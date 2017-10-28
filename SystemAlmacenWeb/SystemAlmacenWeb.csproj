@@ -122,6 +122,7 @@
     <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
     <Content Include="Ui\Registros\RUsuario.aspx" />
+    <Content Include="Ui\Registros\RVenta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Ui\Registros\RUsuario.aspx.designer.cs">
       <DependentUpon>RUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Registros\RVenta.aspx.cs">
+      <DependentUpon>RVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Registros\RVenta.aspx.designer.cs">
+      <DependentUpon>RVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

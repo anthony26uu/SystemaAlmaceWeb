@@ -13,8 +13,8 @@ namespace Entidades
         public int IdArticulo { get; set; }
         public String NombreArticulo { get; set; }
         public int Existencia { get; set; }
-        public decimal PrecioVenta { get; set; }
-        public decimal PrecioCompra { get; set; }
+        public decimal Precio { get; set; }
+        public decimal Costo { get; set; }
         public string Categoria { get; set; }
         public string CodigoArticulo { get; set; }
         public DateTime FechaIngreso { get; set; }
@@ -31,13 +31,13 @@ namespace Entidades
         }
 
 
-        public Articulos(int idArticulo, string nombreArticulo, int existencia, decimal precioVenta, decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
+        public Articulos(int idArticulo, string nombreArticulo, int existencia, decimal precio, decimal costo, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
         {
             this.IdArticulo = idArticulo;
             this.NombreArticulo = nombreArticulo;
             this.Existencia = existencia;
-            this.PrecioVenta = precioVenta;
-            this.PrecioCompra = precioCompra;
+            this.Precio = precio;
+            this.Costo = costo;
             this.Categoria = categoria;
             this.CodigoArticulo = codigoArticulo;
             this.FechaIngreso = fechaIngreso;

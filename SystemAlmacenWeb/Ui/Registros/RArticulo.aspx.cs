@@ -38,8 +38,8 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             articulog.IdArticulo = Utilidades.TOINT(TextBoxID.Text);
             articulog.NombreArticulo = TextBoxNombre.Text;
-            articulog.PrecioCompra = Convert.ToDecimal(TexboCosto.Text);
-            articulog.PrecioVenta = Convert.ToDecimal(TexboPrecio.Text);
+            articulog.Costo = Convert.ToDecimal(TexboCosto.Text);
+            articulog.Precio = Convert.ToDecimal(TexboPrecio.Text);
             articulog.ITBIS = Convert.ToDecimal(TexboItbis.Text);
             articulog.Existencia = Utilidades.TOINT(TextBoxExistencia.Text);
             articulog.Categoria = DropCategoria.Text;
@@ -72,7 +72,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             TexboPrecio.Text = "";
             TextBoxID.Text = "";
             TextBoxNombre.Text = "";
-          
+            TextBoxExistencia.Text = "";
+
             RequiredFieldValidator1.Text = "";
             RequiredFieldValidator2.Text = "";
             RequiredFieldValidator3.Text = "";
@@ -148,15 +149,26 @@ namespace SystemAlmacenWeb.Ui.Registros
                 var cate = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (cate != null)
                 {
-                    BLL.ArticuloBLL.Eliminar(cate);
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Elemento se ha Eliminado  con exito');</script>");
+                   if( BLL.ArticuloBLL.Eliminar(cate))
+                    {
+                        Utilidades.ShowToastr(this, "Se a Eliminado", "Correcto", "success");
+                        Limpiar();
+                    //  Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Entro');</script>");
 
-                    Limpiar();
+                    }
+                    else
+                    {
+                        Utilidades.ShowToastr(this, "No se puedo Eliminar", "Fallido", "error");
+                    }
+               
                 }
 
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El elemento compruebe existencia');</script>");
+                    Utilidades.ShowToastr(this, "No se puedo Eliminar", "Fallido", "error");
+               //     Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El elemento compruebe existencia');</script>");
+
+
                     Limpiar();
                 }
             }
@@ -176,7 +188,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
 
                 int id = int.Parse(TextBoxID.Text);
-                var artic = BLL.ArticuloBLL.Buscar(p => p.CategoriaId == id);
+                var artic = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (artic != null)
                 {
 
@@ -184,12 +196,12 @@ namespace SystemAlmacenWeb.Ui.Registros
                     TextBoxNombre.Text = artic.NombreArticulo;
 
                     TexboCodigo.Text = artic.CodigoArticulo;
-                    TexboCosto.Text = Convert.ToString(artic.PrecioCompra);
+                    TexboCosto.Text = Convert.ToString(artic.Costo);
                     TexboItbis.Text = Convert.ToString(artic.ITBIS);
-                    TexboPrecio.Text = Convert.ToString(artic.PrecioVenta);
+                    TexboPrecio.Text = Convert.ToString(artic.Precio);
                     DropCategoria.Text = artic.Categoria;
                     TextFecha.Text = Convert.ToString(artic.FechaIngreso);
-
+                    TextBoxExistencia.Text = Convert.ToString(artic.Existencia);
 
 
                 }
