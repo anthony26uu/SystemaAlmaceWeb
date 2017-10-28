@@ -10,7 +10,7 @@
 namespace SystemAlmacenWeb.Ui.Registros {
     
     
-    public partial class RUsuario {
+    public partial class RArticulo {
         
         /// <summary>
         /// TextBoxID control.
@@ -40,15 +40,6 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.Button BotonBuscar;
         
         /// <summary>
-        /// RegularExpressionValidator7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator7;
-        
-        /// <summary>
         /// TextBoxNombre control.
         /// </summary>
         /// <remarks>
@@ -76,13 +67,13 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.TextBox TextFecha;
         
         /// <summary>
-        /// TextBoxPass control.
+        /// TextBoxExistencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPass;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxExistencia;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -94,13 +85,13 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// TextBoxConfirm control.
+        /// TexboCosto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirm;
+        protected global::System.Web.UI.WebControls.TextBox TexboCosto;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -112,13 +103,67 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// DropTipo control.
+        /// TexboPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropTipo;
+        protected global::System.Web.UI.WebControls.TextBox TexboPrecio;
+        
+        /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        
+        /// <summary>
+        /// TexboCodigo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TexboCodigo;
+        
+        /// <summary>
+        /// RequiredFieldValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        
+        /// <summary>
+        /// TexboItbis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TexboItbis;
+        
+        /// <summary>
+        /// RequiredFieldValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        
+        /// <summary>
+        /// DropCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropCategoria;
         
         /// <summary>
         /// Button4 control.

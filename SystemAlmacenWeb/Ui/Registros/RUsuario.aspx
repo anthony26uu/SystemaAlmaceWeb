@@ -17,13 +17,12 @@
     <div class="text-center">
         <span class="btn btn-danger">ID Usuario</span>
 
-        <asp:TextBox ID="TextBoxID" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxID"  TextMode="Number"   class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click" />
+        <asp:Button ID="BotonBuscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="BotonBuscar_Click" />
+        <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="TextBoxID" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="buscar"></asp:RegularExpressionValidator>
     </div>
-    <br />
-
-    <br />
     <br />
     <!--Texbox -->
     <div class="text-center">

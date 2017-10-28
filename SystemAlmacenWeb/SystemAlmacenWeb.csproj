@@ -116,8 +116,10 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Ui\Consultas\CArticulos.aspx" />
     <Content Include="Ui\Consultas\CCategoria.aspx" />
     <Content Include="Ui\Consultas\CUsuarios.aspx" />
+    <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
     <Content Include="Ui\Registros\RUsuario.aspx" />
     <Content Include="Web.config" />
@@ -153,6 +155,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Consultas\CArticulos.aspx.cs">
+      <DependentUpon>CArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CArticulos.aspx.designer.cs">
+      <DependentUpon>CArticulos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Consultas\CCategoria.aspx.cs">
       <DependentUpon>CCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -166,6 +175,13 @@
     </Compile>
     <Compile Include="Ui\Consultas\CUsuarios.aspx.designer.cs">
       <DependentUpon>CUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Registros\RArticulo.aspx.cs">
+      <DependentUpon>RArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Registros\RArticulo.aspx.designer.cs">
+      <DependentUpon>RArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Registros\RCategoria.aspx.cs">
       <DependentUpon>RCategoria.aspx</DependentUpon>

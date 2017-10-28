@@ -20,8 +20,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
 
             TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
+           
         }
         Usuarios usuariog = new Usuarios();
+
+      
 
         private void Limpiar()
         {
@@ -37,6 +40,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             RequiredFieldValidator3.Text = "";
             RequiredFieldValidator3.Text = "";
             RequiredFieldValidator5.Text = "";
+            RegularExpressionValidator7.Text = "";
             DropTipo.Text = null;
 
         }
