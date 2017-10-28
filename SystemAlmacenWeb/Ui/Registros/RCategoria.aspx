@@ -16,7 +16,7 @@
 
     <span class="btn btn-danger">ID Categoria</span>&nbsp;
     <asp:TextBox ID="Textid" placeholder="Id a Buscar" class="input-lg" runat="server" Height="45px" Width="165px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
-    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" />
+    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="Button1_Click" />
 
 
          <br />
@@ -47,7 +47,7 @@
     <div class="text-center">
         <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Nuevo"  Height="36px" Width="90px" OnClick="Button2_Click" />
         <asp:Button ID="Guardar" CssClass="btn btn-danger" runat="server" Text="Guardar" Height="36px" ValidationGroup="guardar" Width="90px" OnClick="Button3_Click" />
-        <asp:Button ID="Eliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" ValidationGroup="buscar" Width="90px" />
+        <asp:Button ID="Eliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" ValidationGroup="buscar" Width="90px" OnClick="Eliminar_Click" />
     </div>
 
     </form>

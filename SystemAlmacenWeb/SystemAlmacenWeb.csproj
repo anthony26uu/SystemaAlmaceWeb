@@ -67,10 +67,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\RegistrosDb_log.ldf">
+      <DependentUpon>RegistrosDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\toastr.less" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Base.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -109,7 +116,10 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Ui\Consultas\CCategoria.aspx" />
+    <Content Include="Ui\Consultas\CUsuarios.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
+    <Content Include="Ui\Registros\RUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +148,25 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Consultas\CCategoria.aspx.cs">
+      <DependentUpon>CCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CCategoria.aspx.designer.cs">
+      <DependentUpon>CCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Consultas\CUsuarios.aspx.cs">
+      <DependentUpon>CUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CUsuarios.aspx.designer.cs">
+      <DependentUpon>CUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Registros\RCategoria.aspx.cs">
       <DependentUpon>RCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -145,11 +174,17 @@
     <Compile Include="Ui\Registros\RCategoria.aspx.designer.cs">
       <DependentUpon>RCategoria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Registros\RUsuario.aspx.cs">
+      <DependentUpon>RUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Registros\RUsuario.aspx.designer.cs">
+      <DependentUpon>RUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Ui\Consultas\" />
     <Folder Include="Ui\Reportes\" />
   </ItemGroup>
   <ItemGroup>

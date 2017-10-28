@@ -1,6 +1,6 @@
 ﻿using BLL;
 using Entidades;
-using ProyectoTech;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,5 +93,70 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             Limpiar();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Textid.Text))
+            {
+
+
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No existen elementos con este id');</script>");
+                Limpiar();
+            }
+            else
+
+            {
+
+                int id = int.Parse(Textid.Text);
+                var cate = CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                if (cate != null)
+                {
+
+                  
+                    Textnombre.Text = cate.NombreCategoria;
+
+
+
+
+                }
+                else
+                {
+
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Elementos con este id');</script>");
+                    Limpiar();
+
+                }
+            }
+        }
+
+        protected void Eliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Textid.Text))
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe elementos con este id');</script>");
+                Limpiar();
+
+
+            }
+            else
+            {
+                int id = int.Parse(Textid.Text);
+
+                var cate = CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                if (cate != null)
+                {
+                    CategoriaBLL.Eliminar(cate);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Elemento se ha Eliminado  con exito');</script>");
+
+                    Limpiar();
+                }
+
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El elemento compruebe existencia');</script>");
+                    Limpiar();
+                }
+            }
+        }
     }
-}
+    }

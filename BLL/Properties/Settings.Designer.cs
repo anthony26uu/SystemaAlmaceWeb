@@ -27,8 +27,8 @@ namespace BLL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\antho\\Desktop\\Aplic" +
-            "ada II\\Repos\\ProyectoFinal\\SystemAlmacen\\ProyectoTech\\DataBase\\RegistrosDb.mdf\";" +
-            "Integrated Security=True;Connect Timeout=30")]
+            "ada II\\Tareas\\SystemAlmacenWeb\\SystemAlmacenWeb\\App_Data\\RegistrosDb.mdf\";Integr" +
+            "ated Security=True;Connect Timeout=30")]
         public string ConStr {
             get {
                 return ((string)(this["ConStr"]));
