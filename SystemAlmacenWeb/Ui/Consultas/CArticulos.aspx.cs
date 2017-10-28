@@ -172,13 +172,14 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
             }
 
+           
             else if (DropFiltro.SelectedIndex == 4)
             {
 
-                Lista = BLL.ArticuloBLL.GetList(p => p.Categoria == Convert.ToString(DropCategoria.TabIndex));
+                Lista = BLL.ArticuloBLL.GetList(p => p.Categoria == DropCategoria.Text);
 
-                DropCategoria.DataSource = Lista;
-                DropCategoria.DataBind();
+                ArticuloGrid.DataSource = Lista;
+                ArticuloGrid.DataBind();
             }
         }
 

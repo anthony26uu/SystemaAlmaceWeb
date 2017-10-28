@@ -43,7 +43,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             articulog.ITBIS = Convert.ToDecimal(TexboItbis.Text);
             articulog.Existencia = Utilidades.TOINT(TextBoxExistencia.Text);
             articulog.Categoria = DropCategoria.Text;
-            articulog.CodigoArticulo = DropCategoria.Text;
+            articulog.CodigoArticulo = TexboCodigo.Text;
             articulog.FechaIngreso = Convert.ToDateTime(TextFecha.Text);
 
            
