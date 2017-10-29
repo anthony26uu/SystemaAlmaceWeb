@@ -10,7 +10,12 @@
                   Consulta Usuario <span ></span></h1>
         </header>
 
-          <script src="../../Scripts/popper.min.js"></script>
+     <script src="../../Scripts/popper.min.js"></script>
+      <!-- Librerias para Toastr -->
+    <link href="/../Content/toastr.css" rel="stylesheet" />
+    <script src="../../Scripts/toastr.js"></script>
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
+
  <div class= "text-center">
      
           <span class="btn btn-danger">Selecione-</span>
@@ -28,7 +33,7 @@
        
         
            
-          <span class="btn btn-danger">ID / Descripcion</span>
+          <span class="btn btn-danger">ID / Nombre</span>
           <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" ></asp:TextBox>
          <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click1"  />
  

@@ -8,16 +8,24 @@
 
     
 <!-- Bootstrap 4.0.0 -->
-<link href="Content/bootstrap.min.css" rel="stylesheet" />
+<link href="/Content/bootstrap.min.css" rel="stylesheet" />
 <!-- Bootswatch Darkly theme-->
-<link href="Content/bootstraptheme.min.css" rel="stylesheet" />
+<link href="/Content/bootstraptheme.min.css" rel="stylesheet" />
+ <link href="/../Content/toastr.css" rel="stylesheet" />
+
+    <script src="../../Scripts/bootstrap.js"></script>
 
     <script src="../../Scripts/popper.min.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/jquery-3.2.1.slim.min.js"></script>
     <script src="../../Scripts/bootstrap4.0.min.js"></script>
-  
+    <script src="../../Scripts/popper.js"></script>
     <script src="../../Scripts/toastr.min.js"></script>
+    <script src="../../Scripts/toastr.js"></script>
+    
+
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
+ 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -32,58 +40,39 @@
 
 
           <!-- Bootswatch NAV-->
+         
+      <nav class="navbar navbar-inverse">
           
-            <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-    
-       
-      </button>
 
-      <a class="navbar-brand" href="../../Home.aspx">Inicio</a>
+         <a class="navbar-brand" href="../../Home.aspx">Inicio</a>
          <a class="navbar-brand" href="#">Saldar Deudas</a>
-         <a class="navbar-brand" href="#">Punto de Ventas</a>
-       
-    </div>
-
-         <li class="dropdown">
-          <a href="#"  class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Consultas <span class="caret"></span></a>
-          
-             <ul class="dropdown-menu" role="menu">
+         <a class="navbar-brand" href="/Ui/Registros/RVenta.aspx">Punto de Ventas</a>
+        
+            
+           
+          <li class="navbar-brand">       
+           <a href="#"  class="dropdown" data-toggle="dropdown" role="button"  aria-expanded="false">Consulta </a>
+          <ul class="dropdown-menu" role="menu">
             <li><a href="/Ui/Consultas/CUsuarios.aspx">Usuario</a></li>
             <li><a href="/Ui/Consultas/CCategoria.aspx">Categorias</a></li>
-            <li><a href="/Ui/Consultas/CArticulos.aspx">Articulo</a></li>
-            <li><a href="#">Clientes</a></li>
-            
-          </ul>
-        </li>
-
-       <li class="dropdown">
-          <a href="#"  class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Registros <span class="caret"></span></a>
-          
-             <ul class="dropdown-menu" role="menu">
-            <li><a href="/Ui/Registros/RUsuario.aspx">Usuario</a></li>
+            <li><a href="/Ui/Consultas/CArticulos.aspx">Articulos</a></li>
+             </ul>
+         </li>
+              
+         
+           <li class=" dropdown"> <a href="#" class="dropdown-menu" data-toggle="dropdown" role="button" aria-expanded="true">Registro </a>
+          <ul class="dropdown" role="menu">
+            <li><a href="/Ui/Registros/RArticulo.aspx">Usuario</a></li>
+                <li><a href="/Ui/Registros/RVenta.aspx">Ventas</a></li>
             <li><a href="/Ui/Registros/RCategoria.aspx">Categorias</a></li>
             <li><a href="/Ui/Registros/RArticulo.aspx">Articulos</a></li>
-            <li><a href="#">Clientes</a></li>
+           
             
           </ul>
         </li>
-    
-    
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Cerrar Seccion</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-
-
-
+  
+          
+ </nav>
 
     <form id="form1" runat="server">
         <div>

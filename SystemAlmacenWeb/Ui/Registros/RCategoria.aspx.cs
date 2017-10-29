@@ -56,12 +56,12 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (CategoriaBLL.Mofidicar(categoriag))
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Categoria modificado con exito');</script>");
+                          Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
 
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Categoria No pudo ser modificado');</script>");
+                        Utilidades.ShowToastr(this, "Error Al modificar Categoria", "ERROR", "error");
 
                     }
 
@@ -72,12 +72,13 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (CategoriaBLL.Guardar(categoriag))
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nueva Categoria agregada!');</script>");
+
+                        Utilidades.ShowToastr(this, "Agregada correctamente", "CORRECTO", "success");
 
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo  agregar Categoria');</script>");
+                        Utilidades.ShowToastr(this, "Error al guardar", "ERROR", "error");
 
                     }
 
@@ -99,8 +100,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             if (string.IsNullOrWhiteSpace(Textid.Text))
             {
 
+                Utilidades.ShowToastr(this, "Campo Vacio", "ERROR", "error");
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No existen elementos con este id');</script>");
                 Limpiar();
             }
             else
@@ -114,6 +115,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                   
                     Textnombre.Text = cate.NombreCategoria;
+                    Utilidades.ShowToastr(this, "Sus Resultados", "CORRECTO", "success");
 
 
 
@@ -121,8 +123,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
                 else
                 {
-
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Elementos con este id');</script>");
+                    Utilidades.ShowToastr(this, "No existe categoria con este ID", "ERROR", "error");
                     Limpiar();
 
                 }
@@ -133,7 +134,8 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             if (string.IsNullOrWhiteSpace(Textid.Text))
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe elementos con este id');</script>");
+                Utilidades.ShowToastr(this, "Capo Vacio", "ERROR", "error");
+
                 Limpiar();
 
 
@@ -146,14 +148,15 @@ namespace SystemAlmacenWeb.Ui.Registros
                 if (cate != null)
                 {
                     CategoriaBLL.Eliminar(cate);
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Elemento se ha Eliminado  con exito');</script>");
+                    Utilidades.ShowToastr(this, "Se ha modificado con exito", "CORRECTO", "success");
 
                     Limpiar();
                 }
 
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El elemento compruebe existencia');</script>");
+                    Utilidades.ShowToastr(this, "No se puedo eliminar Categoria", "ERROR", "error");
+
                     Limpiar();
                 }
             }

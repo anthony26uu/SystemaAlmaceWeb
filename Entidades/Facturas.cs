@@ -19,6 +19,11 @@ namespace Entidades
         public int CantidadProd { get; set; }
         public decimal Total { get; set; }
 
+        public List<Entidades.Articulos> Detalle;
+
+
+
+
 
 
         public Facturas()

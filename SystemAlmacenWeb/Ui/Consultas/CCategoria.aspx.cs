@@ -35,7 +35,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 buscaText.Text = "";
                 if (Lista.Count == 0)
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Categoria');</script>");
+                    Utilidades.ShowToastr(this, "No se ha registrado Categoria", "Resultados", "error");
+
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
@@ -43,6 +44,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 {
                     Lista = BLL.CategoriaBLL.GetListodo();
                     CategoriasGrid.DataSource = Lista;
+                    Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
 
 
                 }
@@ -54,7 +57,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
                 if (Lista.Count == 0)
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Elementos con este Id');</script>");
+                    Utilidades.ShowToastr(this, "No existe categoria con este ID", "Resultados", "error");
+
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
@@ -62,21 +66,19 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 {
                     CategoriasGrid.DataSource = Lista;
                     CategoriasGrid.DataBind();
+                    Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
                 }
 
 
 
             }
-            else if (DropFiltro.SelectedIndex == 2)
-            {
-            
-            }
-
+        
             else if (DropFiltro.SelectedIndex == 3)
             {
                 if (buscaText.Text == "")
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debe escribir la descripcion a buscar');</script>");
+                    Utilidades.ShowToastr(this, "Escriba Descripcion", "Resultados", "error");
 
                     buscaText.Text = "";
                     buscaText.Focus();
@@ -86,7 +88,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     Lista = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == buscaText.Text);
                     if (Lista.Count == 0)
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado elementos con esa descripcion');</script>");
+                        Utilidades.ShowToastr(this, "No existe categoria con esa descripcion", "Resultados", "error");
+
                         buscaText.Text = "";
                         buscaText.Focus();
                     }
@@ -94,8 +97,10 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     {
                         CategoriasGrid.DataSource = Lista;
                         CategoriasGrid.DataBind();
+                        Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
                     }
-                    
+
 
                 }
 

@@ -36,7 +36,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 buscaText.Text = "";
                 if (Lista.Count == 0)
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Usuario');</script>");
+                    Utilidades.ShowToastr(this, "No se ha Registrado Usuario", "Correcto", "warning");
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
@@ -44,6 +44,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 {
                     Lista = BLL.UserBLL.GetListodo();
                     UsuarioGrid.DataSource = Lista;
+                    Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
                 }
@@ -55,7 +56,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
                 if (Lista.Count == 0)
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Elementos con este Id');</script>");
+                    Utilidades.ShowToastr(this, "No se ha Registrado Usuario con este ID", "Error", "warning");
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
@@ -63,6 +64,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 {
                     UsuarioGrid.DataSource = Lista;
                     UsuarioGrid.DataBind();
+                    Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
                 }
 
 
@@ -73,6 +76,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 Lista = BLL.UserBLL.GetList(p => p.Tipo == DropTipo.Text);
                 UsuarioGrid.DataSource = Lista;
                 UsuarioGrid.DataBind();
+                Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
             }
 
             else if (DropFiltro.SelectedIndex == 2)
@@ -81,7 +86,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
                 if (desdeFecha.Text == "" && desdeFecha.Text == "")
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida ');</script>");
+                    Utilidades.ShowToastr(this, "Fecha Invalidad", "Error", "warning");
 
                     hastaFecha.Text = "";
                     desdeFecha.Text = "";
@@ -94,7 +99,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     DateTime hasta = DateTime.Now;
                     if (desdeFecha.Text == "")
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida ');</script>");
+                        Utilidades.ShowToastr(this, "Fecha Invalidad", "Error", "warning");
                         hastaFecha.Text = "";
                         desdeFecha.Text = "";
                         desdeFecha.Focus();
@@ -115,12 +120,14 @@ namespace SystemAlmacenWeb.Ui.Consultas
                             Lista = BLL.UserBLL.GetList(p => p.FechaIngreso >= desde.Date && p.FechaIngreso <= hasta.Date);
                             UsuarioGrid.DataSource = Lista;
                             UsuarioGrid.DataBind();
+                            Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
 
 
                         }
                         else
                         {
-                            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida debe ser menor');</script>");
+                            Utilidades.ShowToastr(this, "Fecha Deve ser menor", "Consejo", "info");
                             desdeFecha.Text = "";
                             hastaFecha.Text = "";
                             desdeFecha.Focus();
@@ -128,7 +135,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Ingrese Fecha');</script>");
+                        Utilidades.ShowToastr(this, "Ingrese Fecha", "Consejo", "info");
                         desdeFecha.Focus();
                     }
 
@@ -140,7 +147,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             {
                 if (buscaText.Text == "")
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debe escribir la descripcion a buscar');</script>");
+                    Utilidades.ShowToastr(this, "Escriba Descripcion a buscar", "Consejo", "info");
 
                     buscaText.Text = "";
                     buscaText.Focus();
@@ -150,7 +157,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     Lista = BLL.UserBLL.GetList(p => p.NombreUsuario == buscaText.Text);
                     if (Lista.Count == 0)
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado elementos con esa descripcion');</script>");
+                        Utilidades.ShowToastr(this, "No se ha registrado Elementos con este descripcion", "Consejo", "warning");
                         buscaText.Text = "";
                         buscaText.Focus();
                     }
@@ -158,6 +165,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     {
                         UsuarioGrid.DataSource = Lista;
                         UsuarioGrid.DataBind();
+                        Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
                     }
 
 

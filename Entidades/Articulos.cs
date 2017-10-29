@@ -22,8 +22,6 @@ namespace Entidades
         public decimal ITBIS { get; set; }
 
 
-
-
         public Articulos()
         {
 

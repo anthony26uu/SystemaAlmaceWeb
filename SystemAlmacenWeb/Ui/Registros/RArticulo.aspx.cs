@@ -16,13 +16,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
             TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
             TextBoxID.Focus();
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
-
+            Utilidades.SCritpValidacion();
 
             if (!Page.IsPostBack)
             {
@@ -59,6 +53,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             DropCategoria.DataValueField = "CategoriaId";
             DropCategoria.DataTextField = "NombreCategoria";
             DropCategoria.DataBind();
+
 
 
 
@@ -102,13 +97,11 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (BLL.ArticuloBLL.Mofidicar(articulog))
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Articulo modificado con exito');</script>");
-
+                        Utilidades.ShowToastr(this, "Se modifico Articulo Satisfactoriamente", "Correcto", "success");
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Articulo No pudo ser modificado');</script>");
-
+                        Utilidades.ShowToastr(this, "No se pudo modificar Articulo", "Error", "Error");
                     }
 
 
@@ -118,13 +111,12 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (BLL.ArticuloBLL.Guardar(articulog))
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nuevo Articulo agregada!');</script>");
-
+                       Utilidades.ShowToastr(this, "Agredado Articulo", "Correcto", "success");
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo  agregar el Articulo');</script>");
-
+                        Utilidades.ShowToastr(this, "No se agrego", "Error", "error");
+                      
                     }
 
 
@@ -153,7 +145,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                     {
                         Utilidades.ShowToastr(this, "Se a Eliminado", "Correcto", "success");
                         Limpiar();
-                    //  Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Entro');</script>");
+               
 
                     }
                     else
@@ -166,8 +158,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 else
                 {
                     Utilidades.ShowToastr(this, "No se puedo Eliminar", "Fallido", "error");
-               //     Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El elemento compruebe existencia');</script>");
-
+            
 
                     Limpiar();
                 }
@@ -179,9 +170,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             if (string.IsNullOrWhiteSpace(TextBoxID.Text))
             {
 
-
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No existen elementos con este id');</script>");
-                Limpiar();
+                Utilidades.ShowToastr(this, "Capo Vacio ", "Fallido", "error");
+               Limpiar();
             }
             else
 
@@ -202,13 +192,12 @@ namespace SystemAlmacenWeb.Ui.Registros
                     DropCategoria.Text = artic.Categoria;
                     TextFecha.Text = Convert.ToString(artic.FechaIngreso);
                     TextBoxExistencia.Text = Convert.ToString(artic.Existencia);
-
+                    Utilidades.ShowToastr(this, "Resultados", "Correcto", "success");
 
                 }
                 else
                 {
-
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Elementos con este id');</script>");
+                    Utilidades.ShowToastr(this, "NO existen elementos", "Resultados", "error");
                     Limpiar();
 
                 }

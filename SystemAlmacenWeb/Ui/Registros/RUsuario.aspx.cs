@@ -83,7 +83,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
 
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No existen elementos con este id');</script>");
+                Utilidades.ShowToastr(this, "Capo vacio id", "ERROR", "info");
+
                 Limpiar();
             }
             else
@@ -100,12 +101,13 @@ namespace SystemAlmacenWeb.Ui.Registros
                     TextBoxPass.Text = usuar.PassUsuario;
                     TextFecha.Text = Convert.ToString(usuar.FechaIngreso);
                     TextBoxConfirm.Text = usuar.PassUsuario;
-                                       
+                    Utilidades.ShowToastr(this, "Resultados", "RESULTADOS", "success");
+
                 }
                 else
                 {
+                    Utilidades.ShowToastr(this, "NO existe elementos con ID", "ERROR", "info");
 
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Elementos con este id');</script>");
                     Limpiar();
 
                 }
@@ -122,11 +124,12 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (!validarUser())
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nombre de usuario ya existe');</script>");
+
+                    Utilidades.ShowToastr(this, "Nombre de Usuario ya existe", "ERROR", "info");
 
 
-                    }
-                    else
+                }
+                else
                     {
                         usuariog= LlenarCampos();
 
@@ -137,44 +140,44 @@ namespace SystemAlmacenWeb.Ui.Registros
                             {
                                if (BLL.UserBLL.Mofidicar(usuariog))
                             {
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Usuario modificado con exito');</script>");
+                                Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
 
                             }
-                               else
+                            else
                             {
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Error al modificar');</script>");
+
+                                Utilidades.ShowToastr(this, "Error al  Modificar ", "ERROR", "error");
 
                             }
 
 
 
-                            }
+                        }
                             else
                             {
                               if (BLL.UserBLL.Guardar(usuariog))
                             {
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nuevo usuario agregado!');</script>");
+                                Utilidades.ShowToastr(this, "Nuevo usuario agregado con exito", "CORRECTO", "success");
 
                             }
                             else
                             {
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No pudo ser agregado!');</script>");
+                                Utilidades.ShowToastr(this, "Error al guardar", "ERROR", "error");
 
                             }
 
 
-                           }
+                        }
                         }
                         else
                         {
-                            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Campos Contraseña no coninciden');</script>");
-
-
-
-                        }
+                        Utilidades.ShowToastr(this, "Campos contraseña no coniciden", "CORRECTO", "info");
 
 
                     }
+
+
+                }
                 }
               
 
@@ -193,8 +196,8 @@ namespace SystemAlmacenWeb.Ui.Registros
 
             if (string.IsNullOrWhiteSpace(TextBoxID.Text))
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Usuario con este id');</script>");
 
+                Utilidades.ShowToastr(this, "Campo Id vacio", "ERROR", "info");
 
 
                 Limpiar();
@@ -209,14 +212,14 @@ namespace SystemAlmacenWeb.Ui.Registros
                 if (BLL.UserBLL.Eliminar(user))
                 {
 
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Usuario se ha Eliminado  con exito');</script>");
+                    Utilidades.ShowToastr(this, "Eliminado con exito", "CORRECTO", "success");
 
                     Limpiar();
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El usuario');</script>");
 
+                    Utilidades.ShowToastr(this, "No se puedo eliminar", "ERROR", "error");
 
                 }
             }

@@ -3,9 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
+
+    <!-- Librerias para Toastr -->
+
+
+     
     <script src="Scripts/popper.min.js"></script>
-  
     <div class="jumbotron">
 
         <div class="panel panel-success">

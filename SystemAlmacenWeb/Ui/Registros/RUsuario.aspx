@@ -4,6 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <script src="../../../Scripts/popper.min.js"></script>
+         <!-- Librerias para Toastr -->
+    <link href="/../Content/toastr.css" rel="stylesheet" />
+    <script src="../../Scripts/toastr.js"></script>
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
 
 
     <div class="text-center">

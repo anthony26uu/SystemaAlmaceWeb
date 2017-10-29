@@ -12,6 +12,13 @@ namespace SystemAlmacenWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            for (int i = 0; i < 1; i++)
+            {
+                Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+            }
+
+           
+            
         }
     }
 }
