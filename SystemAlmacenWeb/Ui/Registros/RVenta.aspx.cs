@@ -16,6 +16,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         Entidades.Articulos artig = new Entidades.Articulos();
         private static List<Entidades.FacturaDetalles> listaRelaciones = null;
         private static List<Entidades.Articulos> listadoArticulos = null;
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 facturaG = new Entidades.Facturas();
                 listadoArticulos = new List<Entidades.Articulos>();
                 listaRelaciones = new List<Entidades.FacturaDetalles>();
+              
             }
 
             
@@ -48,13 +50,20 @@ namespace SystemAlmacenWeb.Ui.Registros
 
 
         }
+        private void limpiar()
+        {
+            dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"), new DataColumn("ID Factura"), new DataColumn(" Precio"), new DataColumn("Cantidad"),
+                new DataColumn("Nombre"), new DataColumn("ITBS")});
+
+            TextBoxBuscar.Text = "";
+            ViewState["Detalle"] = dt;
+            this.BindGrid();
+        }
 
         public void LlenarRegistro(Entidades.FacturaDetalles factura)
         {
-           
-          //  TextBoxfactura.Text = factura.IdFactura.ToString();
-        //    DropArticulo.SelectedValue = factura.IdArticulo.ToString();
-        //    TextBoxCantidad.Text = factura.Cantidad.ToString();
+            limpiar();
+
             foreach (var li in factura.Detalle)
             {
                 DataTable dt = (DataTable)ViewState["Detalle"];
@@ -71,33 +80,42 @@ namespace SystemAlmacenWeb.Ui.Registros
         public void LlenarDatos(Entidades.FacturaDetalles detalle)
         {
 
-            int Idarti = 0;
-            Entidades.Articulos art = new Entidades.Articulos();
-            art = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Idarti);
 
-            detalle.IdArticulo = Convert.ToInt32(DropArticulo.SelectedValue);
-            detalle.Nombre = DropArticulo.Text;
+           
+            int id = 0;
+            
+            if (facturaG != null)
+            {
+                id = facturaG.IdFactura;
+                
+            }
+
+            int cantidad = 5;
+
+
+
+            //     detalle.Precio= Convert.ToDecimal(TextBoxSubTotal.Text);
+            detalle.IdFactura = id;
+           
+           
+          //  detalle.IdFactura = id;
+
+            
            // detalle.Cantidad = Utilidades.TOINT(TextBoxCantidad.Text);
            // detalle.Precio = art.Precio;
            //detalle.ITBIS = art.ITBIS;
        
             foreach (GridViewRow dr in FacturaGrid.Rows)
             {
-                detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), Convert.ToInt32(dr.Cells[1].Text), Convert.ToInt32(dr.Cells[2].Text),
+                detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0,0,
                     Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
                     );
                
             }
 
-            int id = 0;
-            if (facturaG != null)
-            {
-                id = facturaG.IdFactura;
-            }
-
-            int cantidad = 5;
+            
            
-            facturaG = new Entidades.Facturas(id, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
+            facturaG = new Entidades.Facturas(0, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
 
 
         }
@@ -113,25 +131,26 @@ namespace SystemAlmacenWeb.Ui.Registros
             int id = Utilidades.TOINT(DropArticulo.SelectedValue);
             artig= BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
 
-            int id2;
+            int id2=0;
             if (facturaG != null)
             {
                 id2 = facturaG.IdFactura;
             }
 
             DataTable dt = (DataTable)ViewState["Detalle"];
-            dt.Rows.Add(DropArticulo.SelectedValue,0,0, artig.Precio, TextBoxCantidad.Text.Trim(),artig.NombreArticulo.Trim(),artig.ITBIS);
+            dt.Rows.Add(DropArticulo.SelectedValue,0, Convert.ToString(id2), artig.Precio, TextBoxCantidad.Text.Trim(),artig.NombreArticulo.Trim(),artig.ITBIS);
             ViewState["Detalle"] = dt;
             this.BindGrid();
             TextBoxCantidad.Text = "";
         }
+       
+            
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
 
+            protected void Button2_Click(object sender, EventArgs e)
+            {
 
-            var guardar = new Entidades.Deudasclientes();
-
+            
 
 
             Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
@@ -142,6 +161,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
 
                 Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
+                limpiar();
                  }
                 else
                 {
@@ -162,13 +182,12 @@ namespace SystemAlmacenWeb.Ui.Registros
             else
             {
                 Entidades.FacturaDetalles detalleb = new Entidades.FacturaDetalles();
-   
 
+                detalleb = BLL.FacturaDetallesBLL.Buscar(p=> p.IdDetalle== Utilidades.TOINT(TextBoxBuscar.Text));
 
-                //    TextBoxTotal.Text = facturaG.Total.ToString();
-                // int id = Utilidades.TOINT(TextBoxBuscar.Text);
-                
-                if (BLL.FacturaDetallesBLL.Buscar(p => p.IdDetalle == 1)!=null)
+               
+
+                if (detalleb != null)
                 {
                     LlenarRegistro(detalleb);
                     Utilidades.ShowToastr(this, "Busqueda exitosa", "Exito");
@@ -176,12 +195,22 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
                 else
                 {
-
-                    Utilidades.ShowToastr(this, "Fallo", "error");
+                    limpiar();
+                    Utilidades.ShowToastr(this, "No existe", "Error", "error");
                 }
 
             }
 
+        }
+
+        protected void Asignar(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

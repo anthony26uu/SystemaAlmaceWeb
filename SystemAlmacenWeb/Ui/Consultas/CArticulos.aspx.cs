@@ -19,10 +19,11 @@ namespace SystemAlmacenWeb.Ui.Consultas
             myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
 
-            Lista = BLL.ArticuloBLL.GetListodo();
-            Entidades.Articulos artoculo = new Entidades.Articulos();
-            ArticuloGrid.DataSource = Lista;
-            ArticuloGrid.DataBind();
+            detalle = BLL.FacturaDetallesBLL.GetListodo();
+        //    Entidades.Articulos artoculo = new Entidades.Articulos();
+           
+         //   ArticuloGrid.DataSource = Lista;
+           // ArticuloGrid.DataBind();
 
             buscaText.Focus();
 
@@ -32,6 +33,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             }
         }
         public static List<Entidades.Articulos> Lista { get; set; }
+        public static List<Entidades.FacturaDetalles> detalle { get; set; }
 
         private void LlenarDrop()
         {
@@ -49,7 +51,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             if (DropFiltro.SelectedIndex == 0)
             {
                 buscaText.Text = "";
-                if (Lista.Count == 0)
+                if (detalle.Count == 0)
                 {
                     Utilidades.ShowToastr(this, "No se ha registrado Articulos", "Resultados", "error");
 
@@ -58,8 +60,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    Lista = BLL.ArticuloBLL.GetListodo();
-                    ArticuloGrid.DataSource = Lista;
+                    detalle = BLL.FacturaDetallesBLL.GetListodo();
+                    ArticuloGrid.DataSource = detalle;
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
@@ -69,10 +71,10 @@ namespace SystemAlmacenWeb.Ui.Consultas
             else if (DropFiltro.SelectedIndex == 1)
             {
 
-                Lista = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                detalle = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
 
-                if (Lista.Count == 0)
-                {
+                if (detalle.Count == 0)
+                {u78
                     Utilidades.ShowToastr(this, "No se ha registrado Articulos con este ID", "Resultados", "error");
 
                     buscaText.Text = "";
@@ -80,7 +82,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    ArticuloGrid.DataSource = Lista;
+                    ArticuloGrid.DataSource = detalle;
                     ArticuloGrid.DataBind();
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 

@@ -36,7 +36,7 @@ namespace BLL
                             foreach (var relacion in listaRelaciones)
                             {
                                 relacion.IdFactura = Facturag.IdFactura;
-                                if (!BLL.FacturaDetallesBLL.Mofidicar(relacion))
+                                if (!BLL.FacturaDetallesBLL.Guardar(relacion))
                                 {
                                     relacionesGuardadas = true;
 

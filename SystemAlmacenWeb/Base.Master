@@ -35,45 +35,39 @@
       <div>
             <a href="../../Home.aspx" class="btn btn-danger btn-block">EL ALMACEN</a><br />
 
-            <br />
+           
 
+          </div>
 
 
           <!-- Bootswatch NAV-->
+ <div class="panel panel-success">
          
-      <nav class="navbar navbar-inverse">
-          
-
-         <a class="navbar-brand" href="../../Home.aspx">Inicio</a>
-         <a class="navbar-brand" href="#">Saldar Deudas</a>
-         <a class="navbar-brand" href="/Ui/Registros/RVenta.aspx">Punto de Ventas</a>
-        
-            
-           
-          <li class="navbar-brand">       
-           <a href="#"  class="dropdown" data-toggle="dropdown" role="button"  aria-expanded="false">Consulta </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/Ui/Consultas/CUsuarios.aspx">Usuario</a></li>
-            <li><a href="/Ui/Consultas/CCategoria.aspx">Categorias</a></li>
-            <li><a href="/Ui/Consultas/CArticulos.aspx">Articulos</a></li>
-             </ul>
-         </li>
-              
-         
-           <li class=" dropdown"> <a href="#" class="dropdown-menu" data-toggle="dropdown" role="button" aria-expanded="true">Registro </a>
-          <ul class="dropdown" role="menu">
-            <li><a href="/Ui/Registros/RArticulo.aspx">Usuario</a></li>
-                <li><a href="/Ui/Registros/RVenta.aspx">Ventas</a></li>
-            <li><a href="/Ui/Registros/RCategoria.aspx">Categorias</a></li>
-            <li><a href="/Ui/Registros/RArticulo.aspx">Articulos</a></li>
-           
-            
-          </ul>
-        </li>
   
-          
- </nav>
+<ul class="breadcrumb">
+  <li><a href="/Home.aspx">Inicio</a></li>
+  <li><a href="/Ui/Registros/RVenta.aspx">Punto de Ventas</a></li>
+    <li><a href="#">Saldar Deudas</a></li>
+     <li> <a href="#">Salir</a></li>
+  
+   
+</ul>
 
+  <ul class="breadcrumb">
+  <li class="active">Registros</li>
+  <li><a href="/Ui/Registros/RUsuario.aspx">Usuario</a></li>
+  <li><a href="/Ui/Registros/RCategoria.aspx">Categorias</a></li>
+  <li><a href="/Ui/Registros/RArticulo.aspx">Articulos</a></li>
+  <li><a href="#">Clientes</a></li>
+      <li class="active">Consultas</li>
+  <li><a href="/Ui/Consultas/CUsuarios.aspx">Usuario</a></li>
+  <li><a href="/Ui/Consultas/CCategoria.aspx">Categorias</a></li>
+  <li><a href="/Ui/Consultas/CArticulos.aspx">Articulos</a></li>
+  <li><a href="#">Clientes</a></li>
+ 
+
+      </div>
+      
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

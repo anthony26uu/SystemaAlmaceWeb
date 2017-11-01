@@ -59,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="content\bootstrap-grid.css.map" />
+    <None Include="content\bootstrap-grid.min.css.map" />
+    <None Include="content\bootstrap-reboot.css.map" />
+    <None Include="content\bootstrap-reboot.min.css.map" />
+    <None Include="content\bootstrap.css.map" />
+    <None Include="content\bootstrap.min.css.map" />
     <None Include="content\toastr.less" />
     <None Include="content\toastr.scss" />
     <None Include="packages.config" />
@@ -89,8 +95,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\bootstrap-grid.css" />
+    <Content Include="content\bootstrap-grid.min.css" />
+    <Content Include="content\bootstrap-reboot.css" />
+    <Content Include="content\bootstrap-reboot.min.css" />
+    <Content Include="content\bootstrap.css" />
+    <Content Include="content\bootstrap.min.css" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

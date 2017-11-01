@@ -69,6 +69,26 @@ namespace BLL
             }
         }
 
+        public static Entidades.FacturaDetalles BuscarB(int id)
+        {
+
+            Entidades.FacturaDetalles nuevo;
+            using (var db = new RegistroDb())
+            {
+                try
+                {
+                    nuevo = db.RelacionDb.Find(id);
+
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return nuevo;
+            }
+        }
 
         public static bool Guardar(FacturaDetalles relacion)
         {

@@ -4,11 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <!-- Librerias para Toastr -->
+         <!-- Librerias para Toastr -->
 
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
 
-     
-    <script src="Scripts/popper.min.js"></script>
     <div class="jumbotron">
 
         <div class="panel panel-success">
@@ -47,10 +46,12 @@
             </div>
         </div>
 
-
+        <script src="Scripts/popper.min.js"></script>
+        <script src="Scripts/popper.js"></script>
 
         <p><a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg">Informacion</a></p>
     </div>
+
 
     
 </asp:Content>

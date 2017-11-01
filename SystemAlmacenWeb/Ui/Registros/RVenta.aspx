@@ -17,8 +17,8 @@
     <div class="text-center">
 
 
-        <h1 class="page-header text-center">Punto De ventas </h1>
-        <p class="page-header text-center">&nbsp;</p>
+        <h1 class=" text-center">Punto De ventas </h1>
+     
     </div>
 
      <div class="panel panel-danger">
@@ -98,7 +98,7 @@
    <!--Botones -->
 
     <div class="text-center">
-        <asp:Button ID="Button4" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px"   />
+        <asp:Button ID="Button4" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px" OnClick="Button4_Click"   />
         <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click"  />
         <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px"  />
     </div>
