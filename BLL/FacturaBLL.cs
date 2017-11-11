@@ -38,7 +38,7 @@ namespace BLL
                                 relacion.IdFactura = Facturag.IdFactura;
                                 if (!BLL.FacturaDetallesBLL.Guardar(relacion))
                                 {
-                                    relacionesGuardadas = true;
+                                    relacionesGuardadas = false;
 
                                 }
                             }
@@ -57,16 +57,15 @@ namespace BLL
             }
         }
 
-        public static Entidades.Facturas Buscarb(Expression<Func<Facturas, bool>> tipo)
+        public static Facturas Buscarb(Expression<Func<Facturas, bool>> criterioBusqueda)
         {
-            Facturas Result = null;
-            using (var repoitorio = new Repositorio<Facturas>())
 
+            using (var repositorio = new DAL.Repositorio<Facturas>())
             {
-                Result = repoitorio.Buscar(tipo);
+                return repositorio.Buscar(criterioBusqueda);
             }
 
-            return Result;
+          
         }
         public static Entidades.Facturas BuscarB(int id)
         {

@@ -14,42 +14,33 @@ namespace SystemAlmacenWeb.Ui.Registros
         Entidades.Facturas facturaG;
         DataTable dt = new DataTable();
         Entidades.Articulos artig = new Entidades.Articulos();
-        private static List<Entidades.FacturaDetalles> listaRelaciones = null;
+        private static List<Entidades.FacturaDetalles> listaRelaciones;
         private static List<Entidades.Articulos> listadoArticulos = null;
-       
 
+        public static List<Entidades.FacturaDetalles> detalle { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!Page.IsPostBack)
             {
                 LlenarDrop();
+              
                 dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"), new DataColumn("ID Factura"), new DataColumn(" Precio"), new DataColumn("Cantidad"),
                 new DataColumn("Nombre"), new DataColumn("ITBS")});
                 ViewState["Detalle"] = dt;
                 artig = new Entidades.Articulos();
-                facturaG = new Entidades.Facturas();
+              
                 listadoArticulos = new List<Entidades.Articulos>();
                 listaRelaciones = new List<Entidades.FacturaDetalles>();
-              
+                detalle = new List<Entidades.FacturaDetalles>();
+
+                facturaG = new Entidades.Facturas();
             }
 
             
         }
 
-        private void LlenarDrop()
-        {
-            List<Entidades.Articulos> ListaDrop = BLL.ArticuloBLL.GetListodo();
-
-            DropArticulo.DataSource = ListaDrop;
-            DropArticulo.DataValueField = "IdArticulo";
-            DropArticulo.DataTextField = "NombreArticulo";
-            DropArticulo.DataBind();
-
-          
-
-
-        }
+      
         private void limpiar()
         {
             dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"), new DataColumn("ID Factura"), new DataColumn(" Precio"), new DataColumn("Cantidad"),
@@ -60,11 +51,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             this.BindGrid();
         }
 
-        public void LlenarRegistro(Entidades.FacturaDetalles factura)
+        public void LlenarRegistro( List<Entidades.FacturaDetalles> llenar )
         {
             limpiar();
 
-            foreach (var li in factura.Detalle)
+            foreach (var li in llenar)
             {
                 DataTable dt = (DataTable)ViewState["Detalle"];
                 dt.Rows.Add(li.IdArticulo, li.IdDetalle, li.IdFactura,li.Precio, li.Cantidad, li.Nombre, li.ITBIS);
@@ -90,31 +81,17 @@ namespace SystemAlmacenWeb.Ui.Registros
                 
             }
 
-            int cantidad = 5;
-
-
-
-            //     detalle.Precio= Convert.ToDecimal(TextBoxSubTotal.Text);
-            detalle.IdFactura = id;
+            int cantidad= 0;
+         
            
-           
-          //  detalle.IdFactura = id;
-
-            
-           // detalle.Cantidad = Utilidades.TOINT(TextBoxCantidad.Text);
-           // detalle.Precio = art.Precio;
-           //detalle.ITBIS = art.ITBIS;
-       
-            foreach (GridViewRow dr in FacturaGrid.Rows)
+           foreach (GridViewRow dr in FacturaGrid.Rows)
             {
                 detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0,0,
                     Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
                     );
-               
+                cantidad  =+ 1;               
             }
-
-            
-           
+                                  
             facturaG = new Entidades.Facturas(0, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
 
 
@@ -143,8 +120,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             this.BindGrid();
             TextBoxCantidad.Text = "";
         }
-       
-            
+                 
 
 
             protected void Button2_Click(object sender, EventArgs e)
@@ -171,9 +147,96 @@ namespace SystemAlmacenWeb.Ui.Registros
                 
             }
 
+        private void LlenarDrop()
+        {
+            List<Entidades.Articulos> ListaDrop = BLL.ArticuloBLL.GetListodo();
+
+            DropArticulo.DataSource = ListaDrop;
+            DropArticulo.DataValueField = "IdArticulo";
+            DropArticulo.DataTextField = "NombreArticulo";
+            DropArticulo.DataBind();
+
+
+
+
+        }
+
+        private void RefreshListaRelciones()
+        {
+            FacturaGrid.DataSource = null;
+            FacturaGrid.DataSource = listaRelaciones;
+            FacturaGrid.DataBind();
+        }
+
         protected void Buscar_Click(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
+            {
+                Utilidades.ShowToastr(this, "ID Vacio", "Resultados", "error");
+
+            }
+            else
+            {
+                int id = Utilidades.TOINT(TextBoxBuscar.Text);
+
+                facturaG = BLL.FacturaBLL.Buscarb(f => f.IdFactura == id);
+                if (facturaG != null)
+                {
+                  
+
+              //  listaRelaciones = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
+                   listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
+                    if (facturaG != null)
+                    {
+
+
+                        if (listaRelaciones.Count == 0)
+                        {
+                            Utilidades.ShowToastr(this, "No se ha registrado Articulos con este ID", "Resultados", "error");
+
+
+                        }
+                        else
+                        {
+
+                            foreach (var relacion in listaRelaciones)
+                            {
+                                listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
+                            }
+
+                            foreach (var articulo in listadoArticulos)
+                            {
+                                articulo.IdArticulo = BLL.ArticuloBLL.Buscar(A => A.IdArticulo == articulo.IdArticulo).IdArticulo;
+                            }
+
+                            LlenarRegistro(listaRelaciones);
+
+
+                            //  FacturaGrid.DataSource=    listaRelaciones;
+                            // FacturaGrid.DataBind();
+                            //    RefreshListaRelciones();
+                            Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+
+                        }
+
+
+
+                    }
+
+                   
+
+
+
+                }
+                else
+                {
+                    Utilidades.ShowToastr(this, "No existe factura", "Eroor", "error");
+                }
+            }
+
+
+            /*
             if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
             {
                 Utilidades.ShowToastr(this, "Llenar Campo buscaro", "Consejo", "info");
@@ -200,6 +263,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
 
             }
+            */
 
         }
 
@@ -212,5 +276,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             limpiar();
         }
+
+       
     }
 }

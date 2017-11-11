@@ -74,7 +74,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 detalle = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
 
                 if (detalle.Count == 0)
-                {u78
+                {
                     Utilidades.ShowToastr(this, "No se ha registrado Articulos con este ID", "Resultados", "error");
 
                     buscaText.Text = "";
@@ -82,8 +82,11 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    ArticuloGrid.DataSource = detalle;
-                    ArticuloGrid.DataBind();
+                    foreach (var relacion in detalle)
+                    {
+                        ArticuloGrid.DataSource = detalle;
+                        ArticuloGrid.DataBind();
+                    }
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
                 }

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="App_Data\RegistrosDb_log.ldf">
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -113,7 +114,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\RegistrosDb.mdf" />
+    <Content Include="App_Data\RegistrosDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\Script.sql" />
     <Content Include="Content\bootstraptheme.min.css" />
     <Content Include="Content\Img\favicon.ico" />
