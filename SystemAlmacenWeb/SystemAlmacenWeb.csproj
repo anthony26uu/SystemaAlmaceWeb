@@ -97,6 +97,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -125,7 +126,6 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
-    <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
@@ -137,6 +137,7 @@
     <Content Include="Ui\Consultas\CUsuarios.aspx" />
     <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
+    <Content Include="Ui\Registros\RCliente.aspx" />
     <Content Include="Ui\Registros\RUsuario.aspx" />
     <Content Include="Ui\Registros\RVenta.aspx" />
     <Content Include="Web.config" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Ui\Registros\RCategoria.aspx.designer.cs">
       <DependentUpon>RCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Registros\RCliente.aspx.cs">
+      <DependentUpon>RCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Registros\RCliente.aspx.designer.cs">
+      <DependentUpon>RCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Registros\RUsuario.aspx.cs">
       <DependentUpon>RUsuario.aspx</DependentUpon>

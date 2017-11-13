@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SystemAlmacenWeb.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SystemAlmacenWeb.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,6 +7,12 @@
          <!-- Librerias para Toastr -->
 
     <script src="../../Scripts/jquery-3.2.1.js"></script>
+
+             <!-- Librerias para Toastr -->
+    <link href="/../Content/toastr.css" rel="stylesheet" />
+    <script src="../../Scripts/toastr.js"></script>
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
+
 
     <div class="jumbotron">
 

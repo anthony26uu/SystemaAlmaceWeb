@@ -10,7 +10,7 @@
 namespace SystemAlmacenWeb {
     
     
-    public partial class Login1 {
+    public partial class Login {
         
         /// <summary>
         /// form1 control.

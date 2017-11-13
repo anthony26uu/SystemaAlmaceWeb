@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SystemAlmacenWeb.Login1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SystemAlmacenWeb.Login" %>
 
 <!DOCTYPE html>
 
@@ -8,23 +8,34 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    
-        <!-- Bootstrap 4.0.0 -->
-      
+       
+        
+                 <!-- Bootstrap 4.0.0 -->
 <link href="/Content/bootstrap.min.css" rel="stylesheet" />
 <!-- Bootswatch Darkly theme-->
 <link href="/Content/bootstraptheme.min.css" rel="stylesheet" />
+ <link href="/../Content/toastr.css" rel="stylesheet" />
+    
+        <!-- Librerias para Toastr -->
 
-        
-       
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
 
+             <!-- Librerias para Toastr -->
+    <link href="/../Content/toastr.css" rel="stylesheet" />
+    <script src="../../Scripts/toastr.js"></script>
+    <script src="../../Scripts/jquery-3.2.1.js"></script>
+
+
+
+
+    
       <div class="text-center">
         <h1 class="page-header text-center">INICIO <span></span></h1>
     </div>
 
 
       
-          <div class="panel panel-success">
+          <div class="panel panel-success" >
         <div class="text-center">
 
 
@@ -42,7 +53,8 @@
             <asp:TextBox ID="TextPass" placeholder="Contraseña" class="input-lg" runat="server" Height="30px" Width="162px"></asp:TextBox>
 
             <br />
-            <asp:Button ID="Inicio" runat="server" OnClick="Inicio_Click" Text="INICIO" />
+          
+            <asp:Button ID="Inicio" runat="server"  Text="INICIO" OnClick="Inicio_Click"  />
             <br />
         </div>
 
@@ -52,6 +64,7 @@
         </div>
                </div>
             
+   
     </form>
 </body>
 </html>

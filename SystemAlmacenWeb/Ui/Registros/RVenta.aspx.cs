@@ -35,6 +35,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 detalle = new List<Entidades.FacturaDetalles>();
 
                 facturaG = new Entidades.Facturas();
+                DropDownTipoVenta.Text = "";
             }
 
             
@@ -49,11 +50,14 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextBoxBuscar.Text = "";
             ViewState["Detalle"] = dt;
             this.BindGrid();
+            DropDownTipoVenta.Text = "";
+            DropDownTipoVenta.SelectedValue = null;
+        //    DropDownTipoVenta.SelectedItem.Text=":"
         }
 
         public void LlenarRegistro( List<Entidades.FacturaDetalles> llenar )
         {
-            limpiar();
+          //  limpiar();
 
             foreach (var li in llenar)
             {
@@ -185,7 +189,6 @@ namespace SystemAlmacenWeb.Ui.Registros
                 {
                   
 
-              //  listaRelaciones = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
                    listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
                     if (facturaG != null)
                     {
@@ -200,6 +203,13 @@ namespace SystemAlmacenWeb.Ui.Registros
                         else
                         {
 
+                            TextBoxVendedor.Text=   facturaG.NombreUsuario;
+                            DropDownCliente.Text = facturaG.Cliente;
+                            TexboxCantidad.Text = Convert.ToString(facturaG.CantidadProd);
+                            TextFecha.Text = Convert.ToString(facturaG.FechaVenta);
+                            TextBoxTotal.Text = Convert.ToString(facturaG.Total);
+
+
                             foreach (var relacion in listaRelaciones)
                             {
                                 listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
@@ -213,9 +223,6 @@ namespace SystemAlmacenWeb.Ui.Registros
                             LlenarRegistro(listaRelaciones);
 
 
-                            //  FacturaGrid.DataSource=    listaRelaciones;
-                            // FacturaGrid.DataBind();
-                            //    RefreshListaRelciones();
                             Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
                         }
@@ -231,39 +238,11 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
                 else
                 {
-                    Utilidades.ShowToastr(this, "No existe factura", "Eroor", "error");
+                    Utilidades.ShowToastr(this, "No existe factura", "Error", "error");
                 }
             }
 
 
-            /*
-            if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
-            {
-                Utilidades.ShowToastr(this, "Llenar Campo buscaro", "Consejo", "info");
-
-            }
-            else
-            {
-                Entidades.FacturaDetalles detalleb = new Entidades.FacturaDetalles();
-
-                detalleb = BLL.FacturaDetallesBLL.Buscar(p=> p.IdDetalle== Utilidades.TOINT(TextBoxBuscar.Text));
-
-               
-
-                if (detalleb != null)
-                {
-                    LlenarRegistro(detalleb);
-                    Utilidades.ShowToastr(this, "Busqueda exitosa", "Exito");
-                   
-                }
-                else
-                {
-                    limpiar();
-                    Utilidades.ShowToastr(this, "No existe", "Error", "error");
-                }
-
-            }
-            */
 
         }
 
@@ -277,6 +256,48 @@ namespace SystemAlmacenWeb.Ui.Registros
             limpiar();
         }
 
-       
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
+            {
+
+                Utilidades.ShowToastr(this, "Campo Id Vacio", "Error", "info");
+            }
+            else
+            {
+                int id = Utilidades.TOINT(TextBoxBuscar.Text);
+
+                facturaG = BLL.FacturaBLL.Buscarb(f => f.IdFactura == id);
+
+
+
+                if (facturaG != null)
+                        {
+                           
+                           
+                                if (BLL.FacturaBLL.EliminarRelacion(facturaG))
+                                {
+                                   
+                                    limpiar();
+                                   
+                                    facturaG = new Entidades.Facturas();
+                                   Utilidades.ShowToastr(this, "Elimino Correctamente", "ELIMINADO", "success");
+                                    
+                                }
+                                else
+                                {
+                                Utilidades.ShowToastr(this, "Problemas Al Eliminar", "Error", "error");
+                            }
+                            
+                        }
+                        else
+                        {
+                            Utilidades.ShowToastr(this, "No hay Factura", "Informacion", "info");
+                        }
+                   
+              
+
+            }
+        }
     }
 }

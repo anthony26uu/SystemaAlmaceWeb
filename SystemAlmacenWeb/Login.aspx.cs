@@ -8,29 +8,28 @@ using System.Web.UI.WebControls;
 
 namespace SystemAlmacenWeb
 {
-    public partial class Login1 : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Inicio_Click(object sender, EventArgs e)
         {
-
-           if( BLL.UserBLL.Authenticate(Textid.Text, TextPass.Text))
+            if (BLL.UserBLL.Authenticate(Textid.Text, TextPass.Text))
             {
-               
+                Home.Usuario = Textid.Text;
                 FormsAuthentication.RedirectFromLoginPage(Textid.Text, true);
-              
+               // Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+
             }
             else
             {
-               
+
                 Utilidades.ShowToastr(this, "Usuario y/o Contraseña Incorrectas", "ERROR", "info");
 
             }
-            
         }
     }
 }

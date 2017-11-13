@@ -29,17 +29,29 @@
     <h2 class="panel-title">Datos Factura</h2>
   </div>
   <div class="panel-body">
-  
-            <asp:TextBox ID="TextBoxBuscar"  CssClass="btn btn-danger" TextMode="Number" runat="server"></asp:TextBox>
+ 
+            <asp:TextBox ID="TextBoxBuscar"  CssClass=" input-lg" TextMode="Number" runat="server"   Height="16px"  Width="114px"></asp:TextBox>
       <asp:Button ID="Buscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="36px" Width="88px" OnClick="Buscar_Click"  />
 
-       <span class="badge badge-primary">Articulos Vendidos</span>
+      <asp:DropDownList ID="DropDownTipoVenta"   CssClass="btn btn-danger"  runat="server">
+          <asp:ListItem>Credito</asp:ListItem>
+          <asp:ListItem>Contado</asp:ListItem>
+      </asp:DropDownList>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <span class="badge badge-primary">Cliente </span>
+        <asp:DropDownList ID="DropDownCliente"   CssClass="btn btn-danger"  runat="server">
+        
+      </asp:DropDownList>
+  
+      <asp:Button ID="ButtonNuevoCliente" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px"   />
+     
+      <span class="badge badge-primary">Articulos Vendidos</span>
         <asp:TextBox ID="TexboxCantidad"  placeholder="Cantidad "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
 
-      <span class="badge badge-primary">Cliente </span>
-        <asp:TextBox ID="TexCliente"  placeholder="Cliente "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
-  
+    
       <span class="badge badge-primary">Vendedor</span>
         <asp:TextBox ID="TextBoxVendedor"  placeholder="Usuario "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
@@ -66,7 +78,7 @@
        <asp:DropDownList ID="DropArticulo"  CssClass="btn btn-danger"  runat="server">
       </asp:DropDownList>
   
-      <asp:TextBox ID="TextBoxCantidad"  CssClass="btn btn-danger " TextMode="Number" runat="server"></asp:TextBox>
+      <asp:TextBox ID="TextBoxCantidad"   Height="16px"  Width="114px" CssClass=" input-lg " TextMode="Number" runat="server"></asp:TextBox>
 
 
 
@@ -90,9 +102,9 @@
 
 
     <div class="text-left">
-        <asp:Button ID="Button4" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px" OnClick="Button4_Click"   />
-        <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click"  />
-        <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px"  />
+        <asp:Button ID="Button4" CssClass="btn btn-warning" runat="server" Text="Limpiar" Height="36px" Width="88px" OnClick="Button4_Click"   />
+        <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click"  />
+        <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" OnClick="Button3_Click"  />
 
  
 
@@ -102,17 +114,17 @@
         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-         <span class="badge badge-primary">Total ITBS</span>
+         <span class="label-default">Total ITBS</span>
         <asp:TextBox ID="TextBoxTotalITBS"  placeholder="TOTAL ITBS "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
-        <span class="badge badge-primary">SUB-TOTAL</span>
+        <span class="label-info">SUB-TOTAL</span>
       <asp:TextBox ID="TextBoxSubTotal"  CssClass=" input-lg "  placeholder="Sub-Total "  disabled="true"   runat="server"   Width="160px" Height="16px"></asp:TextBox>
   
 
-        <span class="badge badge-primary">TOTAL</span>
+        <span class="label-warning">TOTAL</span>
       <asp:TextBox ID="TextBoxTotal"  CssClass="  input-lg "  placeholder="Total "   disabled="true" Height="16px"  runat="server" Width="160px"></asp:TextBox>
          
-        <span class="badge badge-primary">DEVUELTA</span>
+        <span class="label-success">DEVUELTA</span>
        <asp:TextBox ID="TexboxDevuelta"  CssClass=" input-lg  "  placeholder="Devuelta "   disabled="true"   Height="16px"  Width="160px"  runat="server"></asp:TextBox>
    
            </div>

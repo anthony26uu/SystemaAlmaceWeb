@@ -10,7 +10,7 @@
 namespace SystemAlmacenWeb {
     
     
-    public partial class Login {
+    public partial class Home {
         
         /// <summary>
         /// Image1 control.

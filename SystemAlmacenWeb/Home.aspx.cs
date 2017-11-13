@@ -7,18 +7,24 @@ using System.Web.UI.WebControls;
 
 namespace SystemAlmacenWeb
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Home : System.Web.UI.Page
     {
+        public static string Usuario { get; set; }
+
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < 1; i++)
+            
+             
+            if (!IsPostBack)
             {
-                Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+               Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
             }
 
-           
-            
+
+
+
         }
     }
 }
