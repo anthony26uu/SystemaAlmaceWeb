@@ -24,7 +24,7 @@
 
         <asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar"  />
+        <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
     </div>
     <br />
 
@@ -42,7 +42,9 @@
 
         <!--Texbox -->
 
-        <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 " class="input-lg" ReadOnly="True" Width="215px" Height="30px" ValidationGroup="guardar"></asp:TextBox>
+      
+
+          <asp:TextBox ID="TextFecha"  class="input-lg" TextMode="Date"  runat="server" Width="215px" Height="30px" ></asp:TextBox>
 
 
         &nbsp;
@@ -50,27 +52,27 @@
        
           <!--Texbox -->
 
-        <asp:TextBox ID="TextBoxDireccion" placeholder="Existencia" class="input-lg" TextMode="Number" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxDireccion" placeholder="Direccion" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
 
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxExistencia" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
 
         <!--Texbox -->
 
-        <asp:TextBox ID="TexboCedula"  placeholder="Costo" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboCedula"  placeholder="000-0000000-0" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TexboCosto" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TexboCedula" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
-        <asp:TextBox ID="TexboEmail"  placeholder="Precio" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboEmail"  placeholder="Email" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
 
         <!--Select -->
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TexboPrecio" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TexboEmail" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
-        <asp:TextBox ID="TexboTelefono"  placeholder="Codigo" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboTelefono"  placeholder="000-000-0000" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TexboCodigo" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TexboTelefono" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <asp:DropDownList ID="DropSexo" runat="server" class="btn btn-danger" Height="42px" Width="199px">
             <asp:ListItem>Masculino</asp:ListItem>
@@ -87,9 +89,9 @@
     <!--Botones -->
 
     <div class="text-center">
-        <asp:Button ID="ButtonNuevo" CssClass="btn btn-warning" runat="server" Text="Nuevo" Height="36px" Width="88px" ValidationGroup="guardar" />
-        <asp:Button ID="ButtonGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" ValidationGroup="guardar" />
-        <asp:Button ID="ButtonEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" ValidationGroup="Buscar"   />
+        <asp:Button ID="ButtonNuevo" CssClass="btn btn-warning" runat="server" Text="Nuevo" Height="36px" Width="88px" OnClick="ButtonNuevo_Click" />
+        <asp:Button ID="ButtonGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" ValidationGroup="guardar" OnClick="ButtonGuardar_Click" />
+        <asp:Button ID="ButtonEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" ValidationGroup="Buscar" OnClick="ButtonEliminar_Click"   />
     </div>
 
     <br />

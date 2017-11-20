@@ -9,8 +9,6 @@ namespace SystemAlmacenWeb
 {
     public partial class Home : System.Web.UI.Page
     {
-        public static string Usuario { get; set; }
-
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,10 +17,11 @@ namespace SystemAlmacenWeb
              
             if (!IsPostBack)
             {
-               Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+                TextBoxVendedor.Text =  Base.Usuario;
+                Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
             }
 
-
+          
 
 
         }

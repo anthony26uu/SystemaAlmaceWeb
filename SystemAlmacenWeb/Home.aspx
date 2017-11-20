@@ -22,7 +22,8 @@
             </div>
             <div class="panel-body">
                 <h2>Bienvenido  </h2>
-                <h4>**Usuario** </h4>
+                <asp:TextBox ID="TextBoxVendedor"   disabled="true" CssClass="input-lg"  Height="16px"   Width="124px" runat="server"></asp:TextBox>
+  
             </div>
         </div>
 

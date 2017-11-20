@@ -10,6 +10,8 @@
     <script src="../../Scripts/toastr.js"></script>
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
+
+
     <div class="text-center">
         <h1 class="page-header text-center">Registro Articulo <span></span></h1>
     </div>

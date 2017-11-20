@@ -11,15 +11,18 @@ namespace BLL
     public class ClientesBLL
     {
 
-        public static Clientes Guardar(Entidades.Clientes cliente)
-        {
-            Entidades.Clientes creado = null;
-            using (var repositorio = new Repositorio<Entidades.Clientes>())
-            {
-                creado = repositorio.Guardar(cliente);
-            }
+       
 
-            return creado;
+        public static bool Guardar(Clientes nuevo)
+        {
+            bool retorno = false;
+
+            using (var db = new Repositorio<Clientes>())
+            {
+                retorno = db.Guardar(nuevo) != null;
+            }
+            return retorno;
+
         }
 
         public static Clientes Buscar(Expression<Func<Clientes, bool>> criterioBusqueda)

@@ -9,8 +9,20 @@ namespace SystemAlmacenWeb
 {
     public partial class Base : System.Web.UI.MasterPage
     {
+       
+        public static string Usuario { get; set; }
+
+
+    
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Page.IsPostBack)
+            {
+
+                TextBoxVendedor.Text = Usuario;
+            }
+
 
         }
     }

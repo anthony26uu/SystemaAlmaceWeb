@@ -20,11 +20,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
 
             detalle = BLL.FacturaDetallesBLL.GetListodo();
-        //    Entidades.Articulos artoculo = new Entidades.Articulos();
-           
-         //   ArticuloGrid.DataSource = Lista;
-           // ArticuloGrid.DataBind();
-
+       
             buscaText.Focus();
 
             if (!Page.IsPostBack)

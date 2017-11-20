@@ -83,7 +83,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
 
 
-                Utilidades.ShowToastr(this, "Capo vacio id", "ERROR", "info");
+                Utilidades.ShowToastr(this, "Llene Campo  id", "CONSEJO", "info");
 
                 Limpiar();
             }

@@ -52,12 +52,13 @@ namespace SystemAlmacenWeb.Ui.Registros
             this.BindGrid();
             DropDownTipoVenta.Text = "";
             DropDownTipoVenta.SelectedValue = null;
+        
         //    DropDownTipoVenta.SelectedItem.Text=":"
         }
 
         public void LlenarRegistro( List<Entidades.FacturaDetalles> llenar )
         {
-          //  limpiar();
+      //     limpiar();
 
             foreach (var li in llenar)
             {
@@ -93,10 +94,10 @@ namespace SystemAlmacenWeb.Ui.Registros
                 detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0,0,
                     Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
                     );
-                cantidad  =+ 1;               
+                cantidad ++;               
             }
                                   
-            facturaG = new Entidades.Facturas(0, "Anthony", DateTime.Now, "Clente", "Prueba", cantidad, 100);
+            facturaG = new Entidades.Facturas(0, Base.Usuario, DateTime.Now, "Clente",DropDownTipoVenta.Text, cantidad, 100);
 
 
         }
@@ -187,8 +188,8 @@ namespace SystemAlmacenWeb.Ui.Registros
                 facturaG = BLL.FacturaBLL.Buscarb(f => f.IdFactura == id);
                 if (facturaG != null)
                 {
-                  
 
+                    limpiar();
                    listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
                     if (facturaG != null)
                     {
@@ -208,7 +209,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                             TexboxCantidad.Text = Convert.ToString(facturaG.CantidadProd);
                             TextFecha.Text = Convert.ToString(facturaG.FechaVenta);
                             TextBoxTotal.Text = Convert.ToString(facturaG.Total);
-
+                            DropDownTipoVenta.Text = Convert.ToString(facturaG.TipoVenta);
 
                             foreach (var relacion in listaRelaciones)
                             {
