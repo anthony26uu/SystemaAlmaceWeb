@@ -20,9 +20,7 @@
 
 
     <div class="text-center">
-        <span class="btn btn-danger">ID </span>
-
-        <asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
+        <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
         <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
  
@@ -88,6 +86,8 @@
 
         <br />
 
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="TexboCedula" ErrorMessage="Solo Numeros " ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
         <br />
         <span class="badge badge-primary">Email</span><br />
 
@@ -107,12 +107,13 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TexboTelefono" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="TexboTelefono" ErrorMessage="Solo Numeros" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
 
         <br />
 
         <span class="badge badge-primary">Sexo</span><br />
 
-        <asp:DropDownList ID="DropSexo" runat="server" class="btn btn-danger" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropSexo" runat="server" class="btn-success" Height="42px" Width="199px">
             <asp:ListItem>Masculino</asp:ListItem>
             <asp:ListItem>Femenino</asp:ListItem>
         </asp:DropDownList>
@@ -120,7 +121,7 @@
         <br />
         <br />
     </div>
-          </div>
+      
 
   
       

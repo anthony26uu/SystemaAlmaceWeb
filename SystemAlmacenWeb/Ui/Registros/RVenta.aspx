@@ -91,7 +91,7 @@
 </div>
 
    
-     <div style="overflow: auto; width: 1100px; height: 315px;">
+     <div class="center-block" style="overflow: auto; width: 1100px; height: 315px;">
 
 
    

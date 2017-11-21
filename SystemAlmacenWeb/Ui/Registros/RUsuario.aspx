@@ -90,7 +90,7 @@
 
         <!--Select -->
 
-        <asp:DropDownList ID="DropTipo" runat="server" class="btn btn-danger" Height="42px" Width="215px">
+        <asp:DropDownList ID="DropTipo" runat="server" class="btn-success" Height="42px" Width="215px">
             <asp:ListItem>Administrador</asp:ListItem>
             <asp:ListItem>Empleado</asp:ListItem>
         </asp:DropDownList>

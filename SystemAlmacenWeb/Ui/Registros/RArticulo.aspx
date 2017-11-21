@@ -68,6 +68,8 @@
 
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="TextBoxExistencia" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
         <br />
         <span class="badge badge-primary">Costo</span><br />
 
@@ -79,6 +81,8 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TexboCosto" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="TexboCosto" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
         <br />
         <span class="badge badge-primary">Precio</span><br />
 
@@ -89,6 +93,8 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TexboPrecio" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="TexboPrecio" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
         <br />
         <span class="badge badge-primary">Codigo</span><br />
 
@@ -105,10 +111,12 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TexboItbis" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ControlToValidate="TexboItbis" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
         <br />
         <span class="badge badge-primary">Categoria Articulo</span><br />
 
-        <asp:DropDownList ID="DropCategoria" runat="server" class="btn btn-danger" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropCategoria" runat="server" class="btn-success" Height="42px" Width="199px">
         </asp:DropDownList>
 
         <br />

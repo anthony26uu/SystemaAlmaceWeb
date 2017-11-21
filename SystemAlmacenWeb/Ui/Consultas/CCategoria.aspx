@@ -19,7 +19,7 @@
 
         <span class="btn btn-danger">Selecione-</span>
 
-        <asp:DropDownList class="btn btn-danger" ID="DropFiltro" runat="server" Height="45px">
+        <asp:DropDownList class="btn-success" ID="DropFiltro" runat="server" Height="45px">
             <asp:ListItem>Todo</asp:ListItem>
             <asp:ListItem>ID</asp:ListItem>
             <asp:ListItem>Nombre</asp:ListItem>

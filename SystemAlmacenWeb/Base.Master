@@ -44,6 +44,7 @@
              <ul class="dropdown-menu" role="menu">
             <li><a href="/Ui/Registros/RUsuario.aspx">Usuario</a></li>
             <li><a href="/Ui/Registros/RCategoria.aspx">Categorias</a></li>
+           <li><a href="/Ui/Registros/RArticulo.aspx">Articulos</a></li>
             <li><a href="/Ui/Registros/RCliente.aspx">Clientes</a></li>
     
             

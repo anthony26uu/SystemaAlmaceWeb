@@ -19,7 +19,7 @@
  <div class= "text-center">
      
           <span class="btn btn-danger">Selecione-</span>
-          <asp:DropDownList ID="DropFiltro"  CssClass="btn btn-danger" runat="server" Height="45px"> 
+          <asp:DropDownList ID="DropFiltro"  CssClass="btn-success" runat="server" Height="45px"> 
             
               <asp:ListItem>Todo</asp:ListItem>
               <asp:ListItem>ID</asp:ListItem>

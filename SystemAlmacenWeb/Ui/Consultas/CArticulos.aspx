@@ -51,7 +51,7 @@
             
             <asp:TextBox ID="hastaFecha"   class="input-lg" TextMode="Date"  runat="server" Height="44px" Width="212px"></asp:TextBox>
  
-        <asp:DropDownList ID="DropCategoria" runat="server" class="btn btn-danger" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropCategoria" runat="server" class="btn-success" Height="42px" Width="199px">
         </asp:DropDownList>
 
               <br />
