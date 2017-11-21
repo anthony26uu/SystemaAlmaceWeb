@@ -24,7 +24,7 @@
      
     </div>
 
-     <div class="panel panel-danger">
+     <div class="panel panel-primary">
   <div class="panel-heading">
     <h2 class="panel-title">Datos Factura</h2>
   </div>
@@ -68,7 +68,7 @@
 
 
 
-    <div class="panel panel-danger">
+    <div class="panel panel-primary">
   <div class="panel-heading">
     <h4 class="panel-title">Articulos</h4>
   </div>
@@ -90,13 +90,17 @@
 
 </div>
 
+   
+     <div style="overflow: auto; width: 1100px; height: 315px;">
 
 
-    <asp:GridView ID="FacturaGrid" CssClass="table table-striped table-hover" runat="server">
+   
+
+    <asp:GridView ID="FacturaGrid" HorizontalAlign="Center"  ShowFooter="True"   CssClass="table table-striped  table-info " runat="server" Width="767px">
     </asp:GridView>
 
 
-
+     </div>
 
    <!--Botones -->
 

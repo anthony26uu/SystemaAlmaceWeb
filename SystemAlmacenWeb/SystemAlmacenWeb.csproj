@@ -74,36 +74,32 @@
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.js" />
-    <Content Include="Content\bootstrap3,7.min.js" />
-    <Content Include="Content\bootstrap3.8.min.js" />
+    <Content Include="Content\bootstrap3.7.min.js" />
     <Content Include="Content\bootstrap3.9.min.css" />
     <Content Include="Content\Img\bootstrapdeltem.css" />
     <Content Include="Content\Img\bootstraptema.min.css" />
     <Content Include="Content\jquery-3.2.1.min.js" />
-    <Content Include="Content\jquery.min.js" />
-    <Content Include="Content\tema.css" />
-    <Content Include="Content\tema2.css" />
-    <Content Include="Content\Temabootstrap.min.css" />
     <Content Include="Content\toastr.less" />
-    <Content Include="Content\toastr.scss" />
     <Content Include="Base.Master" />
-    <Content Include="Content\_bootswatch.scss" />
+    <Content Include="Models\bootstrap-theme.min.css.map" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Models\bootstrap-theme.css" />
+    <Content Include="Models\bootstrap-theme.min.css" />
+    <Content Include="Models\bootstrap.min.css" />
+    <Content Include="Models\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
-    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
     <None Include="Web.Debug.config">
@@ -125,14 +121,12 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
-    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.3.js" />
-    <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Ui\Consultas\CArticulos.aspx" />
     <Content Include="Ui\Consultas\CCategoria.aspx" />
+    <Content Include="Ui\Consultas\CClientes.aspx" />
     <Content Include="Ui\Consultas\CUsuarios.aspx" />
     <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
@@ -186,6 +180,13 @@
     <Compile Include="Ui\Consultas\CCategoria.aspx.designer.cs">
       <DependentUpon>CCategoria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Consultas\CClientes.aspx.cs">
+      <DependentUpon>CClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CClientes.aspx.designer.cs">
+      <DependentUpon>CClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Consultas\CUsuarios.aspx.cs">
       <DependentUpon>CUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,7 +232,6 @@
     <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Ui\Reportes\" />
   </ItemGroup>
   <ItemGroup>

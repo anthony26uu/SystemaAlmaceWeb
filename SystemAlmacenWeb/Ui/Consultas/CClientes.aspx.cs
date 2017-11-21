@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SystemAlmacenWeb.Ui.Consultas
 {
-    public partial class CArticulos : System.Web.UI.Page
+    public partial class CClientes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,27 +19,23 @@ namespace SystemAlmacenWeb.Ui.Consultas
             myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
 
-            Lista = BLL.ArticuloBLL.GetListodo();
-      
-       
+            Lista = BLL.ClientesBLL.GetListodo();
+            Entidades.Categorias categoria = new Entidades.Categorias();
+            ClienteGrid.DataSource = Lista;
+            ClienteGrid.DataBind();
+
             buscaText.Focus();
 
-            if (!Page.IsPostBack)
-            {
-                LlenarDrop();
-            }
         }
-        public static List<Entidades.Articulos> Lista { get; set; }
-     
-        private void LlenarDrop()
-        {
-            List<Entidades.Categorias> ListaDrop = BLL.CategoriaBLL.GetListodo();
 
-            DropCategoria.DataSource = ListaDrop;
-            DropCategoria.DataValueField = "CategoriaId";
-            DropCategoria.DataTextField = "NombreCategoria";
-            DropCategoria.DataBind();                            
+        public static List<Entidades.Clientes> Lista { get; set; }
+
+
+        protected void DropFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
+
 
         public void Selecionar(int id)
         {
@@ -49,16 +45,15 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 buscaText.Text = "";
                 if (Lista.Count == 0)
                 {
-                    Utilidades.ShowToastr(this, "No se ha registrado Articulos", "Resultados", "error");
+                    Utilidades.ShowToastr(this, "No se ha registrado Clientes", "Resultados", "error");
 
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
                 else
                 {
-                    Lista = BLL.ArticuloBLL.GetListodo();
-                    ArticuloGrid.DataSource = Lista;
-                    ArticuloGrid.DataBind();
+                    Lista = BLL.ClientesBLL.GetListodo();
+                    ClienteGrid.DataSource = Lista;
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
@@ -68,21 +63,21 @@ namespace SystemAlmacenWeb.Ui.Consultas
             else if (DropFiltro.SelectedIndex == 1)
             {
 
-                Lista = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                Lista = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
 
                 if (Lista.Count == 0)
                 {
-                    Utilidades.ShowToastr(this, "No se ha registrado Articulos con este ID", "Resultados", "error");
+                    Utilidades.ShowToastr(this, "No se ha registrado Clientes con este ID", "Resultados", "error");
 
                     buscaText.Text = "";
                     buscaText.Focus();
                 }
                 else
                 {
-                  
-                        ArticuloGrid.DataSource = Lista;
-                        ArticuloGrid.DataBind();
-                    
+
+                    ClienteGrid.DataSource = Lista;
+                    ClienteGrid.DataBind();
+
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
                 }
@@ -128,16 +123,16 @@ namespace SystemAlmacenWeb.Ui.Consultas
                         {
 
 
-                            Lista = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desde.Date && p.FechaIngreso <= hasta.Date);
-                            ArticuloGrid.DataSource = Lista;
-                            ArticuloGrid.DataBind();
+                            Lista = BLL.ClientesBLL.GetList(p => p.FechaNacimiento >= desde.Date && p.FechaNacimiento <= hasta.Date);
+                            ClienteGrid.DataSource = Lista;
+                            ClienteGrid.DataBind();
                             Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
                         }
                         else
                         {
-                             Utilidades.ShowToastr(this, "Fecha debe ser menor", "Consejo", "info");
+                            Utilidades.ShowToastr(this, "Fecha debe ser menor", "Consejo", "info");
 
                             desdeFecha.Text = "";
                             hastaFecha.Text = "";
@@ -166,18 +161,18 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    Lista = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == buscaText.Text);
+                    Lista = BLL.ClientesBLL.GetList(p => p.Nombres == buscaText.Text);
                     if (Lista.Count == 0)
                     {
-                        Utilidades.ShowToastr(this, "No se ha Registrado Elementos con descripcion", "Resultados", "error");
+                        Utilidades.ShowToastr(this, "No se ha Registrado clientes con este nombre", "Resultados", "error");
 
                         buscaText.Text = "";
                         buscaText.Focus();
                     }
                     else
                     {
-                        ArticuloGrid.DataSource = Lista;
-                        ArticuloGrid.DataBind();
+                        ClienteGrid.DataSource = Lista;
+                        ClienteGrid.DataBind();
                         Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
                     }
@@ -187,21 +182,11 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
             }
 
-           
-            else if (DropFiltro.SelectedIndex == 4)
-            {
 
-                Lista = BLL.ArticuloBLL.GetList(p => p.Categoria == DropCategoria.Text);
-
-                ArticuloGrid.DataSource = Lista;
-                ArticuloGrid.DataBind();
-                Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
-
-            }
+            
         }
 
-
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
             Selecionar(Utilidades.TOINT(buscaText.Text));
         }

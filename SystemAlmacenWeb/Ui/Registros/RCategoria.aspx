@@ -20,7 +20,9 @@
     <!--Texbos Buscar y descrpcion o nombre -->
      <div class="text-center">
 
-    <span class="btn btn-danger">ID Categoria</span>&nbsp;
+     <span class="badge badge-primary">ID Categoria</span><br />
+
+         <br />
     <asp:TextBox ID="Textid" placeholder="Id a Buscar" class="input-lg" runat="server" Height="45px" Width="165px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
     <asp:Button ID="Button1" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="Button1_Click" />
 
@@ -36,6 +38,8 @@
 </div>
 
      <div class="text-center">
+
+         <span class="badge badge-primary">Descripcion</span><br />
 
     <asp:TextBox ID="Textnombre" placeholder="Descripcion" class="input-lg" TextMode="MultiLine" Rows="10" runat="server" Height="101px" Width="402px" MaxLength="100"></asp:TextBox>
 

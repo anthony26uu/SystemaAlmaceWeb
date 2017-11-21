@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="CArticulos.aspx.cs" Inherits="SystemAlmacenWeb.Ui.Consultas.CArticulos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="CClientes.aspx.cs" Inherits="SystemAlmacenWeb.Ui.Consultas.CClientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -8,7 +8,7 @@
        <header>
             <h1 class="page-header text-center">
 
-                  Consulta Articulo <span ></span></h1>
+                  Consulta Clientes <span ></span></h1>
         </header>
 
           <script src="../../Scripts/popper.min.js"></script>
@@ -20,7 +20,7 @@
  <div class= "text-center">
      
           <span class="btn btn-danger">Selecione-</span>
-          <asp:DropDownList ID="DropFiltro" CssClass="btn btn-danger" runat="server" Height="45px"> 
+          <asp:DropDownList ID="DropFiltro" CssClass="btn btn-danger" runat="server" Height="45px" OnSelectedIndexChanged="DropFiltro_SelectedIndexChanged"> 
             
               <asp:ListItem>Todo</asp:ListItem>
               <asp:ListItem>ID</asp:ListItem>
@@ -34,9 +34,16 @@
        
         
            
-          <span class="btn btn-danger">ID / Descripcion</span>
+          <br />
+      
+               
+
+       
+        
+           
+          <span class="btn btn-danger">ID/Nombre</span>
           <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" ></asp:TextBox>
-         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-info" OnClick="Button1_Click1"  />
+         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-info" OnClick="Button1_Click"  />
  
             
   
@@ -51,9 +58,6 @@
             
             <asp:TextBox ID="hastaFecha"   class="input-lg" TextMode="Date"  runat="server" Height="44px" Width="212px"></asp:TextBox>
  
-        <asp:DropDownList ID="DropCategoria" runat="server" class="btn btn-danger" Height="42px" Width="199px">
-        </asp:DropDownList>
-
               <br />
             
             
@@ -66,11 +70,11 @@
        
      </div>
 
-          <div   class="center-block"style="overflow: auto; width: 1434px; height: 315px;">
+          <div class="center-block" style="overflow: auto; width: 1434px; height: 315px;">
 
 
 
-                <asp:GridView ID="ArticuloGrid" runat="server"   CssClass=" table table-striped table-hover table-bordered"  CellPadding="0" ClientIDMode="Static"  HorizontalAlign="Center" Height="244px" Width="942px" >   
+                <asp:GridView ID="ClienteGrid" runat="server"   CssClass=" table table-striped table-hover table-bordered"  HorizontalAlign="Center" Height="244px" Width="942px" >   
                 </asp:GridView>
         
     </div>

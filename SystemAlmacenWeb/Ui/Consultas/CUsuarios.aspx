@@ -67,13 +67,14 @@
        
      </div>
 
-       </div>
+   
+    <div   class="center-block" style="overflow: auto; width: 1434px; height: 315px;">
 
-                <asp:GridView ID="UsuarioGrid" runat="server"   CssClass="table table-striped table-hover" >   
+                <asp:GridView ID="UsuarioGrid" runat="server"  HorizontalAlign="Center"  CssClass="table table-striped table-hover" Width="739px" >   
                 </asp:GridView>
         
    
-    
+        </div>
       <br />
         <a href="../Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-danger">
           <span ></span> Imprimir

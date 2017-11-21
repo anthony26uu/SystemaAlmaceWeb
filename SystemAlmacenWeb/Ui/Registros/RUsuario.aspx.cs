@@ -224,5 +224,10 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
             }
         }
+
+        protected void TextBoxConfirm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

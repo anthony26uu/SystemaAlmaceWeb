@@ -40,10 +40,14 @@
 
     </div>
 
-    </div>
+   
+         <div  class="center-block" style="overflow: auto; width: 1487px;  height: 259px;">
 
-                <asp:GridView ID="CategoriasGrid" CssClass="table table-striped table-hover" runat="server">
+
+
+                <asp:GridView ID="CategoriasGrid" ClientIDMode="Static"  ShowFooter="True" PageIndex="2" PageSize="2"  CellPadding="0" CssClass="table table-striped table-hover"  HorizontalAlign="Center" runat="server" Width="971px" Height="192px">
                 </asp:GridView>
+              </div>
 
     <br />
     <a href="../Reportes/Ventanas/CategoriaReport.aspx" class="btn btn-info btn-lg">

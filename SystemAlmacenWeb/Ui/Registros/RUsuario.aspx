@@ -11,7 +11,7 @@
 
 
     <div class="text-center">
-        <h1 class="page-header text-center">Registro Usuario <span></span></h1>
+        <h1 class="page-header text-center text-info">Registro Usuario <span></span></h1>
     </div>
 
 
@@ -19,58 +19,89 @@
 
 
     <div class="text-center">
-        <span class="btn btn-danger">ID Usuario</span>
+
+        <span class="badge badge-primary">Usuario ID</span>
+        <br />
+
 
         <asp:TextBox ID="TextBoxID"  TextMode="Number"   class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
         <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="BotonBuscar_Click" />
         <br />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="TextBoxID" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="buscar"></asp:RegularExpressionValidator>
-    </div>
+
     <br />
     <!--Texbox -->
-    <div class="text-center">
+   
+    
 
   
-    <div class="input-group">
+   
+        <span class="badge badge-primary">Nombre</span>
 
-        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Usuario" class="input-lg" runat="server" Height="30px" Width="199px"></asp:TextBox>
+
+        <br />
+             
+
+        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Usuario" class="input-lg" runat="server" Height="30px" Width="215px"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+          
+        <br />
 
-        <!--Texbox -->
+        <br />
+                
+        <span class="badge badge-primary">Fecha Registro</span><!--Texbox --><br />
+        <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 " class="input-lg" ReadOnly="True"  Height="30px" Width="215px"></asp:TextBox>
 
-        <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 " class="input-lg" ReadOnly="True" Width="215px" Height="30px"></asp:TextBox>
+
+        <br />
+        <br />
 
 
-        &nbsp;
+        <span class="badge badge-primary">Constraseña</span>&nbsp;
 
        
           <!--Texbox -->
 
-        <asp:TextBox ID="TextBoxPass" placeholder="Contraseña" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="199px"></asp:TextBox>
+        <br />
+
+        <asp:TextBox ID="TextBoxPass" placeholder="Contraseña" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px"></asp:TextBox>
 
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPass" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
 
+        <br />
+        <br />
+
+
         <!--Texbox -->
 
-        <asp:TextBox ID="TextBoxConfirm" placeholder="Confirma Pass" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="199px"></asp:TextBox>
+        <span class="badge badge-primary">Confirmar Contraseña</span><br />
+        <asp:TextBox ID="TextBoxConfirm" placeholder="Confirma Pass" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px" OnTextChanged="TextBoxConfirm_TextChanged"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxConfirm" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
+        <br />
+        <br />
+
+        <span class="badge badge-primary">Tipo de Usuario</span><br />
+
         <!--Select -->
 
-        <asp:DropDownList ID="DropTipo" runat="server" class="btn btn-danger" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropTipo" runat="server" class="btn btn-danger" Height="42px" Width="215px">
             <asp:ListItem>Administrador</asp:ListItem>
             <asp:ListItem>Empleado</asp:ListItem>
         </asp:DropDownList>
 
         <br />
+
+        <br />
         <br />
     </div>
-          </div>
+        
+ 
 
   
       

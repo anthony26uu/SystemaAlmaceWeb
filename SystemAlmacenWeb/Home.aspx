@@ -14,13 +14,13 @@
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
 
-    <div class="jumbotron">
-
-        <div class="panel panel-success">
-            <div class="panel-heading">
+    <div class="container">
+      
+        <div class=" panel bg-info">
+            <div class="panel-bg-succes">
                 <h3 class="panel-title"></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-succes">
                 <h2>Bienvenido  </h2>
                 <asp:TextBox ID="TextBoxVendedor"   disabled="true" CssClass="input-lg"  Height="16px"   Width="124px" runat="server"></asp:TextBox>
   
@@ -29,9 +29,6 @@
 
 
 
-        <p>
-            <asp:Image ID="Image1" runat="server" Height="363px" ImageUrl="~/Content/Img/warehouse.jpg" Width="874px" />
-        </p>
 
 
 
@@ -53,8 +50,8 @@
             </div>
         </div>
 
-        <script src="Scripts/popper.min.js"></script>
-        <script src="Scripts/popper.js"></script>
+        <script src="/Scripts/popper.min.js"></script>
+        <script src="/Scripts/popper.js"></script>
 
         <p><a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg">Informacion</a></p>
     </div>
