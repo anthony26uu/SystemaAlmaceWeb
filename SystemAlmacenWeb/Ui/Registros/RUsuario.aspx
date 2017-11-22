@@ -26,7 +26,7 @@
 
         <asp:TextBox ID="TextBoxID"  TextMode="Number"   class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="BotonBuscar_Click" />
+        <asp:Button ID="BotonBuscar"   runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="BotonBuscar_Click" />
         <br />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="TextBoxID" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="buscar"></asp:RegularExpressionValidator>
 
@@ -90,7 +90,7 @@
 
         <!--Select -->
 
-        <asp:DropDownList ID="DropTipo" runat="server" class="btn-success" Height="42px" Width="215px">
+        <asp:DropDownList ID="DropTipo" runat="server"   CssClass="btn-danger"  Height="42px" Width="215px">
             <asp:ListItem>Administrador</asp:ListItem>
             <asp:ListItem>Empleado</asp:ListItem>
         </asp:DropDownList>

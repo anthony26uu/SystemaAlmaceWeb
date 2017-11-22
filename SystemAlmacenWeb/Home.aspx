@@ -13,8 +13,8 @@
     <script src="../../Scripts/toastr.js"></script>
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
+     <div class="panel panel-success">
 
-    <div class="container">
       
         <div class=" panel bg-info">
             <div class="panel-bg-succes">

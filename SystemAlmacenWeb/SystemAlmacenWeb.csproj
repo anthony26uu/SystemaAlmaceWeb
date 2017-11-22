@@ -133,6 +133,8 @@
     <Content Include="Ui\Registros\RCliente.aspx" />
     <Content Include="Ui\Registros\RUsuario.aspx" />
     <Content Include="Ui\Registros\RVenta.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\CategoriaReport.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\UsuarioReport.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -229,11 +231,21 @@
     <Compile Include="Ui\Registros\RVenta.aspx.designer.cs">
       <DependentUpon>RVenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\CategoriaReport.aspx.cs">
+      <DependentUpon>CategoriaReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\CategoriaReport.aspx.designer.cs">
+      <DependentUpon>CategoriaReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.cs">
+      <DependentUpon>UsuarioReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.designer.cs">
+      <DependentUpon>UsuarioReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ui\Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{d3bb4909-526b-4f05-b96d-c5d09fb5d45b}</Project>
@@ -246,6 +258,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ui\Reportes\ArticulosReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\CategoriasReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\DeudasReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\UsuariosReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

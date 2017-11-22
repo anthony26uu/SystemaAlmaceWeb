@@ -26,7 +26,7 @@
 
         <asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
+        <asp:Button ID="BotonBuscar" CssClass="col-md-3 col-sm-3 btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
     </div>
     <br />
 
@@ -116,7 +116,7 @@
         <br />
         <span class="badge badge-primary">Categoria Articulo</span><br />
 
-        <asp:DropDownList ID="DropCategoria" runat="server" class="btn-success" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropCategoria" runat="server" CssClass="col-md-3 col-sm-3 btn btn-default" Height="42px" Width="199px">
         </asp:DropDownList>
 
         <br />
