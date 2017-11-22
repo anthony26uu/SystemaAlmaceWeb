@@ -9,16 +9,19 @@
 <body>
     <form id="form1" runat="server">
        
+     
         
-                 <!-- Bootstrap 4.0.0 -->
-<link href="/Content/bootstrap.min.css" rel="stylesheet" />
-<!-- Bootswatch Darkly theme-->
-<link href="/Content/bootstraptheme.min.css" rel="stylesheet" />
- <link href="/../Content/toastr.css" rel="stylesheet" />
-    
-        <!-- Librerias para Toastr -->
+    <link href="/Models/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/Models/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/Models/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Models/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="/Content/jquery-3.2.1.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/Content/bootstrap3.7.min.js"></script>
+ 
+ 
 
-    <script src="../../Scripts/jquery-3.2.1.js"></script>
 
              <!-- Librerias para Toastr -->
     <link href="/../Content/toastr.css" rel="stylesheet" />
@@ -27,16 +30,25 @@
 
 
 
+     <div class="center-block" style="overflow: auto;">
 
     
-      <div class="text-center">
+     
         <h1 class="page-header text-center">INICIO <span></span></h1>
-    </div>
+  
 
 
       
-          <div class="panel panel-success" >
+        
+     
+
         <div class="text-center">
+
+
+            <br />
+    
+
+        <span class="badge badge-primary">Nombre Usuario </span>
 
 
             <!--Texbos Buscar y descrpcion o nombre -->
@@ -48,13 +60,19 @@
             <br />
 
             <br />
+    
+
+        <span class="badge badge-primary">Contraseña </span>
+            <br />
 
 
-            <asp:TextBox ID="TextPass" placeholder="Contraseña" class="input-lg" runat="server" Height="30px" Width="162px"></asp:TextBox>
+            <asp:TextBox ID="TextPass"  TextMode="Password" placeholder="Contraseña" class="input-lg" runat="server" Height="30px" Width="162px"></asp:TextBox>
+
+            <br />
 
             <br />
           
-            <asp:Button ID="Inicio" runat="server"  Text="INICIO" OnClick="Inicio_Click"  />
+            <asp:Button ID="Inicio" runat="server" CssClass="btn btn-success"  Text="INICIO" OnClick="Inicio_Click"  />
             <br />
         </div>
 

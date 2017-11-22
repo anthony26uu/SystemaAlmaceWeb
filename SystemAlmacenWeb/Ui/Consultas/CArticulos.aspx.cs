@@ -20,7 +20,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
 
             Lista = BLL.ArticuloBLL.GetListodo();
-      
+            ArticuloGrid.DataSource = Lista;
+            ArticuloGrid.DataBind();
        
             buscaText.Focus();
 

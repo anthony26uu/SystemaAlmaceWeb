@@ -38,28 +38,33 @@
           <asp:ListItem>Contado</asp:ListItem>
       </asp:DropDownList>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-primary">%Descuento</span>
+            <asp:TextBox ID="DescuentoTextBox"  CssClass=" input-lg" TextMode="Number" runat="server"   Height="16px"  Width="114px"></asp:TextBox>
+            &nbsp;
 
-        <span class="badge badge-primary">Cliente </span>
+        <span class="badge badge-primary">Cliente a Comprar </span>
         <asp:DropDownList ID="DropDownCliente"   CssClass="btn btn-danger"  runat="server">
         
       </asp:DropDownList>
   
       <asp:Button ID="ButtonNuevoCliente" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px"   />
      
-      <span class="badge badge-primary">Articulos Vendidos</span>
-        <asp:TextBox ID="TexboxCantidad"  placeholder="Cantidad "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
-  
-
-    
-      <span class="badge badge-primary">Vendedor</span>
+      &nbsp;<span class="badge badge-primary">Vendedor</span>
         <asp:TextBox ID="TextBoxVendedor"  placeholder="Usuario "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
-      <span class="badge badge-primary">Fecha Venta</span>
+      <span class="badge badge-primary">Fecha</span>
         <asp:TextBox ID="TextFecha"  placeholder="Fecha "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
 
 
+  
+
+  &nbsp;&nbsp;
+  
+      <span class="badge badge-primary">Cliente</span><asp:TextBox ID="TexboxClienteCompro"  placeholder="Compro"   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
+  
+
+    
   
 
   </div>
@@ -86,6 +91,12 @@
 
 
 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      <span class="badge badge-primary">Articulos Vendidos</span><asp:TextBox ID="TexboxCantidad"  placeholder="Cantidad "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
+  
+
+    
   </div>
 
 </div>
@@ -117,7 +128,7 @@
        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       
          <span class="label-default">Total ITBS</span>
         <asp:TextBox ID="TextBoxTotalITBS"  placeholder="TOTAL ITBS "   disabled="true" CssClass="  input-lg  "  Height="16px"   Width="160px" runat="server"></asp:TextBox>
   
@@ -128,6 +139,9 @@
         <span class="label-warning">TOTAL</span>
       <asp:TextBox ID="TextBoxTotal"  CssClass="  input-lg "  placeholder="Total "   disabled="true" Height="16px"  runat="server" Width="160px"></asp:TextBox>
          
+        <span class="label-success">Monto</span>
+          <asp:TextBox ID="TextMontoRecibido"  CssClass=" input-lg  "  placeholder="Monto "    Height="16px"  Width="160px"  runat="server" OnTextChanged="TextMontoRecibido_TextChanged"></asp:TextBox>
+   
         <span class="label-success">DEVUELTA</span>
        <asp:TextBox ID="TexboxDevuelta"  CssClass=" input-lg  "  placeholder="Devuelta "   disabled="true"   Height="16px"  Width="160px"  runat="server"></asp:TextBox>
    
@@ -141,3 +155,5 @@
 
 
 </asp:Content>
+
+

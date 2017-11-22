@@ -12,12 +12,8 @@
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
     <div class="text-center">
-        <h1 class="page-header text-center">Registro Cliente <span></span></h1>
+        <h3 class="page-header text-center">Registro Cliente <span></span></h3>
     </div>
-
-
-
-
 
     <div class="text-center">
         <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>

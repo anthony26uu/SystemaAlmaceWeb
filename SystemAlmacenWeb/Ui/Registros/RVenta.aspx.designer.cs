@@ -40,6 +40,15 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.DropDownList DropDownTipoVenta;
         
         /// <summary>
+        /// DescuentoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DescuentoTextBox;
+        
+        /// <summary>
         /// DropDownCliente control.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.Button ButtonNuevoCliente;
         
         /// <summary>
-        /// TexboxCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TexboxCantidad;
-        
-        /// <summary>
         /// TextBoxVendedor control.
         /// </summary>
         /// <remarks>
@@ -83,6 +83,15 @@ namespace SystemAlmacenWeb.Ui.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextFecha;
+        
+        /// <summary>
+        /// TexboxClienteCompro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TexboxClienteCompro;
         
         /// <summary>
         /// DropArticulo control.
@@ -110,6 +119,15 @@ namespace SystemAlmacenWeb.Ui.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Agregar;
+        
+        /// <summary>
+        /// TexboxCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TexboxCantidad;
         
         /// <summary>
         /// FacturaGrid control.
@@ -173,6 +191,15 @@ namespace SystemAlmacenWeb.Ui.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxTotal;
+        
+        /// <summary>
+        /// TextMontoRecibido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextMontoRecibido;
         
         /// <summary>
         /// TexboxDevuelta control.

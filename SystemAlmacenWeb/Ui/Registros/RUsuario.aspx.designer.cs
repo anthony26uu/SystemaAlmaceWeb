@@ -121,30 +121,30 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.DropDownList DropTipo;
         
         /// <summary>
-        /// Button4 control.
+        /// ButtoNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button ButtoNuevo;
         
         /// <summary>
-        /// Button2 control.
+        /// ButtonGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ButtonGuardar;
         
         /// <summary>
-        /// Button3 control.
+        /// ButtonEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button ButtonEliminar;
     }
 }

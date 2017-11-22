@@ -12,15 +12,15 @@
 
 
 
-    <div class="text-center">
-        <h1 class="page-header text-center">Registro Articulo <span></span></h1>
-    </div>
-
-
+    
 
 
 
     <div class="text-center">
+        
+        <h2 class="page-header text-center">Registro Articulo <span></span></h2>
+    
+
         <span class="badge badge-primary">ID </span>
         <br />
 

@@ -108,9 +108,9 @@
     <!--Botones -->
 
     <div class="text-center">
-        <asp:Button ID="Button4" CssClass="btn btn-warning" runat="server" Text="Nuevo" Height="36px" Width="88px" ValidationGroup="guardar" OnClick="Button4_Click"  />
-        <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" ValidationGroup="guardar" OnClick="Button2_Click" />
-        <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" ValidationGroup="buscar" OnClick="Button3_Click" />
+        <asp:Button ID="ButtoNuevo" CssClass="btn btn-warning" runat="server" Text="Nuevo" Height="36px" Width="88px" OnClick="Button4_Click"  />
+        <asp:Button ID="ButtonGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" ValidationGroup="guardar" OnClick="Button2_Click" />
+        <asp:Button ID="ButtonEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" ValidationGroup="buscar" OnClick="Button3_Click" />
     </div>
 
     <br />
