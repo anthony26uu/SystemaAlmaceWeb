@@ -17,12 +17,13 @@ namespace Entidades
         public string Nombre { get; set; }
         public decimal ITBIS { get; set; }
 
-        public List<FacturaDetalles> Detalle;
-
+        public   List<FacturaDetalles> Detalle;
+        public static List<FacturaDetalles> impresion;
         public Entidades.Articulos Articulo { get; set; }
         public FacturaDetalles()
         {
             Detalle = new List<FacturaDetalles>();
+            impresion = new List<FacturaDetalles>();
         }
 
 
@@ -36,13 +37,15 @@ namespace Entidades
             this.Nombre = nombre;
             this.ITBIS = itbis;
             Detalle = new List<FacturaDetalles>();
-
+            impresion = new List<FacturaDetalles>();
         }
 
 
         public void AgregarDetalle(int idarticulo, int iddetalle, int idFactura, decimal precio, int cantidad, string nombre, decimal itbs)
         {
             this.Detalle.Add(new FacturaDetalles(idarticulo, iddetalle, idFactura, precio, cantidad, nombre, itbs));
+
+            impresion = Detalle;
         }
     }
 }

@@ -209,7 +209,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
 
 
-            Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
+          Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
             LlenarDatos(detallef);
 
             if (BLL.FacturaBLL.Guardar(facturaG, detallef.Detalle))
@@ -217,6 +217,9 @@ namespace SystemAlmacenWeb.Ui.Registros
                 EliminarExitencia();
 
                 Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
+                Response.Redirect("../Reportes/Ventanas/Factura.aspx");
+
+
                 limpiar();
             }
             else
@@ -273,13 +276,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         }
 
-        private void RefreshListaRelciones()
-        {
-            FacturaGrid.DataSource = null;
-            FacturaGrid.DataSource = listaRelaciones;
-            FacturaGrid.DataBind();
-        }
-
+      
 
         public void CalcularMonto()
         {

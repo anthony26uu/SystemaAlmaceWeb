@@ -80,9 +80,9 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                  
-                        ArticuloGrid.DataSource = Lista;
-                        ArticuloGrid.DataBind();
+
+                    ArticuloGrid.DataSource = Lista;
+                    ArticuloGrid.DataBind();
                     
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
@@ -189,16 +189,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             }
 
            
-            else if (DropFiltro.SelectedIndex == 4)
-            {
-
-                Lista = BLL.ArticuloBLL.GetList(p => p.Categoria == DropCategoria.Text);
-
-                ArticuloGrid.DataSource = Lista;
-                ArticuloGrid.DataBind();
-                Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
-
-            }
+           
         }
 
 

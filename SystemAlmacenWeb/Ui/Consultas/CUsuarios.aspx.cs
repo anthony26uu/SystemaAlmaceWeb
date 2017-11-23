@@ -71,7 +71,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
 
             }
-            else if(DropFiltro.SelectedIndex == 4)
+            else if (DropFiltro.SelectedIndex == 4)
             {
                 Lista = BLL.UserBLL.GetList(p => p.Tipo == DropTipo.Text);
                 UsuarioGrid.DataSource = Lista;

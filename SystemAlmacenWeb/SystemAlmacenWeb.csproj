@@ -51,6 +51,31 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,6 +127,39 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="RegistrosDbDataSet.xsc">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="RegistrosDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="RegistrosDbDataSet.xss">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="RegistrosUsuario.xsc">
+      <DependentUpon>RegistrosUsuario.xsd</DependentUpon>
+    </Content>
+    <Content Include="RegistrosDbDataSetPrueba.xsc">
+      <DependentUpon>RegistrosDbDataSetPrueba.xsd</DependentUpon>
+    </Content>
+    <None Include="RegistrosDbDataSetPrueba.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosDbDataSetPrueba.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="RegistrosDbDataSetPrueba.xss">
+      <DependentUpon>RegistrosDbDataSetPrueba.xsd</DependentUpon>
+    </Content>
+    <None Include="RegistrosUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosUsuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="RegistrosUsuario.xss">
+      <DependentUpon>RegistrosUsuario.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,16 +182,35 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Ui\Consultas\CArticulos.aspx" />
     <Content Include="Ui\Consultas\CCategoria.aspx" />
     <Content Include="Ui\Consultas\CClientes.aspx" />
+    <Content Include="Ui\Consultas\CCuadreFactura.aspx" />
     <Content Include="Ui\Consultas\CUsuarios.aspx" />
     <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
     <Content Include="Ui\Registros\RCliente.aspx" />
     <Content Include="Ui\Registros\RUsuario.aspx" />
     <Content Include="Ui\Registros\RVenta.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\ArticuloReport.aspx" />
     <Content Include="Ui\Reportes\Ventanas\CategoriaReport.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\Clientereport.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\DeudasReport.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\Factura.aspx" />
+    <Content Include="Ui\Reportes\Ventanas\FacturaReport.aspx" />
     <Content Include="Ui\Reportes\Ventanas\UsuarioReport.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -168,6 +245,22 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RegistrosDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosDbDataSetPrueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrosDbDataSetPrueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrosUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Ui\Consultas\CArticulos.aspx.cs">
       <DependentUpon>CArticulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,6 +281,13 @@
     </Compile>
     <Compile Include="Ui\Consultas\CClientes.aspx.designer.cs">
       <DependentUpon>CClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Consultas\CCuadreFactura.aspx.cs">
+      <DependentUpon>CCuadreFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CCuadreFactura.aspx.designer.cs">
+      <DependentUpon>CCuadreFactura.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Consultas\CUsuarios.aspx.cs">
       <DependentUpon>CUsuarios.aspx</DependentUpon>
@@ -231,14 +331,51 @@
     <Compile Include="Ui\Registros\RVenta.aspx.designer.cs">
       <DependentUpon>RVenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\ArticuloReport.aspx.cs">
+      <DependentUpon>ArticuloReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\ArticuloReport.aspx.designer.cs">
+      <DependentUpon>ArticuloReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\Ventanas\CategoriaReport.aspx.cs">
       <DependentUpon>CategoriaReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ui\Reportes\Ventanas\CategoriaReport.aspx.designer.cs">
       <DependentUpon>CategoriaReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\Clientereport.aspx.cs">
+      <DependentUpon>Clientereport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\Clientereport.aspx.designer.cs">
+      <DependentUpon>Clientereport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\DeudasReport.aspx.cs">
+      <DependentUpon>DeudasReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\DeudasReport.aspx.designer.cs">
+      <DependentUpon>DeudasReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\FacturaReport.aspx.cs">
+      <DependentUpon>FacturaReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas\FacturaReport.aspx.designer.cs">
+      <DependentUpon>FacturaReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.cs">
       <DependentUpon>UsuarioReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.designer.cs">
       <DependentUpon>UsuarioReport.aspx</DependentUpon>
@@ -264,6 +401,7 @@
     <EmbeddedResource Include="Ui\Reportes\CategoriasReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\DeudasReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\Factura.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\UsuariosReport.rdlc" />
   </ItemGroup>

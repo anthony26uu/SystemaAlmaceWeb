@@ -1,4 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CategoriaReport.aspx.cs" Inherits="ProyectoFinal.Ui.Reportes.Ventanas.CategoriaReport" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CategoriaReport.aspx.cs" Inherits="SystemAlmacenWeb.Ui.Reportes.Ventanas.CategoriaReport" %>
+
+
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <!DOCTYPE html>

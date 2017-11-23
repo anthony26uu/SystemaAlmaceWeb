@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoFinal.Ui.Reportes.Ventanas {
+namespace SystemAlmacenWeb.Ui.Reportes.Ventanas {
     
     
     public partial class CategoriaReport {

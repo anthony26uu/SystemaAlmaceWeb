@@ -80,7 +80,7 @@
     </div>
     
       <br />
-        <a href="../Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-info">
+        <a href="../Reportes/Ventanas/Clientereport.aspx" class="btn btn-info">
           <span ></span> Imprimir
         </a> 
        

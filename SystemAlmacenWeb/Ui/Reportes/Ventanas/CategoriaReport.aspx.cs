@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProyectoFinal.Ui.Reportes.Ventanas
+namespace SystemAlmacenWeb.Ui.Reportes.Ventanas
 {
     public partial class CategoriaReport : System.Web.UI.Page
     {
@@ -15,12 +15,12 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
             this.ReportViewer1.Reset();
 
 
-            this.ReportViewer1.LocalReport.ReportPath = @"C:\Users\antho\Desktop\Aplicada II\Repos\ProyectoFinal\SystemAlmacen\ProyectoFinal\Ui\Reportes\CategoriasReport.rdlc";
+            this.ReportViewer1.LocalReport.ReportPath = @"C:\Users\antho\Desktop\Aplicada II\Tareas\SystemAlmacenWeb\SystemAlmacenWeb\Ui\Reportes\CategoriasReport.rdlc";
             this.ReportViewer1.LocalReport.DataSources.Clear();
 
 
 
-            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("CategoriasDataSet", Consultas.ConsultaCategoria.Lista));
+            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSetCategoria", Ui.Consultas.CCategoria.Lista  ));
 
             this.ReportViewer1.LocalReport.Refresh();
 
