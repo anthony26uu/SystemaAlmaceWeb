@@ -18,7 +18,7 @@
 
     <div class="text-center">
         
-        <h2 class="page-header text-center">Registro Articulo <span></span></h2>
+        <h3 class="page-header text-center">Registro Articulo <span></span></h3>
     
 
         <span class="badge badge-primary">ID </span>
@@ -26,7 +26,7 @@
 
         <asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="col-md-3 col-sm-3 btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
+        <asp:Button ID="BotonBuscar"   CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
     </div>
     <br />
 
@@ -98,7 +98,7 @@
         <br />
         <span class="badge badge-primary">Codigo</span><br />
 
-        <asp:TextBox ID="TexboCodigo"  placeholder="Codigo" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboCodigo"  placeholder="Codigo" class="input-lg"  runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TexboCodigo" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -106,7 +106,7 @@
         <br />
         <span class="badge badge-primary">ITBIS</span><br />
 
-        <asp:TextBox ID="TexboItbis"  placeholder="ITBS" class="input-lg"  runat="server" Height="30px" Width="199px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboItbis"  placeholder="ITBS" class="input-lg"  runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TexboItbis" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -116,7 +116,7 @@
         <br />
         <span class="badge badge-primary">Categoria Articulo</span><br />
 
-        <asp:DropDownList ID="DropCategoria" runat="server" CssClass="col-md-3 col-sm-3 btn btn-default" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropCategoria" runat="server"  CssClass="btn btn-default"  Height="42px" Width="199px">
         </asp:DropDownList>
 
         <br />

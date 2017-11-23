@@ -18,7 +18,7 @@
     <div class="text-center">
         <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass="btn btn-info" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
+        <asp:Button ID="BotonBuscar" CssClass=" btn btn-default"  runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
  
         <br />
         <br />
@@ -61,7 +61,7 @@
        
           <!--Texbox -->
 
-        <asp:TextBox ID="TextBoxDireccion" placeholder="Direccion" class="input-lg" runat="server" Height="68px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxDireccion" TextMode="MultiLine" placeholder="Direccion" class="input-lg" runat="server"  Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
 
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
@@ -109,7 +109,7 @@
 
         <span class="badge badge-primary">Sexo</span><br />
 
-        <asp:DropDownList ID="DropSexo" runat="server" class="btn-success" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropSexo" runat="server" CssClass=" btn btn-default"  class="btn-" Height="42px" Width="199px">
             <asp:ListItem>Masculino</asp:ListItem>
             <asp:ListItem>Femenino</asp:ListItem>
         </asp:DropDownList>

@@ -24,7 +24,7 @@
 
          <br />
     <asp:TextBox ID="Textid" placeholder="Id a Buscar" class="input-lg" runat="server" Height="45px" Width="165px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
-    <asp:Button ID="Button1"  CssClass="col-md-3 col-sm-3 btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="Button1_Click" />
+    <asp:Button ID="Button1"  CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="Button1_Click" Width="97px" />
 
 
          <br />
