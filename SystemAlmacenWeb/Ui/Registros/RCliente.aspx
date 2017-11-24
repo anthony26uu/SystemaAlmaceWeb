@@ -18,7 +18,7 @@
     <div class="text-center">
         <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID"  TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
-        <asp:Button ID="BotonBuscar" CssClass=" btn btn-default"  runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click"  />
+        <asp:Button ID="BotonBuscar" CssClass=" btn btn-default"  runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click" Width="83px"  />
  
         <br />
         <br />

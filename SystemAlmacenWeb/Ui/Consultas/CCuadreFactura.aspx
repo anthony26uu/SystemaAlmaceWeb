@@ -7,7 +7,7 @@
 
 
     <header>
-        <h1 class="page-header text-center">Cuadre Factura <span></span></h1>
+        <h1 class="page-header text-center">CUADRE FACTURA <span></span></h1>
     </header>
 
     <script src="../../Scripts/popper.min.js"></script>
@@ -19,7 +19,7 @@
     <div class="text-center">
 
         <span class="btn btn-danger">Selecione-</span>
-        <asp:DropDownList ID="DropFiltro" CssClass="btn-success" runat="server" Height="45px">
+        <asp:DropDownList ID="DropFiltro" CssClass="btn-danger" runat="server" Height="45px">
 
             <asp:ListItem>Todo</asp:ListItem>
             <asp:ListItem>ID</asp:ListItem>
@@ -32,7 +32,7 @@
 
 
 
-        <asp:DropDownList ID="DropUsuario" runat="server" class="btn-success" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropUsuario" runat="server" class="btn-danger" Height="42px" Width="199px">
         </asp:DropDownList>
 
 
@@ -48,8 +48,8 @@
 
 
         <span class="btn btn-danger">ID/Nombre</span>
-        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-info" OnClick="Button1_Click" />
+        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px" Width="168px"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click" />
 
 
 
@@ -76,22 +76,23 @@
 
     </div>
 
-    <div class="center-block" style="overflow: auto; width: 1434px; height: 315px;">
+    <div class="center-block" style="overflow: auto; width: 1434px; height: 209px;">
 
 
 
-        <asp:GridView ID="FacturaGrid" runat="server" CssClass=" table table-striped table-hover table-bordered" HorizontalAlign="Center" Height="244px" Width="942px">
+        <asp:GridView ID="FacturaGrid" runat="server" CssClass=" table table-striped table-hover table-bordered" HorizontalAlign="Center" Height="16px" Width="742px">
         </asp:GridView>
 
     </div>
 
     <br />
-    <a href="../Reportes/Ventanas/FacturaReport.aspx" class="btn btn-info">
+    <a href="../Reportes/Ventanas/FacturaReport.aspx" class="btn btn-danger">
         <span></span>Imprimir
     </a>
     
-        <asp:TextBox ID="TextBoxTotal" class="input-lg" ReadOnly="true" runat="server" Height="44px" Width="212px"></asp:TextBox>
-
+    <div class="text-center"> 
+        <span class="btn btn-danger">Total Consulta</span><asp:TextBox ID="TextBoxTotal" class="input-lg" ReadOnly="true" runat="server" Height="25px" Width="212px"></asp:TextBox>
+    </div>
         
     <br />
     <br />

@@ -227,6 +227,14 @@ namespace SystemAlmacenWeb.Ui.Registros
                 {
                     EliminarExitencia();
 
+                   
+                       //uardar.Cliente = DropDownCliente.Text;
+                       // guardar.Deuda = Convert.ToDecimal(TextBoxTotal.Text);
+                     //   BLL.DeudasclientesBLL.Guardar(guardar);
+                   //     MessageBox.Show("Nueva deuda agregada al clinete! " + DropDownCliente.Text);
+
+                   
+
                     Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
                   
                     limpiar();
@@ -525,6 +533,11 @@ namespace SystemAlmacenWeb.Ui.Registros
                CalcularMonto();
                 calcularDevuelta();
             
+        }
+
+        protected void DropDownTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

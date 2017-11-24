@@ -23,6 +23,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             if (!Page.IsPostBack)
             {
                 LlenarDrop();
+                calcular();
             }
         }
         public static List<Entidades.Facturas> Lista { get; set; }

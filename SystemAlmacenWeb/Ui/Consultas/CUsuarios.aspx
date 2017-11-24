@@ -19,7 +19,7 @@
  <div class= "text-center">
      
           <span class="btn btn-danger">Selecione-</span>
-          <asp:DropDownList ID="DropFiltro"  CssClass="btn-success" runat="server" Height="45px"> 
+          <asp:DropDownList ID="DropFiltro"  CssClass="btn-danger" runat="server" Height="45px"> 
             
               <asp:ListItem>Todo</asp:ListItem>
               <asp:ListItem>ID</asp:ListItem>
@@ -34,7 +34,7 @@
         
            
           <span class="btn btn-danger">ID / Nombre</span>
-          <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" ></asp:TextBox>
+          <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" Width="130px" ></asp:TextBox>
          <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click1"  />
  
             

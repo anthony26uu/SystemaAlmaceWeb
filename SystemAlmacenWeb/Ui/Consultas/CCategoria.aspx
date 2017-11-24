@@ -11,7 +11,7 @@
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
     <header>
-        <h1 class="page-header text-center">Consulta Categorias <span></span></h1>
+        <h1 class="page-header text-center">CONSULTAS CATEGORIA <span></span></h1>
     </header>
 
     <div class="text-center">
@@ -19,7 +19,7 @@
 
         <span class="btn btn-danger">Selecione-</span>
 
-        <asp:DropDownList class="btn-success" ID="DropFiltro" runat="server" Height="45px">
+        <asp:DropDownList class="btn-danger" ID="DropFiltro" runat="server" Height="45px">
             <asp:ListItem>Todo</asp:ListItem>
             <asp:ListItem>ID</asp:ListItem>
             <asp:ListItem>Nombre</asp:ListItem>
@@ -32,7 +32,7 @@
 
         <span class="btn btn-danger">ID / Nombre</span>
 
-        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px"></asp:TextBox>
+        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px" Width="94px"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click" />
 
         <br />
@@ -50,7 +50,7 @@
               </div>
 
     <br />
-    <a href="../Reportes/Ventanas/CategoriaReport.aspx" class="btn btn-info btn-lg">
+    <a href="../Reportes/Ventanas/CategoriaReport.aspx" class="btn btn-info btn-danger">
         <span class=""></span>Imprimir
     </a>
     <br />

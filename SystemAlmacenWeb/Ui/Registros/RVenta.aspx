@@ -35,7 +35,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxBuscar" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
             <asp:Button ID="Buscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="36px" Width="88px" OnClick="Buscar_Click" ValidationGroup="Buscar" />
 
-            <asp:DropDownList ID="DropDownTipoVenta" CssClass="btn btn-danger" runat="server">
+            <asp:DropDownList ID="DropDownTipoVenta" CssClass="btn btn-danger" runat="server" OnSelectedIndexChanged="DropDownTipoVenta_SelectedIndexChanged">
                 <asp:ListItem>Credito</asp:ListItem>
                 <asp:ListItem>Contado</asp:ListItem>
             </asp:DropDownList>
@@ -96,7 +96,7 @@
 
 
 
-            <asp:Button ID="Agregar" CssClass="btn btn-danger" runat="server" Text="Agregar" OnClick="Agregar_Click" ValidationGroup="agregar" />
+            <asp:Button ID="Agregar" CssClass="btn btn-danger" runat="server" Text="Agregar" OnClick="Agregar_Click" ValidationGroup="agregar" Width="113px" />
 
 
 
@@ -162,9 +162,8 @@
 
 
 
-
     </div>
-
+          <br />
 
 
 

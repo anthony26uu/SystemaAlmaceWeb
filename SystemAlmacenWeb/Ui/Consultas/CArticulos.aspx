@@ -8,7 +8,7 @@
        <header>
             <h1 class="page-header text-center">
 
-                  Consulta Articulo <span ></span></h1>
+                  CONSULTA ARTICULO <span ></span></h1>
         </header>
 
           <script src="../../Scripts/popper.min.js"></script>
@@ -35,8 +35,8 @@
         
            
           <span class="btn btn-danger">ID / Descripcion</span>
-          <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" ></asp:TextBox>
-         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-info" OnClick="Button1_Click1"  />
+          <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="45px" Width="100px" ></asp:TextBox>
+         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click1"  />
  
             
   
@@ -51,7 +51,7 @@
             
             <asp:TextBox ID="hastaFecha"   class="input-lg" TextMode="Date"  runat="server" Height="44px" Width="212px"></asp:TextBox>
  
-        <asp:DropDownList ID="DropCategoria" runat="server" class="btn-success" Height="42px" Width="199px">
+        <asp:DropDownList ID="DropCategoria" runat="server" class="btn-danger" Height="42px" Width="199px">
         </asp:DropDownList>
 
               <br />
@@ -66,17 +66,17 @@
        
      </div>
 
-          <div   class="center-block"style="overflow: auto; width: 1434px; height: 315px;">
+          <div   class="center-block"style="overflow: auto; width: 1434px; height: 213px;">
 
 
 
-                <asp:GridView ID="ArticuloGrid" runat="server"   CssClass=" table table-striped table-hover table-bordered"  CellPadding="0" ClientIDMode="Static"  HorizontalAlign="Center" Height="244px" Width="942px" >   
+                <asp:GridView ID="ArticuloGrid" runat="server"   CssClass=" table table-striped table-hover table-bordered"  CellPadding="0" ClientIDMode="Static"  HorizontalAlign="Center" Height="172px" Width="942px" >   
                 </asp:GridView>
         
     </div>
     
       <br />
-        <a href="../Reportes/Ventanas/ArticuloReport.aspx" class="btn btn-info">
+        <a href="../Reportes/Ventanas/ArticuloReport.aspx" class="btn btn-danger">
           <span ></span> Imprimir
         </a> 
        

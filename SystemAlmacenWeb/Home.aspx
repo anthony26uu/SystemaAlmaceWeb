@@ -17,12 +17,11 @@
 
       
 
-  <label class="control-label">Input addons</label>
+ 
   <div class="input-group">
     <span class="input-group-addon">!!</span>
-    <input type="text" readonly="true" placeholder="Desarrollado con fines academicos, por Anthony Santana Polanco-2014-0527" class="form-control">
+    <input type="text" readonly="true" placeholder="Desarrollado con fines academicos, por Anthony Santana Polanco-2014-0527" class="col-lg-12">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="button">Button</button>
     </span>
   </div>
 
