@@ -20,22 +20,28 @@ namespace SystemAlmacenWeb
 
         protected void Inicio_Click(object sender, EventArgs e)
         {
-            if (BLL.UserBLL.Authenticate(Textid.Text, TextPass.Text))
-            {
 
-                Base.Usuario = Textid.Text;
+          
+
+                if (BLL.UserBLL.Authenticate(Textid.Text, TextPass.Text))
+                {
+
+                    Base.Usuario = Textid.Text;
 
 
-                FormsAuthentication.RedirectFromLoginPage(Textid.Text, true);
-               // Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+                    FormsAuthentication.RedirectFromLoginPage(Textid.Text, true);
+                    // Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
 
-            }
-            else
-            {
 
-                Utilidades.ShowToastr(this, "Usuario y/o Contraseña Incorrectas", "ERROR", "info");
 
-            }
+                }
+                else
+                {
+
+                    Utilidades.ShowToastr(this, "Usuario y/o Contraseña Incorrectas", "ERROR", "info");
+
+                }
+            
         }
     }
 }

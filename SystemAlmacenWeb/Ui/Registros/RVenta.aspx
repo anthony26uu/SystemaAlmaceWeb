@@ -31,7 +31,8 @@
         <div class="panel-body">
 
             <asp:TextBox ID="TextBoxBuscar" CssClass=" input-lg" TextMode="Number" runat="server" Height="16px" Width="114px"></asp:TextBox>
-            <asp:Button ID="Buscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="36px" Width="88px" OnClick="Buscar_Click" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxBuscar" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
+            <asp:Button ID="Buscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="36px" Width="88px" OnClick="Buscar_Click" ValidationGroup="Buscar" />
 
             <asp:DropDownList ID="DropDownTipoVenta" CssClass="btn btn-danger" runat="server">
                 <asp:ListItem>Credito</asp:ListItem>
@@ -39,14 +40,16 @@
             </asp:DropDownList>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-primary">%Descuento</span>
-            <asp:TextBox ID="DescuentoTextBox" CssClass=" input-lg" TextMode="Number" runat="server" Height="16px" Width="114px"></asp:TextBox>
+            <asp:TextBox ID="DescuentoTextBox" CssClass=" input" TextMode="Number" runat="server" Height="16px" Width="38px"></asp:TextBox>
             &nbsp;
 
         <span class="badge badge-primary">Cliente a Comprar </span>
-            <asp:DropDownList ID="DropDownCliente" CssClass="btn btn-danger" runat="server">
+            <asp:DropDownList ID="DropDownCliente" CssClass="btn btn-danger" runat="server" ValidationGroup="guardar">
             </asp:DropDownList>
 
-            <asp:Button ID="ButtonNuevoCliente" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="88px" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="DropDownCliente" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+
+            <asp:Button ID="ButtonNuevoCliente" CssClass="btn btn-danger" runat="server" Text="Nuevo" Height="36px" Width="79px" />
 
             &nbsp;<span class="badge badge-primary">Vendedor</span>
             <asp:TextBox ID="TextBoxVendedor" placeholder="Usuario " disabled="true" CssClass="  input-lg  " Height="16px" Width="160px" runat="server"></asp:TextBox>
@@ -79,18 +82,25 @@
         <div class="panel-body">
 
 
-            <asp:DropDownList ID="DropArticulo" CssClass="btn btn-danger" runat="server">
+            <asp:DropDownList ID="DropArticulo" CssClass="btn btn-danger" runat="server" ValidationGroup="agregar">
             </asp:DropDownList>
 
-            <asp:TextBox ID="TextBoxCantidad" Height="16px" Width="114px" CssClass=" input-lg " TextMode="Number" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="DropArticulo" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="agregar"></asp:RequiredFieldValidator>
+
+            <asp:TextBox ID="TextBoxCantidad" Height="16px" Width="114px" CssClass=" input-lg " TextMode="Number" runat="server" ValidationGroup="agregar"></asp:TextBox>
 
 
 
-            <asp:Button ID="Agregar" CssClass="btn btn-danger" runat="server" Text="Agregar" OnClick="Agregar_Click" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxCantidad" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="agregar"></asp:RequiredFieldValidator>
 
 
 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Agregar" CssClass="btn btn-danger" runat="server" Text="Agregar" OnClick="Agregar_Click" ValidationGroup="agregar" />
+
+
+
+            &nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="DropArticulo" ErrorMessage="Registre Articulo" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="agregar"></asp:RequiredFieldValidator>
+            &nbsp;&nbsp;&nbsp;&nbsp;
      
       <span class="badge badge-primary">Articulos Vendidos</span><asp:TextBox ID="TexboxCantidad" placeholder="Cantidad " disabled="true" CssClass="  input-lg  " Height="16px" Width="160px" runat="server"></asp:TextBox>
 
@@ -101,7 +111,7 @@
     </div>
 
 
-    <div class="center-block" style="overflow: auto; width: 1100px; height: 315px;">
+    <div class="center-block" style="overflow: auto; width: 1100px; height: 260px;">
 
 
 
@@ -114,40 +124,45 @@
 
     <!--Botones -->
 
+       <div class="text-left">
+ 
 
-    <div class="text-left">
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       
+         <span class="label-default">Total ITBS</span>
+        <asp:TextBox ID="TextBoxTotalITBS" placeholder="TOTAL ITBS " disabled="true" CssClass="  input-lg  " Height="16px" Width="160px" runat="server"></asp:TextBox>
+
+        <span class="label-default">SUB-TOTAL</span>
+        <asp:TextBox ID="TextBoxSubTotal" CssClass=" input-lg " placeholder="Sub-Total " disabled="true" runat="server" Width="160px" Height="16px"></asp:TextBox>
+
+
+        <span class="label-default">TOTAL</span>
+        <asp:TextBox ID="TextBoxTotal" CssClass="  input-lg " placeholder="Total " disabled="true" Height="16px" runat="server" Width="160px"></asp:TextBox>
+
+
+        <span class="label-default">Monto</span>
+        <asp:TextBox ID="TextMontoRecibido" CssClass=" input-lg  " DefaultButton="BotonCalcularDevuelta" placeholder="Monto " Height="16px" Width="160px" runat="server" OnTextChanged="TextMontoRecibido_TextChanged"></asp:TextBox>
+         <asp:ImageButton ID="BotonCalcularDevuelta" runat="server" Height="46px" ImageUrl="~/Content/Img/if_MetroUI_Calculator_176505.png" Width="46px" OnClick="BotonCalcularDevuelta_Click" />
+
+
+        <span class=" label-default">DEVUELTA</span>
+        <asp:TextBox ID="TexboxDevuelta" CssClass=" input-lg  " placeholder="Devuelta " disabled="true" Height="16px" Width="160px" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TexboxDevuelta" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TexboxDevuelta" ErrorMessage="  Calcule Deuelta primero" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+    </div>
+
+   
+    <br />
+
+    <div class="text-center">
         <asp:Button ID="Button4" CssClass="btn btn-warning" runat="server" Text="Limpiar" Height="36px" Width="88px" OnClick="Button4_Click" />
-        <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click" />
+        <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click" ValidationGroup="guardar" />
         <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" OnClick="Button3_Click" />
 
 
 
 
-
-        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-       
-         <span class="label-default">Total ITBS</span>
-        <asp:TextBox ID="TextBoxTotalITBS" placeholder="TOTAL ITBS " disabled="true" CssClass="  input-lg  " Height="16px" Width="160px" runat="server"></asp:TextBox>
-
-        <span class="label-info">SUB-TOTAL</span>
-        <asp:TextBox ID="TextBoxSubTotal" CssClass=" input-lg " placeholder="Sub-Total " disabled="true" runat="server" Width="160px" Height="16px"></asp:TextBox>
-
-
-        <span class="label-warning">TOTAL</span>
-        <asp:TextBox ID="TextBoxTotal" CssClass="  input-lg " placeholder="Total " disabled="true" Height="16px" runat="server" Width="160px"></asp:TextBox>
-
-        <span class="label-success">Monto</span>
-        <asp:TextBox ID="TextMontoRecibido" CssClass=" input-lg  " placeholder="Monto " Height="16px" Width="160px" runat="server" OnTextChanged="TextMontoRecibido_TextChanged"></asp:TextBox>
-
-        <span class="label-success">DEVUELTA</span>
-        <asp:TextBox ID="TexboxDevuelta" CssClass=" input-lg  " placeholder="Devuelta " disabled="true" Height="16px" Width="160px" runat="server"></asp:TextBox>
-
     </div>
-
-    <br />
-
 
 
 

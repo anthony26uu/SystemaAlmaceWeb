@@ -22,13 +22,15 @@ namespace SystemAlmacenWeb.Ui.Registros
         private static List<Entidades.FacturaDetalles> listaRelaciones;
         Entidades.Facturas facturaG;
 
- 
-       
+        decimal total ;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+            Utilidades.SCritpValidacion();
             if (!Page.IsPostBack)
             {
+                total = 0;
                 LlenarDropCliente();
                 LlenarDrop();
 
@@ -85,6 +87,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
 
         }
+
 
 
 
@@ -190,7 +193,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                     dt.Rows.Add(DropArticulo.SelectedValue, 0, Convert.ToString(id2), artig.Precio, TextBoxCantidad.Text.Trim(), artig.NombreArticulo.Trim(), artig.ITBIS);
                     ViewState["Detalle"] = dt;
                     this.BindGrid();
-                    CalcularMonto();
+                  //  CalcularMonto();
                     TextBoxCantidad.Text = "";
 
 
@@ -205,29 +208,35 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
-
-
-
-          Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
+            Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
             LlenarDatos(detallef);
 
-            if (BLL.FacturaBLL.Guardar(facturaG, detallef.Detalle))
+            if (detallef.Detalle.Count == 0)
             {
-                EliminarExitencia();
+                Utilidades.ShowToastr(this, "Primero agregue Articulos", "Consejo", "info");
 
-                Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
-                Response.Redirect("../Reportes/Ventanas/Factura.aspx");
-
-
-                limpiar();
             }
             else
+
             {
-                Utilidades.ShowToastr(this, "Error", "Error", "error");
 
+
+              
+
+                if (BLL.FacturaBLL.Guardar(facturaG, detallef.Detalle))
+                {
+                    EliminarExitencia();
+
+                    Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
+                  
+                    limpiar();
+                }
+                else
+                {
+                    Utilidades.ShowToastr(this, "Error", "Error", "error");
+
+                }
             }
-
         }
 
 
@@ -276,16 +285,26 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         }
 
+
+        public void calcularDevuelta()
+        {
+
+            decimal devuelta = 0;
+
+            devuelta = Utilidades.TOINT(TextMontoRecibido.Text) - Convert.ToInt16(total);
+            TexboxDevuelta.Text = devuelta.ToString();
+        }
+
       
 
         public void CalcularMonto()
         {
             decimal subTotal = 0m;
             decimal descuento = 0;
-            decimal total = 0;
+           
             decimal itbs = 0;
             int porciento = 100;
-            int devuelta = 0;
+           
 
             if (FacturaGrid.Rows.Count > 0)
             {
@@ -303,13 +322,16 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
                 DescuentoTextBox.Text = Convert.ToString(0);
             }
+            else
 
-            descuento = (Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text);
-            Math.Round(total = (subTotal + itbs) - descuento);
-            TextBoxTotal.Text = total.ToString();
+            {
+                descuento = (Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text);
+                Math.Round(total = (subTotal + itbs) - descuento);
+                TextBoxTotal.Text = total.ToString();
 
-            devuelta = Utilidades.TOINT(TextMontoRecibido.Text) - Convert.ToInt16(total);
-            TexboxDevuelta.Text = devuelta.ToString();
+
+            }
+
 
 
 
@@ -402,7 +424,17 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
+           
+            var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
+            if (user.Tipo != "Administrador")
+            {
+
+                Utilidades.ShowToastr(this, "No es Administrador", "Error", "error");
+            }
+            else
+            {
+          
+                if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
             {
 
                 Utilidades.ShowToastr(this, "Campo Id Vacio", "Error", "info");
@@ -440,13 +472,23 @@ namespace SystemAlmacenWeb.Ui.Registros
                 }
             }
 
+        }
 
         }
 
         protected void TextMontoRecibido_TextChanged(object sender, EventArgs e)
         {
-            CalcularMonto();
+           
 
+        }
+
+        protected void BotonCalcularDevuelta_Click(object sender, ImageClickEventArgs e)
+        {
+           
+           
+               CalcularMonto();
+                calcularDevuelta();
+            
         }
     }
 }

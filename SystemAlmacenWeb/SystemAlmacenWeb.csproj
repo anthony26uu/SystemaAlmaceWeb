@@ -106,11 +106,17 @@
     <Content Include="Content\bootstrap3.9.min.css" />
     <Content Include="Content\Img\bootstrapdeltem.css" />
     <Content Include="Content\Img\bootstraptema.min.css" />
+    <Content Include="Content\Img\if_Black_Plus_60942.png" />
+    <Content Include="Content\Img\if_Calculator_16_171352.ico" />
+    <Content Include="Content\Img\if_Calculator_16_171352.png" />
+    <Content Include="Content\Img\if_MetroUI_Calculator_176505.png" />
     <Content Include="Content\jquery-3.2.1.min.js" />
     <Content Include="Content\toastr.less" />
     <Content Include="Base.Master" />
     <Content Include="Models\bootstrap-theme.min.css.map" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\SystemAlmacenWeb20171123040136 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SystenAlmacenWeb - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,7 +218,9 @@
     <Content Include="Ui\Reportes\Ventanas\Factura.aspx" />
     <Content Include="Ui\Reportes\Ventanas\FacturaReport.aspx" />
     <Content Include="Ui\Reportes\Ventanas\UsuarioReport.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.Master.cs">

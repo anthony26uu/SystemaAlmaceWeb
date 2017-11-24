@@ -11,14 +11,11 @@ namespace SystemAlmacenWeb.Ui.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         //   TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
+            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
 
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+            Utilidades.SCritpValidacion();
+
+         
         }
 
         Entidades.Clientes clienteg = new Entidades.Clientes();
@@ -34,6 +31,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             clienteg.Direccion = TextBoxDireccion.Text;
             clienteg.FechaNacimiento = Convert.ToDateTime(TextFecha.Text);
             clienteg.Sexo = DropSexo.Text;
+            clienteg.Telefono = TexboTelefono.Text;
 
 
             
@@ -45,7 +43,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
          
             TextBoxNombre.Text = "";
-            TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
+            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
             TextBoxDireccion.Text = "";
             TexboTelefono.Text = "";
             TextBoxID.Text = "";

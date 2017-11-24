@@ -12,15 +12,9 @@ namespace SystemAlmacenWeb.Ui.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
-
-            TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
-           
+            Utilidades.SCritpValidacion();
+            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
+          
         }
         Usuarios usuariog = new Usuarios();
 
@@ -34,7 +28,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextBoxConfirm.Text = "";
             TextBoxNombre.Text = "";
             TextBoxPass.Text = "";
-            TextFecha.Text = (DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day);
+
+            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
             RequiredFieldValidator1.Text = "";
             RequiredFieldValidator2.Text = "";
             RequiredFieldValidator3.Text = "";
@@ -79,110 +74,137 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void BotonBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxID.Text))
+            int id = int.Parse(TextBoxID.Text);
+            var usuar = BLL.UserBLL.Buscar(p => p.Id == id);
+            var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
+            if (user.Tipo != "Administrador")
             {
 
+                Utilidades.ShowToastr(this, "No es Administrador", "Error", "error");
 
-                Utilidades.ShowToastr(this, "Llene Campo  id", "CONSEJO", "info");
 
-                Limpiar();
+
             }
             else
-
             {
-
-                int id = int.Parse(TextBoxID.Text);
-                var usuar = BLL.UserBLL.Buscar(p => p.Id == id);
-                if (usuar != null)
+                if (string.IsNullOrWhiteSpace(TextBoxID.Text))
                 {
 
 
-                    TextBoxNombre.Text = usuar.NombreUsuario;
-                    TextBoxPass.Text = usuar.PassUsuario;
-                    TextFecha.Text = Convert.ToString(usuar.FechaIngreso);
-                    TextBoxConfirm.Text = usuar.PassUsuario;
-                    Utilidades.ShowToastr(this, "Resultados", "RESULTADOS", "success");
-
-                }
-                else
-                {
-                    Utilidades.ShowToastr(this, "NO existe elementos con ID", "ERROR", "info");
+                    Utilidades.ShowToastr(this, "Llene Campo  id", "CONSEJO", "info");
 
                     Limpiar();
+                }
+                else
 
+                {
+
+
+                    if (usuar != null)
+                    {
+
+
+                        TextBoxNombre.Text = usuar.NombreUsuario;
+                        TextBoxPass.Text = usuar.PassUsuario;
+                        TextFecha.Text = Convert.ToString(usuar.FechaIngreso);
+                        TextBoxConfirm.Text = usuar.PassUsuario;
+
+
+                        Utilidades.ShowToastr(this, "Contraseña omitida por seguridad", "RESULTADOS", "info");
+
+                    }
+                    else
+                    {
+                        Utilidades.ShowToastr(this, "NO existe elementos con ID", "ERROR", "info");
+
+                        Limpiar();
+
+                    }
                 }
             }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
             int id = 0;
-           
+            var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
+            if (user.Tipo != "Administrador")
+            {
+
+                Utilidades.ShowToastr(this, "No es Administrador", "Error", "error");
+
+
+
+            }
+            else
+            {
+
                 if (IsValid)
                 {
 
                     if (!validarUser())
                     {
 
-                    Utilidades.ShowToastr(this, "Nombre de Usuario ya existe", "ERROR", "info");
-
-
-                }
-                else
+                        Utilidades.ShowToastr(this, "Nombre de Usuario ya existe", "ERROR", "info");
+                    }
+                    else
                     {
-                        usuariog= LlenarCampos();
-
+                        
+                        usuariog = LlenarCampos();
 
                         if (TextBoxPass.Text == TextBoxConfirm.Text)
                         {
+                            
+                            var usuar = BLL.UserBLL.Buscar(p => p.Id == id);
                             if (id != usuariog.Id)
-                            {
-                               if (BLL.UserBLL.Mofidicar(usuariog))
-                            {
-                                Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
 
+                            {
+
+
+                                if (BLL.UserBLL.Mofidicar(usuariog))
+                                {
+                                    Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
+
+                                }
+                                else
+                                {
+                                    Utilidades.ShowToastr(this, "No puede Modificado ", "Error", "error");
+
+                                }
                             }
                             else
                             {
+                                if (BLL.UserBLL.Guardar(usuariog))
+                                {
+                                    Utilidades.ShowToastr(this, "Nuevo usuario agregado con exito", "CORRECTO", "success");
 
-                                Utilidades.ShowToastr(this, "Error al  Modificar ", "ERROR", "error");
+                                }
+                                else
+                                {
+                                    Utilidades.ShowToastr(this, "Error al guardar", "ERROR", "error");
+
+                                }
+
 
                             }
-
-
-
                         }
-                            else
-                            {
-                              if (BLL.UserBLL.Guardar(usuariog))
-                            {
-                                Utilidades.ShowToastr(this, "Nuevo usuario agregado con exito", "CORRECTO", "success");
-
-                            }
-                            else
-                            {
-                                Utilidades.ShowToastr(this, "Error al guardar", "ERROR", "error");
-
-                            }
 
 
-                        }
-                        }
+
                         else
                         {
-                        Utilidades.ShowToastr(this, "Campos contraseña no coniciden", "CORRECTO", "info");
+                            Utilidades.ShowToastr(this, "Campos contraseña no coniciden", "CORRECTO", "info");
+
+
+                        }
 
 
                     }
-
-
                 }
-                }
-              
+
 
                 Limpiar();
-         
+            }
         }
 
         protected void Button4_Click(object sender, EventArgs e)
@@ -193,36 +215,58 @@ namespace SystemAlmacenWeb.Ui.Registros
         protected void Button3_Click(object sender, EventArgs e)
         {
 
-
-            if (string.IsNullOrWhiteSpace(TextBoxID.Text))
+            var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
+         
+        
+           
+            if (user.Tipo != "Administrador")
             {
 
-                Utilidades.ShowToastr(this, "Campo Id vacio", "ERROR", "info");
-
-
-                Limpiar();
-
-
+                Utilidades.ShowToastr(this, "No es Administrador", "Error", "error");
             }
             else
             {
-                int id = int.Parse(TextBoxID.Text);
-                var bll = new BLL.UserBLL();
-                var user = BLL.UserBLL.Buscar(p => p.Id == id);
-                if (BLL.UserBLL.Eliminar(user))
+
+
+                if (string.IsNullOrWhiteSpace(TextBoxID.Text))
                 {
 
-                    Utilidades.ShowToastr(this, "Eliminado con exito", "CORRECTO", "success");
+                    Utilidades.ShowToastr(this, "Campo Id vacio", "ERROR", "info");
+
 
                     Limpiar();
+
+
                 }
                 else
                 {
 
-                    Utilidades.ShowToastr(this, "No se puedo eliminar", "ERROR", "error");
+                    if (user.Id == 1)
+                    {
+                        Utilidades.ShowToastr(this, "Usuario por defecto no se puede borrar", "Informacion", "info");
+
+                    }
+                    else
+
+                    {
+                        if (BLL.UserBLL.Eliminar(user))
+                        {
+
+                            Utilidades.ShowToastr(this, "Eliminado con exito", "CORRECTO", "success");
+
+                            Limpiar();
+                        }
+                        else
+                        {
+
+                            Utilidades.ShowToastr(this, "No se puedo eliminar", "ERROR", "error");
+
+                        }
+                    }
 
                 }
             }
+
         }
 
         protected void TextBoxConfirm_TextChanged(object sender, EventArgs e)

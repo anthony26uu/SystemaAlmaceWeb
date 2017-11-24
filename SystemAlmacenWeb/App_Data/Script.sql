@@ -4,19 +4,20 @@
 																					/*Tablas:          8      */
 																			 /*Anthony Santana POlanco -- 2014-0527 */
 
-CREATE TABLE [dbo].[ArticuloCategorias] (
+																			 CREATE TABLE [dbo].[ArticuloCategorias] (
     [ArticuloCategoriasid] INT IDENTITY (1, 1) NOT NULL,
     [IdArticulo]           INT NULL,
     [CategoriaId]          INT NULL,
     PRIMARY KEY CLUSTERED ([ArticuloCategoriasid] ASC)
 );
 
+
 CREATE TABLE [dbo].[Articulos] (
     [IdArticulo]     INT          IDENTITY (1, 1) NOT NULL,
     [NombreArticulo] VARCHAR (80) NULL,
     [Existencia]     INT          NULL,
-    [PrecioVenta]    DECIMAL (18) NULL,
-    [PrecioCompra]   DECIMAL (18) NULL,
+    [Precio]         DECIMAL (18) NULL,
+    [Costo]          DECIMAL (18) NULL,
     [Categoria]      VARCHAR (80) NULL,
     [CodigoArticulo] VARCHAR (80) NULL,
     [FechaIngreso]   DATETIME     NULL,
@@ -73,27 +74,12 @@ CREATE TABLE [dbo].[Facturas] (
     PRIMARY KEY CLUSTERED ([IdFactura] ASC)
 );
 
+
 CREATE TABLE [dbo].[Usuarios] (
     [Id]            INT          IDENTITY (1, 1) NOT NULL,
     [nombreUsuario] VARCHAR (50) NULL,
     [PassUsuario]   VARCHAR (70) NULL,
     [Tipo]          VARCHAR (50) NULL,
+    [FechaIngreso]  DATETIME     NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
