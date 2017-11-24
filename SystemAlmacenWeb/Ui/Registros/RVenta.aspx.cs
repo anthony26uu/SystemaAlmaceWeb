@@ -310,7 +310,20 @@ namespace SystemAlmacenWeb.Ui.Registros
           
         }
 
-      
+        private void SumarExistencia()
+        {
+            decimal descuento = 0;
+            foreach (GridViewRow producto in FacturaGrid.Rows)
+            {
+                Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
+                int productoId = Convert.ToInt32(producto.Cells[0].Text); ///Celda 2 es el idArticulo antes esta detalleid y facturaid
+                descuento = Convert.ToDecimal(producto.Cells[4].Text); //Celda 4 es la cantiddad
+
+                detallef.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
+                detallef.Articulo.Existencia += Convert.ToInt32(descuento);
+                BLL.ArticuloBLL.Mofidicar(detallef.Articulo);
+            }
+        }
 
         public void CalcularMonto()
         {
@@ -476,7 +489,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (BLL.FacturaBLL.EliminarRelacion(facturaG))
                     {
-
+                        SumarExistencia();
                         limpiar();
 
                         facturaG = new Entidades.Facturas();

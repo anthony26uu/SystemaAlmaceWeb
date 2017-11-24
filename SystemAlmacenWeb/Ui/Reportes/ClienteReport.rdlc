@@ -39,8 +39,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>2.09448cm</Top>
+        <Left>2.29263cm</Left>
         <Height>1.52604cm</Height>
-        <Width>16.97238cm</Width>
+        <Width>12.64456cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -620,24 +621,10 @@
   <Width>7.04775in</Width>
   <Page>
     <PageHeader>
-      <Height>3.26525cm</Height>
+      <Height>3.85162cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image4">
-          <Source>Embedded</Source>
-          <Value>logo_clientes</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.2734cm</Top>
-          <Left>0.32886cm</Left>
-          <Height>2.81546cm</Height>
-          <Width>5.12491cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="ExecutionTime">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -653,11 +640,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.2734cm</Top>
+          <Top>0.56658cm</Top>
           <Left>14.93892cm</Left>
           <Height>0.6cm</Height>
           <Width>2.96236cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -683,11 +669,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.2734cm</Top>
+          <Top>0.56658cm</Top>
           <Left>14.01cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -698,6 +684,20 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image3">
+          <Source>Embedded</Source>
+          <Value>logoelalmacen</Value>
+          <Sizing>FitProportional</Sizing>
+          <Left>4.47002cm</Left>
+          <Height>3.85162cm</Height>
+          <Width>8.96125cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>

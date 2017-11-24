@@ -481,7 +481,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -798,19 +797,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logo</Value>
-          <Sizing>FitProportional</Sizing>
-          <Left>0.34859cm</Left>
-          <Height>2.92557cm</Height>
-          <Width>4.05865cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Image Name="Image2">
           <Source>Embedded</Source>
           <Value>logoelalmacen</Value>
@@ -818,7 +804,6 @@
           <Left>5.34859cm</Left>
           <Height>2.60807cm</Height>
           <Width>8.08208cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -843,7 +828,7 @@
           <Left>14.53598cm</Left>
           <Height>0.6cm</Height>
           <Width>2.96236cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -872,7 +857,7 @@
           <Left>13.60706cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

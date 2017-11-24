@@ -76,7 +76,7 @@
     </div>
     
       <br />
-        <a href="../Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-info">
+        <a href="../Reportes/Ventanas/ArticuloReport.aspx" class="btn btn-info">
           <span ></span> Imprimir
         </a> 
        

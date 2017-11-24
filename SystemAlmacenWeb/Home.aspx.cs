@@ -17,7 +17,7 @@ namespace SystemAlmacenWeb
              
             if (!IsPostBack)
             {
-                TextBoxVendedor.Text =  Base.Usuario;
+              
                 Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
             }
 

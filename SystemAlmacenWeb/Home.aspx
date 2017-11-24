@@ -13,21 +13,25 @@
     <script src="../../Scripts/toastr.js"></script>
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
-     <div class="panel panel-success">
+     <div class="container-fluid">
 
       
-        <div class=" panel bg-info">
-            <div class="panel-bg-succes">
-                <h3 class="panel-title"></h3>
-            </div>
-            <div class="panel-succes">
-                <h2>Bienvenido  </h2>
-                <asp:TextBox ID="TextBoxVendedor"   disabled="true" CssClass="input-lg"  Height="16px"   Width="124px" runat="server"></asp:TextBox>
-  
-            </div>
-        </div>
 
+  <label class="control-label">Input addons</label>
+  <div class="input-group">
+    <span class="input-group-addon">!!</span>
+    <input type="text" readonly="true" placeholder="Desarrollado con fines academicos, por Anthony Santana Polanco-2014-0527" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Button</button>
+    </span>
+  </div>
 
+         <br />
+
+<div class="jumbotron">
+  <h1 class="display-3">Bienvenidos</h1>
+   <p><a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg">Informacion</a></p>
+</div>
 
 
 
@@ -49,13 +53,13 @@
                 </div>
             </div>
         </div>
-
+           </div>
         <script src="/Scripts/popper.min.js"></script>
         <script src="/Scripts/popper.js"></script>
 
-        <p><a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg">Informacion</a></p>
-    </div>
+ 
 
 
     
+       
 </asp:Content>

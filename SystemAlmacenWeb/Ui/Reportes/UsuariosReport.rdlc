@@ -364,6 +364,21 @@
           </Border>
         </Style>
       </Tablix>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>UsuarioReporte</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.10583cm</Top>
+        <Left>1.73572cm</Left>
+        <Height>2.64763cm</Height>
+        <Width>12.5cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>4.35417in</Height>
     <Style>
@@ -376,24 +391,10 @@
   <Width>6.59709in</Width>
   <Page>
     <PageHeader>
-      <Height>3.78533cm</Height>
+      <Height>3.85162cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image2">
-          <Source>Embedded</Source>
-          <Value>UsuarioReporte</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.23812cm</Top>
-          <Left>1.21093cm</Left>
-          <Height>3.54721cm</Height>
-          <Width>12.39479cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="ExecutionTime">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -409,11 +410,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.23812cm</Top>
+          <Top>0.27126cm</Top>
           <Left>12.83327cm</Left>
           <Height>0.6cm</Height>
           <Width>2.96236cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -439,11 +439,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.23812cm</Top>
+          <Top>0.27126cm</Top>
           <Left>11.90435cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -454,6 +454,20 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image3">
+          <Source>Embedded</Source>
+          <Value>logoelalmacen</Value>
+          <Sizing>FitProportional</Sizing>
+          <Left>3.89768cm</Left>
+          <Height>3.85162cm</Height>
+          <Width>8.96125cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
