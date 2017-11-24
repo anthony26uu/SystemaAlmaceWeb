@@ -22,7 +22,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         private static List<Entidades.FacturaDetalles> listaRelaciones;
         Entidades.Facturas facturaG;
 
-        decimal total ;
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             Utilidades.SCritpValidacion();
             if (!Page.IsPostBack)
             {
-                total = 0;
+              
                 LlenarDropCliente();
                 LlenarDrop();
 
@@ -290,20 +290,36 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
 
             decimal devuelta = 0;
+            if (TextBoxTotal.Text == "")
+            {
+                CalcularMonto();
+            }
+            else
+            {
+                if(TextMontoRecibido.Text=="")
+                {
+                    Utilidades.ShowToastr(this, "Ingres Monto para calcular devuelta", "Atencion", "info");
+                }
+                else
+                {
 
-            devuelta = Utilidades.TOINT(TextMontoRecibido.Text) - Convert.ToInt16(total);
-            TexboxDevuelta.Text = devuelta.ToString();
+                    devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
+                    TexboxDevuelta.Text = devuelta.ToString();
+                }
+            }
+          
         }
 
       
 
         public void CalcularMonto()
         {
+            decimal total=0;
             decimal subTotal = 0m;
             decimal descuento = 0;
            
             decimal itbs = 0;
-            int porciento = 100;
+            decimal porciento = 100;
            
 
             if (FacturaGrid.Rows.Count > 0)
@@ -323,11 +339,18 @@ namespace SystemAlmacenWeb.Ui.Registros
                 DescuentoTextBox.Text = Convert.ToString(0);
             }
             else
-
             {
-                descuento = (Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text);
-                Math.Round(total = (subTotal + itbs) - descuento);
-                TextBoxTotal.Text = total.ToString();
+               if(TextBoxSubTotal.Text=="")
+                {
+                    Utilidades.ShowToastr(this, "Primero Agregue articulos", "ANTENCION ", "info");
+                }
+               else
+                {
+                    descuento = ((Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text));
+                    Math.Round(total = (subTotal + itbs) - descuento);
+                    TextBoxTotal.Text = total.ToString();
+                }
+               
 
 
             }

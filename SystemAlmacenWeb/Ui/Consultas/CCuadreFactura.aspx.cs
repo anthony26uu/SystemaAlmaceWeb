@@ -11,13 +11,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
-
+            Utilidades.SCritpValidacion();
             Lista = BLL.FacturaBLL.GetListodo();
             FacturaGrid.DataSource = Lista;
             FacturaGrid.DataBind();
@@ -33,6 +27,21 @@ namespace SystemAlmacenWeb.Ui.Consultas
         }
         public static List<Entidades.Facturas> Lista { get; set; }
 
+
+        private void calcular()
+        {
+            decimal total = 0;
+
+            if (FacturaGrid.Rows.Count > 0)
+            {
+                foreach (GridViewRow precio in FacturaGrid.Rows)
+                {
+                  total=   Convert.ToDecimal(precio.Cells[6].Text);
+                }
+            }
+            TextBoxTotal.Text = total.ToString();
+        }
+            
         public void Selecionar(int id)
         {
 
@@ -51,7 +60,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     Lista = BLL.FacturaBLL.GetListodo();
                     FacturaGrid.DataSource = Lista;
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
-
+                    calcular();
 
 
                 }
@@ -73,6 +82,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     FacturaGrid.DataSource = Lista;
                     FacturaGrid.DataBind();
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+                    calcular();
 
                 }
 
@@ -122,17 +132,19 @@ namespace SystemAlmacenWeb.Ui.Consultas
                             FacturaGrid.DataSource = Lista;
                             FacturaGrid.DataBind();
                             Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
-
+                            calcular();
 
 
                         }
                         else
                         {
-                            Utilidades.ShowToastr(this, "Fecha Deve ser menor", "Consejo", "info");
+                            Utilidades.ShowToastr(this, "Fecha Debe ser menor", "Consejo", "info");
                             desdeFecha.Text = "";
                             hastaFecha.Text = "";
                             desdeFecha.Focus();
+                         
                         }
+
                     }
                     else
                     {
@@ -164,6 +176,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     FacturaGrid.DataSource = Lista;
                     FacturaGrid.DataBind();
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+                    calcular();
 
                 }
 

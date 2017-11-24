@@ -89,7 +89,10 @@
     <a href="../Reportes/Ventanas/FacturaReport.aspx" class="btn btn-info">
         <span></span>Imprimir
     </a>
+    
+        <asp:TextBox ID="TextBoxTotal" class="input-lg" ReadOnly="true" runat="server" Height="44px" Width="212px"></asp:TextBox>
 
+        
     <br />
     <br />
 
