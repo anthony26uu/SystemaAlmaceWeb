@@ -13,18 +13,13 @@
     <script src="../../Scripts/toastr.js"></script>
     <script src="../../Scripts/jquery-3.2.1.js"></script>
 
-     <div class="container-fluid">
+   
+    <div class="container-fluid">
 
       
 
  
-  <div class="input-group">
-    <span class="input-group-addon">!!</span>
-    <input type="text" readonly="true" placeholder="Desarrollado con fines academicos, por Anthony Santana Polanco-2014-0527" class="col-lg-12">
-    <span class="input-group-btn">
-    </span>
-  </div>
-
+ 
          <br />
 
 <div class="jumbotron">

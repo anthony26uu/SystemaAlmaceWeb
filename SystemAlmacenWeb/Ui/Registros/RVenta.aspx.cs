@@ -60,7 +60,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextBoxBuscar.Text = "";
             ViewState["Detalle"] = dt;
             this.BindGrid();
-            DropDownTipoVenta.Text = "";
+          
             DropDownTipoVenta.SelectedValue = null;
             DropDownCliente.SelectedValue = null;
             TextBoxVendedor.Text = "";

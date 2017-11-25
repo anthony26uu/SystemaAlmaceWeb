@@ -72,7 +72,7 @@
 
             <br />
           
-            <asp:Button ID="Inicio" runat="server" CssClass="btn btn-success"  Text="INICIO" OnClick="Inicio_Click"  />
+            <asp:Button ID="Inicio" runat="server" CssClass="btn btn-success"  Text="INICIO" OnClick="Inicio_Click" Width="99px"  />
             <br />
         </div>
 

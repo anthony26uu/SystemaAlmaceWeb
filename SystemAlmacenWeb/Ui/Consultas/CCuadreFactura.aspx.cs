@@ -19,11 +19,11 @@ namespace SystemAlmacenWeb.Ui.Consultas
             buscaText.Focus();
 
             buscaText.Focus();
-
+            calcular();
             if (!Page.IsPostBack)
             {
                 LlenarDrop();
-                calcular();
+                
             }
         }
         public static List<Entidades.Facturas> Lista { get; set; }
@@ -37,7 +37,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             {
                 foreach (GridViewRow precio in FacturaGrid.Rows)
                 {
-                  total=   Convert.ToDecimal(precio.Cells[6].Text);
+                  total +=   Convert.ToDecimal(precio.Cells[6].Text);
                 }
             }
             TextBoxTotal.Text = total.ToString();
