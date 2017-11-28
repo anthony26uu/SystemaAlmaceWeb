@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
+        <!--Inclusión de Extras Para evitar Errores-->
+     <script src="/Scripts/toastr.min.js"></script>
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>   
+    <script src="/Scripts/bootstrap.min.js"></script> 
     
        <header>
             <h1 class="page-header text-center">
@@ -11,11 +14,7 @@
                   CONSULTA CLIENTES <span ></span></h1>
         </header>
 
-          <script src="../../Scripts/popper.min.js"></script>
-     <!-- Librerias para Toastr -->
-    <link href="/../Content/toastr.css" rel="stylesheet" />
-    <script src="../../Scripts/toastr.js"></script>
-    <script src="../../Scripts/jquery-3.2.1.js"></script>
+    
 
  <div class= "text-center">
      

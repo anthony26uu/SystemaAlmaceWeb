@@ -3,12 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <script src="../../../Scripts/popper.min.js"></script>
-         <!-- Librerias para Toastr -->
-    <link href="/../Content/toastr.css" rel="stylesheet" />
-    <script src="../../Scripts/toastr.js"></script>
-    <script src="../../Scripts/jquery-3.2.1.js"></script>
-
+        <!--Inclusión de Extras Para evitar Errores-->
+     <script src="/Scripts/toastr.min.js"></script>
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>   
+    <script src="/Scripts/bootstrap.min.js"></script> 
 
     <div class="text-center">
         <h2 class="page-header text-center text">Registro Usuario <span></span></h2>
@@ -52,7 +50,7 @@
         <br />
                 
         <span class="badge badge-primary">Fecha Registro</span><!--Texbox --><br />
-        <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 " class="input-lg" ReadOnly="True"  Height="30px" Width="215px"></asp:TextBox>
+        <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 " class="input-lg" ReadOnly="True"  Height="30px" Width="221px"></asp:TextBox>
 
 
         <br />

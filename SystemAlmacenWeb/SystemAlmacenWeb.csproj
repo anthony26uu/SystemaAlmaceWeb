@@ -99,21 +99,21 @@
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.min.js" />
-    <Content Include="Content\bootstrap3.7.min.js" />
-    <Content Include="Content\bootstrap3.9.min.css" />
-    <Content Include="Content\Img\bootstrapdeltem.css" />
-    <Content Include="Content\Img\bootstraptema.min.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Scripts\bootstrap3.7.min.js" />
     <Content Include="Content\Img\if_Black_Plus_60942.png" />
     <Content Include="Content\Img\if_Calculator_16_171352.ico" />
     <Content Include="Content\Img\if_Calculator_16_171352.png" />
     <Content Include="Content\Img\if_MetroUI_Calculator_176505.png" />
-    <Content Include="Content\jquery-3.2.1.min.js" />
-    <Content Include="Content\toastr.less" />
     <Content Include="Base.Master" />
-    <Content Include="Models\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\SystemAlmacenWeb20171123040136 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SystenAlmacenWeb - Web Deploy.pubxml" />
@@ -122,16 +122,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Login.aspx" />
-    <Content Include="Models\bootstrap-theme.css" />
-    <Content Include="Models\bootstrap-theme.min.css" />
-    <Content Include="Models\bootstrap.min.css" />
-    <Content Include="Models\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-3.2.1.js" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
-    <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
@@ -166,6 +164,7 @@
     <Content Include="RegistrosUsuario.xss">
       <DependentUpon>RegistrosUsuario.xsd</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,16 +177,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Script.sql" />
-    <Content Include="Content\bootstraptheme.min.css" />
     <Content Include="Content\Img\favicon.ico" />
     <Content Include="Content\Img\warehouse.jpg" />
-    <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
-    <Content Include="Scripts\toastr.js" />
-    <Content Include="Scripts\toastr.min.js" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

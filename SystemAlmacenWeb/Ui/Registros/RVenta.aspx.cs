@@ -193,7 +193,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                     dt.Rows.Add(DropArticulo.SelectedValue, 0, Convert.ToString(id2), artig.Precio, TextBoxCantidad.Text.Trim(), artig.NombreArticulo.Trim(), artig.ITBIS);
                     ViewState["Detalle"] = dt;
                     this.BindGrid();
-                  //  CalcularMonto();
+                    CalcularMonto();
                     TextBoxCantidad.Text = "";
 
 
@@ -210,6 +210,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
             LlenarDatos(detallef);
+            var guardar = new Entidades.Deudasclientes();
 
             if (detallef.Detalle.Count == 0)
             {
@@ -219,31 +220,62 @@ namespace SystemAlmacenWeb.Ui.Registros
             else
 
             {
-
-
-              
-
-                if (BLL.FacturaBLL.Guardar(facturaG, detallef.Detalle))
+                if(TextBoxTotal.Text=="")
                 {
-                    EliminarExitencia();
+                    Utilidades.ShowToastr(this, "Calcule total", "ATENCION", "info");
+                }
+                    else
+                {
 
-                   
-                       //uardar.Cliente = DropDownCliente.Text;
-                       // guardar.Deuda = Convert.ToDecimal(TextBoxTotal.Text);
-                     //   BLL.DeudasclientesBLL.Guardar(guardar);
-                   //     MessageBox.Show("Nueva deuda agregada al clinete! " + DropDownCliente.Text);
-
-                   
-
-                    Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
-                  
-                    limpiar();
+                if(TexboxDevuelta.Text==""  )
+                {
+                    Utilidades.ShowToastr(this, "Ingrese monto y calcule devulta ", "ATENCION", "error");
                 }
                 else
                 {
-                    Utilidades.ShowToastr(this, "Error", "Error", "error");
 
+                    if (BLL.FacturaBLL.Guardar(facturaG, detallef.Detalle))
+                    {
+                        EliminarExitencia();
+
+                        if (DropDownTipoVenta.Text == "Credito")
+                        {
+                            if (TextBoxTotal.Text == "")
+                            {
+                                Utilidades.ShowToastr(this, "Calcule total", "ATENCION", "info");
+
+                            }
+                            else
+                            {
+                                guardar.Cliente = DropDownCliente.Text;
+                                guardar.Deuda = Convert.ToDecimal(TextBoxTotal.Text);
+                                if(BLL.DeudasclientesBLL.Guardar(guardar))
+                                {
+                                    Utilidades.ShowToastr(this, "Nueva deuda agregada", "ATENCION", "info");
+                                }
+
+                            }
+
+                        }
+
+
+
+
+                        Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
+
+                        limpiar();
+                    }
+                    else
+                    {
+                        Utilidades.ShowToastr(this, "Error", "Error", "error");
+
+                    }
                 }
+
+              
+
+            }
+
             }
         }
 
@@ -298,23 +330,31 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
 
             decimal devuelta = 0;
-            if (TextBoxTotal.Text == "")
+            if(DropDownTipoVenta.Text=="Credito")
             {
                 CalcularMonto();
             }
             else
             {
-                if(TextMontoRecibido.Text=="")
+                if (TextBoxTotal.Text == "")
                 {
-                    Utilidades.ShowToastr(this, "Ingres Monto para calcular devuelta", "Atencion", "info");
+                    CalcularMonto();
                 }
                 else
                 {
+                    if (TextMontoRecibido.Text == "")
+                    {
+                        Utilidades.ShowToastr(this, "Ingres Monto para calcular devuelta", "Atencion", "info");
+                    }
+                    else
+                    {
 
-                    devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
-                    TexboxDevuelta.Text = devuelta.ToString();
+                        devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
+                        TexboxDevuelta.Text = devuelta.ToString();
+                    }
                 }
             }
+            
           
         }
 

@@ -6,12 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script src="../../Scripts/popper.min.js"></script>
-
-    <!-- Librerias para Toastr -->
-    <link href="/../Content/toastr.css" rel="stylesheet" />
-    <script src="../../Scripts/toastr.js"></script>
-    <script src="../../Scripts/jquery-3.2.1.js"></script>
+        <!--Inclusión de Extras Para evitar Errores-->
+     <script src="/Scripts/toastr.min.js"></script>
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>   
+    <script src="/Scripts/bootstrap.min.js"></script> 
 
 
     <div class="text-center">
@@ -148,8 +146,6 @@
 
         <span class=" label-default">DEVUELTA</span>
         <asp:TextBox ID="TexboxDevuelta" CssClass=" input-lg  " placeholder="Devuelta " disabled="true" Height="16px" Width="160px" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TexboxDevuelta" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TexboxDevuelta" ErrorMessage="  Calcule Deuelta primero" Font-Bold="True" Font-Italic="True" ForeColor="White" ValidationGroup="guardar"></asp:RequiredFieldValidator>
     </div>
 
    

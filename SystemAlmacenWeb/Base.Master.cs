@@ -20,9 +20,21 @@ namespace SystemAlmacenWeb
             if (!Page.IsPostBack)
             {
 
-                TextBoxVendedor.Text = Usuario;
+              
+                LlenarUsuario();
             }
 
+
+        }
+
+        public void LlenarUsuario()
+        {
+            var user = new Entidades.Usuarios();
+            user=  BLL.UserBLL.Buscar(p => p.NombreUsuario == Usuario);
+            TipoUsuarioLabel.Text = user.Tipo;
+
+            ModalLabel.Text = Usuario.ToString();
+            UsuarioLabel.Text = Usuario.ToString();
 
         }
 

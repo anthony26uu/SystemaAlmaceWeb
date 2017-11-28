@@ -19,11 +19,20 @@ namespace SystemAlmacenWeb
             {
               
                 Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
+                LlenarUsuario();
             }
 
-          
+           
 
 
         }
+
+        public  void LlenarUsuario()
+        {
+            
+            UsuarioLabel.Text = Base.Usuario.ToString();
+
+        }
+
     }
 }

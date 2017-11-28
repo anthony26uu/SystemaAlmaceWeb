@@ -6,15 +6,25 @@
 <head runat="server">
     <title></title>
 
+     <meta lang="es-ES">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="SYstemAlmacenWeb">
+    <meta name="author" content="Anthony Santana Polanco">
+    <link rel="icon" href="/Content/Img/favicon.ico">
 
-    <link href="/Models/bootstrap-theme.css" rel="stylesheet" />
-    <link href="/Models/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="/Models/bootstrap.min.css" rel="stylesheet" />
-    <script src="/Models/bootstrap.min.js"></script>
-    <script src="/Scripts/jquery-3.2.1.min.js"></script>
-    <script src="/Content/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/Content/bootstrap3.7.min.js"></script>
+     <!--Inclusión de Bootstrap-->
+      <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+      <script src="/Scripts/bootstrap.min.js"></script>  
+      <script src="/Content/bootstrap3.7.min.js"></script>
+    <!--Inclusión de toastr-->
+      <link href="/Content/toastr.min.css" rel="stylesheet" />
+      <script src="/Scripts/toastr.min.js"></script>
+
+    <!--Inclusión de jquery-->
+     <script src="/Scripts/jquery-2.2.0.min.js"></script>   
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
 
 
 
@@ -29,90 +39,104 @@
 
     <!--Menu -->
 
-    <nav class="navbar  navbar-light bg-dark">
 
-        <a class="navbar-brand" href="../../Home.aspx">INICIO</a>
-        <a class="navbar-brand" href="/Ui/Registros/RVenta.aspx">VENTAS</a>
+    
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../Home.aspx">El ALMACEN</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li>
+                        <a href="#">Ventas</a>
+                    </li>
 
-        
-        <div class="collapse navbar-collapse" id="Menu">
-            <ul class="navbar-nav mr-auto">
-
-                 <li class="dropdown">
-                    <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Facturas <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Ui/Consultas/CCuadreFactura.aspx">Cuadre Facturas</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Factura <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-header">Facturas</li>
+                           <li><a href="/Ui/Consultas/CCuadreFactura.aspx">Cuadre Facturas</a></li>
                         <li><a href="#">Saldar</a></li>
                         <li><a href="/Ui/Registros/RVenta.aspx">Vender</a></li>
-                      
-                    </ul>
-                </li>
+                            
+                        </ul>
+                    </li>
 
-                <li class="dropdown">
-                    <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Registros <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Ui/Registros/RUsuario.aspx">Usuario</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registros <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-header">Registros</li>
+                            <li><a href="/Ui/Registros/RUsuario.aspx">Usuario</a></li>
                         <li><a href="/Ui/Registros/RCategoria.aspx">Categorias</a></li>
                         <li><a href="/Ui/Registros/RArticulo.aspx">Articulos</a></li>
                         <li><a href="/Ui/Registros/RCliente.aspx">Clientes</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Consultas <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Ui/Consultas/CUsuarios.aspx">Usuario</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Consultas</li>
+                             <li><a href="/Ui/Consultas/CUsuarios.aspx">Usuario</a></li>
                         <li><a href="/Ui/Consultas/CCategoria.aspx">Categorias</a></li>
                         <li><a href="/Ui/Consultas/CArticulos.aspx">Articulos</a></li>
                         <li><a href="/Ui/Consultas/CClientes.aspx">Clientes</a></li>
 
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#ModalInformacion">Datos Usuario</a></li>
-                        
-                    </ul>
-                </li>
-
-            </ul>
-
+                        </ul>
+                    </li>
+                      <li> <a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg" >PERFIL</a></li>
+                  
+                </ul>
+            </div>
         </div>
     </nav>
 
-    
-        <div id="ModalInformacion" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Contactos</h4>  
-                    </div>
-                    <div class="modal-body">
-                        <p> </p>
-                        <p>Informaccion esribir sobre usuario anthony26uu@gmail.com</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 
+      <div id="ModalInformacion" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">INFORMACION DE USUARIO</h4>
+                        </div>
+                        <div class="modal-body">
+                             </div>
+                        
+                            <asp:Label ID="ModalLabel"  runat="server" Text='<%# Eval("Usuario") %>'></asp:Label>&nbsp&nbsp
+                           <asp:Label ID="TipoUsuarioLabel" runat="server" Text='<%# Eval("Tipo") %>'></asp:Label>&nbsp&nbsp
+
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-
+           
 
     <form id="form1" runat="server">
         
+      <div class="col">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
         </asp:ContentPlaceHolder>
-        
+          </div>
         <footer class="text-center">
-            &nbsp;<span class="badge badge-success">Usuario: </span>
-            <asp:TextBox ID="TextBoxVendedor" disabled="true" CssClass="input-lg" Height="16px" Width="124px" runat="server"></asp:TextBox>
-            
+            &nbsp;<div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Usuario </h3>
+                                  <asp:Label ID="UsuarioLabel" runat="server" Text='<%# Eval("Usuario") %>'></asp:Label>&nbsp&nbsp
+                            </div>
+                          
+
+                        </div>
             <asp:Button ID="ButtonCerrarSesion" class="btn-warning" runat="server" OnClick="ButtonCerrarSesion_Click" Text="Cerrar Sesion" Width="120px" />
             
             <div class="bg-success">
@@ -121,7 +145,7 @@
         </footer>        
     </form>
 
-        
+      
 
 </body>
 </html>
