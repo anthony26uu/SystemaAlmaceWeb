@@ -56,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right">
                    
                     <li>
-                        <a href="#">Ventas</a>
+                        <a href="/Ui/Registros/RVenta.aspx">Ventas</a>
                     </li>
 
                       <li class="dropdown">
@@ -89,11 +89,13 @@
                         <li><a href="/Ui/Consultas/CCategoria.aspx">Categorias</a></li>
                         <li><a href="/Ui/Consultas/CArticulos.aspx">Articulos</a></li>
                         <li><a href="/Ui/Consultas/CClientes.aspx">Clientes</a></li>
+                        <li><a href="/Ui/Consultas/CDeudas.aspx">Deudas</a></li>
 
                         </ul>
                     </li>
-                      <li> <a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg" >PERFIL</a></li>
-                  
+                     
+                      <li> <a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg" >USUARIO </a></li>
+                
                 </ul>
             </div>
         </div>

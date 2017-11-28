@@ -21,10 +21,10 @@ namespace SystemAlmacenWeb
             {
 
               
-                LlenarUsuario();
+              //  LlenarUsuario();
             }
 
-
+            
         }
 
         public void LlenarUsuario()
@@ -32,7 +32,7 @@ namespace SystemAlmacenWeb
             var user = new Entidades.Usuarios();
             user=  BLL.UserBLL.Buscar(p => p.NombreUsuario == Usuario);
             TipoUsuarioLabel.Text = user.Tipo;
-
+          
             ModalLabel.Text = Usuario.ToString();
             UsuarioLabel.Text = Usuario.ToString();
 

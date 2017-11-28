@@ -4,10 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-       <!--Inclusión de Extras Para evitar Errores-->
-     <script src="/Scripts/toastr.min.js"></script>
-    <script src="/Scripts/jquery-2.2.0.min.js"></script>   
-    <script src="/Scripts/bootstrap.min.js"></script> 
+    <!--Inclusión de Extras Para evitar Errores-->
+    <script src="/Scripts/toastr.min.js"></script>
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
 
     <header>
         <h1 class="page-header text-center">CONSULTAS CATEGORIA <span></span></h1>
@@ -16,42 +16,52 @@
     <div class="text-center">
 
 
-        <span class="btn btn-danger">Selecione-</span>
-
-        <asp:DropDownList class="btn-danger" ID="DropFiltro" runat="server" Height="45px">
-            <asp:ListItem>Todo</asp:ListItem>
-            <asp:ListItem>ID</asp:ListItem>
-            <asp:ListItem>Nombre</asp:ListItem>
-        </asp:DropDownList>
-
-
-
+        <span class="col-md-3 control-label input-sm">SELECIONE LA OPCION DESEADA</span>
+        <div class="col-lg-2 col-md-2">
+            <asp:DropDownList CssClass="form-control" ID="DropFiltro" runat="server" Height="45px">
+                <asp:ListItem>Todo</asp:ListItem>
+                <asp:ListItem>ID</asp:ListItem>
+                <asp:ListItem>Nombre</asp:ListItem>
+            </asp:DropDownList>
+        </div>
 
 
 
-        <span class="btn btn-danger">ID / Nombre</span>
 
-        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px" Width="94px"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" CssClass="btn btn-danger" OnClick="Button1_Click" />
 
+        <span class="col-md-2 control-label ">ID / NOMBRE</span>
+        <div class="col-lg-2 col-md-4">
+
+            <asp:TextBox ID="buscaText" runat="server" class="form-control" placeholder="ID a buscar"></asp:TextBox>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <asp:Button ID="Button1" runat="server" CssClass="btn-warning" Text="Buscar" Height="45px" Width="88px" OnClick="Button1_Click" />
+        </div>
         <br />
         <br />
 
     </div>
 
-   
-         <div  class="center-block" style="overflow: auto; width: 1487px;  height: 259px;">
 
+    <div class="center-block" style="overflow: auto; width: 1487px; height: 259px;">
+        <asp:GridView ID="CategoriasGrid" runat="server" CssClass=" table table-striped table-hover table-bordered" HorizontalAlign="Center" Height="16px" Width="742px">
+            <AlternatingRowStyle BackColor="gray  " />
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+        </asp:GridView>
+    </div>
 
-
-                <asp:GridView ID="CategoriasGrid" ClientIDMode="Static"  ShowFooter="True" PageIndex="2" PageSize="2"  CellPadding="0" CssClass="table table-striped table-hover"  HorizontalAlign="Center" runat="server" Width="971px" Height="192px">
-                </asp:GridView>
-              </div>
+  
 
     <br />
-    <a href="../Reportes/Ventanas/CategoriaReport.aspx" class="btn btn-info btn-danger">
-        <span class=""></span>Imprimir
-    </a>
-    <br />
+
+    <div class="modal-footer">
+        <div class="text-center">
+            <a href="../Reportes/Ventanas/CategoriaReport.aspx" class="btn-default">
+                <span></span>Imprimir
+            </a>
+        </div>
+    </div>
+
     <br />
 </asp:Content>

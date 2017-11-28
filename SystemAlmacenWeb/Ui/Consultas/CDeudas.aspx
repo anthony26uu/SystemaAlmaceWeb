@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="CCuadreFactura.aspx.cs" Inherits="SystemAlmacenWeb.Ui.Consultas.CCuadreFactura" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="CDeudas.aspx.cs" Inherits="SystemAlmacenWeb.Ui.Consultas.CDeudas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -10,7 +10,7 @@
     <script src="/Scripts/bootstrap.min.js"></script>
 
     <header>
-        <h1 class="page-header text-center">CUADRE FACTURA <span></span></h1>
+        <h1 class="page-header text-center">CONSULTA DEUDAS <span></span></h1>
     </header>
 
 
@@ -20,12 +20,11 @@
             <asp:DropDownList ID="DropFiltro" CssClass="form-control" runat="server" Height="45px" Width="305px">
                 <asp:ListItem>Todo</asp:ListItem>
                 <asp:ListItem>ID</asp:ListItem>
-                <asp:ListItem>Fecha</asp:ListItem>
-                <asp:ListItem>Usuario Vendio</asp:ListItem>
+                <asp:ListItem>Cliente</asp:ListItem>
             </asp:DropDownList>
         </div>
 
-        <span class="col-md-2 control-label ">USUARIO</span>
+        <span class="col-md-2 control-label ">CLIENTE</span>
         <div class="col-lg-2 col-md-4">
             <asp:DropDownList ID="DropUsuario" runat="server" class="form-control" Height="42px" Width="229px">
             </asp:DropDownList>
@@ -37,13 +36,8 @@
         </div>
 
         <div class="col-lg-2 col-md-4">
-            <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" class="btn btn-warning btn-sm" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" class="btn btn-warning btn-sm" OnClick="Button1_Click"  />
         </div>
-
-        <span>Desde</span>
-        <asp:TextBox ID="desdeFecha" class="input-lg" TextMode="Date" runat="server" Width="212px" Height="45px"></asp:TextBox>
-        <span>Hasta</span>
-        <asp:TextBox ID="hastaFecha" class="input-lg" TextMode="Date" runat="server" Height="44px" Width="212px"></asp:TextBox>
 
     </div>
 
@@ -63,8 +57,8 @@
 
     <div class="modal-footer">
         <div class="text-center">
-            <span>Total Consulta</span><asp:TextBox ID="TextBoxTotal" class="input-lg" ReadOnly="true" runat="server" Height="25px" Width="212px"></asp:TextBox>
-            <a href="../Reportes/Ventanas/FacturaReport.aspx" class="btn-default">
+            <span>TOTAL POR COBRAR</span><asp:TextBox ID="TextBoxTotal" class="input-lg" ReadOnly="true" runat="server" Height="25px" Width="212px"></asp:TextBox>
+            <a href="../Reportes/Ventanas/DeudasReport.aspx" class="btn-default">
                 <span></span>Imprimir
             </a>
         </div>

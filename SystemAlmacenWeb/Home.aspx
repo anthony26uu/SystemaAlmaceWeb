@@ -30,12 +30,8 @@
 
                     </div>
                     <p><a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg">Informacion</a></p>
-                </div>
+                 
             </div>
-
-            <div class="col-sm-6">
-            </div>
-
 
 
             <div id="ModalInformacion" class="modal">

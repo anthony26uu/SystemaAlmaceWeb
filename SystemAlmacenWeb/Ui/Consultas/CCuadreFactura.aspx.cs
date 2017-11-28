@@ -204,5 +204,10 @@ namespace SystemAlmacenWeb.Ui.Consultas
         {
             Selecionar(Utilidades.TOINT(buscaText.Text));
         }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

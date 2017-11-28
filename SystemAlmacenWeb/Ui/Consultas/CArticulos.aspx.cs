@@ -12,17 +12,12 @@ namespace SystemAlmacenWeb.Ui.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+            Utilidades.SCritpValidacion();
 
             Lista = BLL.ArticuloBLL.GetListodo();
             ArticuloGrid.DataSource = Lista;
             ArticuloGrid.DataBind();
-       
+
             buscaText.Focus();
 
             if (!Page.IsPostBack)
@@ -31,7 +26,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             }
         }
         public static List<Entidades.Articulos> Lista { get; set; }
-     
+
         private void LlenarDrop()
         {
             List<Entidades.Categorias> ListaDrop = BLL.CategoriaBLL.GetListodo();
@@ -39,7 +34,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             DropCategoria.DataSource = ListaDrop;
             DropCategoria.DataValueField = "CategoriaId";
             DropCategoria.DataTextField = "NombreCategoria";
-            DropCategoria.DataBind();                            
+            DropCategoria.DataBind();
         }
 
         public void Selecionar(int id)
@@ -60,6 +55,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     Lista = BLL.ArticuloBLL.GetListodo();
                     ArticuloGrid.DataSource = Lista;
                     ArticuloGrid.DataBind();
+                    buscaText.Text = "";
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
@@ -83,7 +79,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
                     ArticuloGrid.DataSource = Lista;
                     ArticuloGrid.DataBind();
-                    
+                    buscaText.Text = "";
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
                 }
@@ -98,7 +94,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 if (desdeFecha.Text == "" && desdeFecha.Text == "")
                 {
                     Utilidades.ShowToastr(this, "Fecha invalida", "Resultados", "error");
-
+                    buscaText.Text = "";
                     hastaFecha.Text = "";
                     desdeFecha.Text = "";
                     desdeFecha.Focus();
@@ -111,7 +107,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     if (desdeFecha.Text == "")
                     {
                         Utilidades.ShowToastr(this, "Fecha invalida", "Resultados", "error");
-
+                        buscaText.Text = "";
                         hastaFecha.Text = "";
                         desdeFecha.Text = "";
                         desdeFecha.Focus();
@@ -132,14 +128,15 @@ namespace SystemAlmacenWeb.Ui.Consultas
                             Lista = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desde.Date && p.FechaIngreso <= hasta.Date);
                             ArticuloGrid.DataSource = Lista;
                             ArticuloGrid.DataBind();
+                            buscaText.Text = "";
                             Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
 
 
                         }
                         else
                         {
-                             Utilidades.ShowToastr(this, "Fecha debe ser menor", "Consejo", "info");
-
+                            Utilidades.ShowToastr(this, "Fecha debe ser menor", "Consejo", "info");
+                            buscaText.Text = "";
                             desdeFecha.Text = "";
                             hastaFecha.Text = "";
                             desdeFecha.Focus();
@@ -148,12 +145,45 @@ namespace SystemAlmacenWeb.Ui.Consultas
                     else
                     {
                         Utilidades.ShowToastr(this, "Ingrese Fecha", "Consejo", "info");
-
+                        buscaText.Text = "";
                         desdeFecha.Focus();
                     }
 
                 }
             }
+            else if (DropFiltro.SelectedIndex == 4)
+            {
+                if (DropCategoria.Text == "")
+                {
+                    Utilidades.ShowToastr(this, "Selecion o Registre Categoria Antes de buscar", "Resultados", "info");
+
+
+                    buscaText.Text = "";
+                    buscaText.Focus();
+                }
+                else
+                {
+                    Lista = BLL.ArticuloBLL.GetList(p => p.Categoria == DropCategoria.Text);
+                    if (Lista.Count == 0)
+                    {
+                        Utilidades.ShowToastr(this, "No se ha Registrado Elementos con esta categoria", "Resultados", "error");
+
+                        buscaText.Text = "";
+                        buscaText.Focus();
+                    }
+                    else
+                    {
+                        ArticuloGrid.DataSource = Lista;
+                        ArticuloGrid.DataBind();
+                        Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
+                        buscaText.Text = "";
+                    }
+
+
+                }
+
+            }
+
 
             else if (DropFiltro.SelectedIndex == 3)
             {
@@ -180,7 +210,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                         ArticuloGrid.DataSource = Lista;
                         ArticuloGrid.DataBind();
                         Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
-
+                        buscaText.Text = "";
                     }
 
 
@@ -188,12 +218,13 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
             }
 
-           
-           
+
+
         }
 
 
-        protected void Button1_Click1(object sender, EventArgs e)
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
             Selecionar(Utilidades.TOINT(buscaText.Text));
         }

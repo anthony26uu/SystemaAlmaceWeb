@@ -21,8 +21,8 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         private static List<Entidades.FacturaDetalles> listaRelaciones;
         Entidades.Facturas facturaG;
+        decimal devuelta = 0;
 
-      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,6 +37,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"), new DataColumn("ID Factura"), new DataColumn(" Precio"), new DataColumn("Cantidad"),
                 new DataColumn("Nombre"), new DataColumn("ITBS")});
                 ViewState["Detalle"] = dt;
+
                 artig = new Entidades.Articulos();
 
                 listadoArticulos = new List<Entidades.Articulos>();
@@ -195,7 +196,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                     this.BindGrid();
                     CalcularMonto();
                     TextBoxCantidad.Text = "";
-
+                    TexboxCantidad.Focus();
 
                 }
 
@@ -220,17 +221,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             else
 
             {
-                if(TextBoxTotal.Text=="")
+                if(TextBoxTotal.Text=="" && DropDownTipoVenta.Text=="Contado" )
                 {
                     Utilidades.ShowToastr(this, "Calcule total", "ATENCION", "info");
                 }
-                    else
-                {
-
-                if(TexboxDevuelta.Text==""  )
-                {
-                    Utilidades.ShowToastr(this, "Ingrese monto y calcule devulta ", "ATENCION", "error");
-                }
+                   
                 else
                 {
 
@@ -242,7 +237,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                         {
                             if (TextBoxTotal.Text == "")
                             {
-                                Utilidades.ShowToastr(this, "Calcule total", "ATENCION", "info");
+                                Utilidades.ShowToastr(this, "Calcule total, presionando el boton ", "ATENCION", "info");
 
                             }
                             else
@@ -274,7 +269,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
               
 
-            }
+            
 
             }
         }
@@ -329,7 +324,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         public void calcularDevuelta()
         {
 
-            decimal devuelta = 0;
+           
             if(DropDownTipoVenta.Text=="Credito")
             {
                 CalcularMonto();
@@ -349,8 +344,16 @@ namespace SystemAlmacenWeb.Ui.Registros
                     else
                     {
 
-                        devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
-                        TexboxDevuelta.Text = devuelta.ToString();
+                        if(Convert.ToDecimal(TextMontoRecibido.Text) < Convert.ToDecimal(TextBoxTotal.Text))
+                        {
+                            Utilidades.ShowToastr(this, "Dinero Ingresado es menor que monto a pagar", "ATENCION", "info");
+
+                        }
+                        else
+                        {
+                            devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
+                            TexboxDevuelta.Text = devuelta.ToString();
+                              }
                     }
                 }
             }
@@ -387,13 +390,16 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
                 foreach (GridViewRow precio in FacturaGrid.Rows)
                 {
-                    Math.Round(subTotal += Convert.ToDecimal(precio.Cells[3].Text));
-                    Math.Round(subTotal += (subTotal * 0.18m));
+                    subTotal += ((Convert.ToDecimal(precio.Cells[4].Text) * Convert.ToDecimal(precio.Cells[3].Text)));                        ;
+                    subTotal += (Convert.ToDecimal(precio.Cells[3].Text) *(Convert.ToDecimal(precio.Cells[6].Text)/100));
                     TextBoxSubTotal.Text = subTotal.ToString();
 
                     itbs += Convert.ToDecimal(precio.Cells[6].Text);
                     TextBoxTotalITBS.Text = itbs.ToString();
+                    TextBoxSubTotal.Text = subTotal.ToString();
+                 
                 }
+               
             }
             if (DescuentoTextBox.Text == "")
             {
@@ -410,12 +416,17 @@ namespace SystemAlmacenWeb.Ui.Registros
                     descuento = ((Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text));
                     Math.Round(total = (subTotal + itbs) - descuento);
                     TextBoxTotal.Text = total.ToString();
+                   if(DropDownTipoVenta.Text !="Credito")
+                    {
+                        TexboxDevuelta.Text = devuelta.ToString();
+                    }
                 }
-               
+             
 
 
             }
 
+             
 
 
 
@@ -569,15 +580,26 @@ namespace SystemAlmacenWeb.Ui.Registros
         protected void BotonCalcularDevuelta_Click(object sender, ImageClickEventArgs e)
         {
            
-           
-               CalcularMonto();
+           if(DropDownTipoVenta.Text=="Credito")
+            {
+                CalcularMonto();
+            }else
+            {
+
+                CalcularMonto();
                 calcularDevuelta();
-            
+                Button2.Focus();
+            }
         }
 
         protected void DropDownTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        protected void DropArticulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TexboxCantidad.Focus();
         }
     }
 }

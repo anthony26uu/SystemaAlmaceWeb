@@ -103,6 +103,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\depositphotos_112179970-stock-illustration-logo-natural-with-leaves-natural.jpg" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Scripts\bootstrap3.7.min.js" />
     <Content Include="Content\Img\if_Black_Plus_60942.png" />
@@ -199,6 +200,7 @@
     <Content Include="Ui\Consultas\CCategoria.aspx" />
     <Content Include="Ui\Consultas\CClientes.aspx" />
     <Content Include="Ui\Consultas\CCuadreFactura.aspx" />
+    <Content Include="Ui\Consultas\CDeudas.aspx" />
     <Content Include="Ui\Consultas\CUsuarios.aspx" />
     <Content Include="Ui\Registros\RArticulo.aspx" />
     <Content Include="Ui\Registros\RCategoria.aspx" />
@@ -212,6 +214,7 @@
     <Content Include="Ui\Reportes\Ventanas\Factura.aspx" />
     <Content Include="Ui\Reportes\Ventanas\FacturaReport.aspx" />
     <Content Include="Ui\Reportes\Ventanas\UsuarioReport.aspx" />
+    <Content Include="Ui\SaldarDeudas.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -290,6 +293,13 @@
     </Compile>
     <Compile Include="Ui\Consultas\CCuadreFactura.aspx.designer.cs">
       <DependentUpon>CCuadreFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Consultas\CDeudas.aspx.cs">
+      <DependentUpon>CDeudas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Consultas\CDeudas.aspx.designer.cs">
+      <DependentUpon>CDeudas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Consultas\CUsuarios.aspx.cs">
       <DependentUpon>CUsuarios.aspx</DependentUpon>
@@ -381,6 +391,13 @@
     </Compile>
     <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.designer.cs">
       <DependentUpon>UsuarioReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SaldarDeudas.aspx.cs">
+      <DependentUpon>SaldarDeudas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\SaldarDeudas.aspx.designer.cs">
+      <DependentUpon>SaldarDeudas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

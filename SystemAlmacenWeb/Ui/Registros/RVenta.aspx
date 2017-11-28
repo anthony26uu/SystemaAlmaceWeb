@@ -81,7 +81,7 @@
         <div class="panel-body">
 
 
-            <asp:DropDownList ID="DropArticulo" CssClass="btn btn-danger" runat="server" ValidationGroup="agregar">
+            <asp:DropDownList ID="DropArticulo" CssClass="btn btn-danger" runat="server" ValidationGroup="agregar" OnSelectedIndexChanged="DropArticulo_SelectedIndexChanged">
             </asp:DropDownList>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="DropArticulo" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="agregar"></asp:RequiredFieldValidator>

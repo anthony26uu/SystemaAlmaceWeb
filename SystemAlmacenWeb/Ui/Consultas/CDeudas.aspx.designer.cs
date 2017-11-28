@@ -10,7 +10,7 @@
 namespace SystemAlmacenWeb.Ui.Consultas {
     
     
-    public partial class CArticulos {
+    public partial class CDeudas {
         
         /// <summary>
         /// DropFiltro control.
@@ -20,6 +20,15 @@ namespace SystemAlmacenWeb.Ui.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropFiltro;
+        
+        /// <summary>
+        /// DropUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropUsuario;
         
         /// <summary>
         /// buscaText control.
@@ -40,48 +49,21 @@ namespace SystemAlmacenWeb.Ui.Consultas {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// desdeFecha control.
+        /// FacturaGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox desdeFecha;
+        protected global::System.Web.UI.WebControls.GridView FacturaGrid;
         
         /// <summary>
-        /// hastaFecha control.
+        /// TextBoxTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hastaFecha;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// DropCategoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropCategoria;
-        
-        /// <summary>
-        /// ArticuloGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ArticuloGrid;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTotal;
     }
 }

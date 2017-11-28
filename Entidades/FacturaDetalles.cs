@@ -20,6 +20,7 @@ namespace Entidades
         public   List<FacturaDetalles> Detalle;
         public static List<FacturaDetalles> impresion;
         public Entidades.Articulos Articulo { get; set; }
+
         public FacturaDetalles()
         {
             Detalle = new List<FacturaDetalles>();

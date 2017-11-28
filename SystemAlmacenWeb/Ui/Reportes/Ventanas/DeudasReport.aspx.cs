@@ -23,7 +23,7 @@ namespace SystemAlmacenWeb.Ui.Reportes.Ventanas
 
 
 
-         //   this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSetDeudas", Ui.Consultas.CCuadreFactura.Lista));
+           this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSetDeudas", Ui.Consultas.CDeudas.Lista));
 
             this.ReportViewer1.LocalReport.Refresh();
 
