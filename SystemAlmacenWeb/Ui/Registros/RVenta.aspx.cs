@@ -61,8 +61,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextBoxBuscar.Text = "";
             ViewState["Detalle"] = dt;
             this.BindGrid();
-          
-            DropDownTipoVenta.SelectedValue = null;
+
+            DropDownTipoVenta.SelectedIndex=0;
             DropDownCliente.SelectedValue = null;
             TextBoxVendedor.Text = "";
             TexboxClienteCompro.Text = "";
@@ -213,6 +213,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             LlenarDatos(detallef);
             var guardar = new Entidades.Deudasclientes();
 
+            int idcliente= int.Parse(DropDownCliente.Text);
+            var ClienteNombre = BLL.ClientesBLL.Buscar(p => p.ClienteId == idcliente);
+
+           
+
             if (detallef.Detalle.Count == 0)
             {
                 Utilidades.ShowToastr(this, "Primero agregue Articulos", "Consejo", "info");
@@ -242,7 +247,10 @@ namespace SystemAlmacenWeb.Ui.Registros
                             }
                             else
                             {
-                                guardar.Cliente = DropDownCliente.Text;
+                               
+                               
+
+                                guardar.Cliente = ClienteNombre.Nombres;
                                 guardar.Deuda = Convert.ToDecimal(TextBoxTotal.Text);
                                 if(BLL.DeudasclientesBLL.Guardar(guardar))
                                 {

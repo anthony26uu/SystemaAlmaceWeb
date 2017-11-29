@@ -15,7 +15,7 @@
     </div>
 
     <div class="text-center">
-        <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
+        <span class="badge badge-primary">ID</span><asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
         <asp:Button ID="BotonBuscar" CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click" Width="83px" />
 
@@ -29,7 +29,7 @@
 
 
 
-        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre " class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="50"></asp:TextBox>
+        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre " class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="100"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -86,7 +86,7 @@
         <br />
         <span class="badge badge-primary">Email</span><br />
 
-        <asp:TextBox ID="TexboEmail" placeholder="Email" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboEmail" placeholder="Email" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="20"></asp:TextBox>
 
         <!--Select -->
 

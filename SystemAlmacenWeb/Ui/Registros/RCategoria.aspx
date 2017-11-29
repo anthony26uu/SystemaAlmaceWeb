@@ -17,7 +17,7 @@
     <div class="text-center">
         <span class="badge badge-primary">ID Categoria</span><br />
         <br />
-        <asp:TextBox ID="Textid" placeholder="Id a Buscar" class="input-lg" runat="server" Height="45px" Width="165px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
+        <asp:TextBox ID="Textid" placeholder="Id a Buscar" class="input-lg" TextMode="Number" runat="server" Height="45px" Width="165px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
         <asp:Button ID="Button1" CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="Button1_Click" Width="97px" />
         <br />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Textid" ErrorMessage="Campo Id vacio" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>

@@ -11,7 +11,7 @@ namespace SystemAlmacenWeb.Ui.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
+          
 
             Utilidades.SCritpValidacion();
 
@@ -24,6 +24,8 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         public Entidades.Clientes LlenarCampos()
         {
+
+
             clienteg.ClienteId = Utilidades.TOINT(TextBoxID.Text);
             clienteg.Nombres = TextBoxNombre.Text;
             clienteg.Email = TexboEmail.Text;
@@ -32,6 +34,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             clienteg.FechaNacimiento = Convert.ToDateTime(TextFecha.Text);
             clienteg.Sexo = DropSexo.Text;
             clienteg.Telefono = TexboTelefono.Text;
+
 
 
             
@@ -43,7 +46,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
          
             TextBoxNombre.Text = "";
-            TextFecha.Text = string.Format("{0:G}", DateTime.Now);
+         
             TextBoxDireccion.Text = "";
             TexboTelefono.Text = "";
             TextBoxID.Text = "";
@@ -154,8 +157,11 @@ namespace SystemAlmacenWeb.Ui.Registros
                 var cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
                 if (cliente != null)
                 {
+                   
+                    TextFecha.Text = String.Format("{0:d/M/yyyy HH:mm:ss}", cliente.FechaNacimiento);
 
-                    TextFecha.Text = Convert.ToString(cliente.FechaNacimiento);
+
+                    TextFecha.Text = cliente.FechaNacimiento.ToString();
                     TextBoxNombre.Text = cliente.Nombres;
                   
                     TextBoxDireccion.Text = cliente.Direccion ;

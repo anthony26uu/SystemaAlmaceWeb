@@ -34,8 +34,9 @@
             <asp:Button ID="Buscar" CssClass="btn btn-danger" runat="server" Text="Buscar" Height="36px" Width="88px" OnClick="Buscar_Click" ValidationGroup="Buscar" />
 
             <asp:DropDownList ID="DropDownTipoVenta" CssClass="btn btn-danger" runat="server" OnSelectedIndexChanged="DropDownTipoVenta_SelectedIndexChanged">
-                <asp:ListItem>Credito</asp:ListItem>
+               
                 <asp:ListItem>Contado</asp:ListItem>
+                 <asp:ListItem>Credito</asp:ListItem>
             </asp:DropDownList>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-primary">%Descuento</span>

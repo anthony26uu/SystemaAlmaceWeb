@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                      
-                      <li> <a href="#ModalInformacion" data-toggle="modal" class="btn btn-primary btn-lg" >USUARIO </a></li>
+                      <li> <a href="#ModalUsuario" data-toggle="modal" class="btn btn-primary btn-lg" >USUARIO </a></li>
                 
                 </ul>
             </div>
@@ -102,7 +102,7 @@
     </nav>
 
 
-      <div id="ModalInformacion" class="modal">
+      <div id="ModalUsuario" class="modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

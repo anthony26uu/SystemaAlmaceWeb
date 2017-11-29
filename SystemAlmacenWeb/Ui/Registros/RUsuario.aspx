@@ -23,7 +23,7 @@
         <br />
 
 
-        <asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
         <asp:Button ID="BotonBuscar" CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="buscar" OnClick="BotonBuscar_Click" Width="106px" />
         <br />
@@ -42,7 +42,7 @@
         <br />
 
 
-        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Usuario" class="input-lg" runat="server" Height="30px" Width="215px"></asp:TextBox>
+        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Usuario" class="input-lg" runat="server" Height="30px" Width="215px" MaxLength="100"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -66,7 +66,7 @@
 
         <br />
 
-        <asp:TextBox ID="TextBoxPass" placeholder="Contraseña" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px"></asp:TextBox>
+        <asp:TextBox ID="TextBoxPass" placeholder="Contraseña" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px" MaxLength="20"></asp:TextBox>
 
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPass" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
@@ -79,7 +79,7 @@
         <!--Texbox -->
 
         <span class="badge badge-primary">Confirmar Contraseña</span><br />
-        <asp:TextBox ID="TextBoxConfirm" placeholder="Confirma Pass" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px" OnTextChanged="TextBoxConfirm_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TextBoxConfirm" placeholder="Confirma Pass" class="input-lg" TextMode="Password" runat="server" Height="30px" Width="215px" OnTextChanged="TextBoxConfirm_TextChanged" MaxLength="20"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxConfirm" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 

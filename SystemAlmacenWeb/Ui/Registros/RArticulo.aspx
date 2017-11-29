@@ -19,7 +19,7 @@
         <span class="badge badge-primary">ID </span>
         <br />
 
-        <asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxID" TextMode="Number" class="input-lg" placeholder="ID a buscar " runat="server" Height="45px" Width="160px" ValidationGroup="buscar" MaxLength="10"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
         <asp:Button ID="BotonBuscar" CssClass=" btn btn-default" runat="server" Text="Buscar" Height="45px" ValidationGroup="Buscar" OnClick="BotonBuscar_Click" Width="93px" />
     </div>
@@ -33,7 +33,7 @@
 
         <span class="badge badge-primary">Nombre Articulo</span><br />
 
-        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Articulo" class="input-lg" runat="server" Height="30px" Width="215px"></asp:TextBox>
+        <asp:TextBox ID="TextBoxNombre" placeholder="Nombre Articulo" class="input-lg" runat="server" Height="30px" Width="215px" MaxLength="100"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -56,7 +56,7 @@
        
           <!--Texbox -->
 
-        <asp:TextBox ID="TextBoxExistencia" placeholder="Existencia" class="input-lg" TextMode="Number" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TextBoxExistencia" placeholder="Existencia" class="input-lg" TextMode="Number" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="10"></asp:TextBox>
 
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxExistencia" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
@@ -71,7 +71,7 @@
 
         <!--Texbox -->
 
-        <asp:TextBox ID="TexboCosto" placeholder="Costo" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboCosto" placeholder="Costo" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="10"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TexboCosto" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -81,7 +81,7 @@
         <br />
         <span class="badge badge-primary">Precio</span><br />
 
-        <asp:TextBox ID="TexboPrecio" placeholder="Precio" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboPrecio" placeholder="Precio" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="10"></asp:TextBox>
 
         <!--Select -->
 
@@ -93,7 +93,7 @@
         <br />
         <span class="badge badge-primary">Codigo</span><br />
 
-        <asp:TextBox ID="TexboCodigo" placeholder="Codigo" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboCodigo" placeholder="Codigo" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="12"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TexboCodigo" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
@@ -101,7 +101,7 @@
         <br />
         <span class="badge badge-primary">ITBIS</span><br />
 
-        <asp:TextBox ID="TexboItbis" placeholder="ITBS"   TextMode="Number" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar"></asp:TextBox>
+        <asp:TextBox ID="TexboItbis" placeholder="ITBS"   TextMode="Number" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" Rows="3"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TexboItbis" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
