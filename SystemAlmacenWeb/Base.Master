@@ -64,7 +64,7 @@
                         <ul class="dropdown-menu">
                            <li class="dropdown-header">Facturas</li>
                            <li><a href="/Ui/Consultas/CCuadreFactura.aspx">Cuadre Facturas</a></li>
-                        <li><a href="#">Saldar</a></li>
+                        <li><a href="/Ui/SaldarDeudas.aspx">Saldar</a></li>
                         <li><a href="/Ui/Registros/RVenta.aspx">Vender</a></li>
                             
                         </ul>

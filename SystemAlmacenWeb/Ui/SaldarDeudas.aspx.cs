@@ -23,7 +23,7 @@ namespace SystemAlmacenWeb.Ui
             TextBoxAbono.Text = "";
             TextBoxDinero.Text = "";
             TextMonto.Text = "";
-            
+
         }
 
 
@@ -76,17 +76,19 @@ namespace SystemAlmacenWeb.Ui
                 Limpiar();
             }
             else
-            
+
             {
 
                 int id = int.Parse(TextBoxID.Text);
                 var cliente = BLL.DeudasclientesBLL.Buscar(p => p.IdDeudas == id);
+
+
                 if (cliente != null)
                 {
                     TextBoxNombre.Text = cliente.Cliente;
                     TextMonto.Text = Convert.ToString(cliente.Deuda);
 
-                    
+
 
                     Utilidades.ShowToastr(this, "Resultados", "RESULTADOS", "success");
 
@@ -100,76 +102,71 @@ namespace SystemAlmacenWeb.Ui
                 }
             }
         }
-        private void calcular()
+
+
+        private void CalcularDevuelta()
         {
-            decimal total = 0;
-            
-            total =( Convert.ToDecimal(TextMonto.Text) - Convert.ToDecimal(TextBoxDinero.Text));
-            TextBoxDinero.Text = total.ToString();
+            if (string.IsNullOrWhiteSpace(TextMonto.Text))
+            {
+                Utilidades.ShowToastr(this, " Opciones \n - Realice busqueda \n - Registre una deuda", "ATENCION", "info");
+            }
+            else
+            {
+                if (TextBoxAbono.Text != "")
+                {
+                    decimal efevtivo = Convert.ToDecimal(TextBoxAbono.Text);
+                    decimal deuda = Convert.ToDecimal(TextMonto.Text);
+                    decimal tota = efevtivo - deuda;
+                    TextBoxDinero.Text = tota.ToString();
+                }
+                else
+                {
+                    Utilidades.ShowToastr(this, "Ingrese Dinero Abonar", "ATENCION", "info");
+                }
+            }
+
         }
 
-        public Entidades.Deudasclientes LlenarCampos()
-        {
-
-            //deuda.Cliente = TextBoxNombre.Text;
-          
-            deuda.Deuda = Convert.ToDecimal(TextBoxDinero.Text);
-
-
-
-
-            return deuda;
-        }
 
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
             int id = 0;
 
-            if (IsValid)
+            decimal deudatotal = 0;
+            var guardar = new Entidades.Deudasclientes();
+
+
+
+            deudatotal = Convert.ToDecimal(TextBoxDinero.Text) - Convert.ToDecimal(TextBoxAbono.Text);
+            guardar.Cliente = TextBoxNombre.Text;
+            guardar.Deuda = deudatotal;
+            guardar.IdDeudas = (Utilidades.TOINT(TextBoxID.Text));
+            if (deudatotal <= 0)
+            {
+                int idd = int.Parse(TextBoxID.Text);
+                var bll = new BLL.DeudasclientesBLL();
+                var cliente = BLL.DeudasclientesBLL.Buscar(p => p.IdDeudas == idd);
+                BLL.DeudasclientesBLL.Eliminar(cliente);
+                Utilidades.ShowToastr(this, "Abono es mayor que deuda se elimina automaticamente", "ATENCION", "info");
+            }
+            else
             {
 
-                deuda = LlenarCampos();
 
-
-                if (id != deuda.IdDeudas)
+                if (id != guardar.IdDeudas)
                 {
-
-                    if (BLL.DeudasclientesBLL.Mofidicar(deuda))
-                    {
-                        Utilidades.ShowToastr(this, "Se modifico la deuda Satisfactoriamente", "Correcto", "success");
-                    }
-                    else
-                    {
-                        Utilidades.ShowToastr(this, "No se pudo modificar la deuda", "Error", "Error");
-                    }
-
-
+                    BLL.DeudasclientesBLL.Mofidicar(guardar);
+                    Utilidades.ShowToastr(this, "Modifico la deuda", "ATENCION", "info");
                 }
-                else
-                {
-                    Utilidades.ShowToastr(this, "Deuda a modificar no existe", "Error", "error");
-                    //if (BLL.ClientesBLL.Guardar(clienteg))
-                    //{
-                    //    Utilidades.ShowToastr(this, " Cliente Agregado", "Correcto", "success");
-                    //}
-                    //else
-                    //{
-                    //    Utilidades.ShowToastr(this, "No se agrego", "Error", "error");
-
-                    //}
-
-
-                }
-
             }
-            Limpiar();
+
 
         }
 
         protected void ButtonCalcular_Click(object sender, EventArgs e)
         {
-            calcular();
+            CalcularDevuelta();
         }
     }
 }

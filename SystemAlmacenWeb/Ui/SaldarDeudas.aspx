@@ -72,6 +72,9 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxAbono" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="TextBoxAbono" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="guardar"></asp:RegularExpressionValidator>
+
+        <br />
             <asp:Button ID="ButtonCalcular" CssClass="btn btn-success" runat="server" Text="Calcular" Height="36px" Width="88px" OnClick="ButtonCalcular_Click"    />
 
         <br />
@@ -79,6 +82,8 @@
 
         <span class="badge badge-primary">Devuelta o Dinero</span><br />
         <asp:TextBox ID="TextBoxDinero"  class="input-lg"  runat="server" Height="30px" Width="215px" ></asp:TextBox>
+
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxDinero" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
 
