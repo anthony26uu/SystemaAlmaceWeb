@@ -23,7 +23,11 @@
      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   
-
+        
+    <!--Inclusión de Extras Para evitar Errores-->
+    <script src="/Scripts/toastr.min.js"></script>
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
      
         <h1 class="page-header text-center">INICIO <span></span></h1>
   
@@ -32,7 +36,7 @@
     <div class=" container-fluid">
        
 <div class="jumbotron">
-  <h1 class="display-3">EL ALAMCE</h1>
+  <h1 class="display-3">EL ALAMCEN</h1>
   <p>Todo en un solo lugar</p>
  
 </div>

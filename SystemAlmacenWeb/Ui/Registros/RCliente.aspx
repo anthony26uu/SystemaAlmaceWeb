@@ -42,7 +42,7 @@
 
 
 
-        <asp:TextBox ID="TextFecha" class="input-lg" TextMode="Date" runat="server" Width="225px" Height="42px"></asp:TextBox>
+        <asp:TextBox ID="TextFecha" class="input-lg" type="date" runat="server" Width="225px" Height="42px"></asp:TextBox>
 
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
@@ -104,7 +104,7 @@
         <br />
         <span class="badge badge-primary">Telefono</span><br />
 
-        <asp:TextBox ID="TexboTelefono" placeholder="000-000-0000" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="10"></asp:TextBox>
+        <asp:TextBox ID="TexboTelefono" placeholder="000-000-0000" class="input-lg" runat="server"  Height="30px" Width="215px" ValidationGroup="guardar" MaxLength="10"></asp:TextBox>
 
 
 

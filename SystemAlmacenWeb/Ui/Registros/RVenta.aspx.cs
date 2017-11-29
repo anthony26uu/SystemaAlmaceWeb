@@ -34,8 +34,11 @@ namespace SystemAlmacenWeb.Ui.Registros
                 LlenarDropCliente();
                 LlenarDrop();
 
-                dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"), new DataColumn("ID Factura"), new DataColumn(" Precio"), new DataColumn("Cantidad"),
+                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ID Articulo"),
+                new DataColumn(" Precio"),
+                new DataColumn("Cantidad"),
                 new DataColumn("Nombre"), new DataColumn("ITBS")});
+
                 ViewState["Detalle"] = dt;
 
                 artig = new Entidades.Articulos();
@@ -53,8 +56,8 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         private void limpiar()
         {
-            dt.Columns.AddRange(new DataColumn[7] { new DataColumn("ID Articulo"), new DataColumn("ID Detalle"),
-                new DataColumn("ID Factura"), new DataColumn(" Precio"),
+            dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ID Articulo"),
+               new DataColumn(" Precio"),
                 new DataColumn("Cantidad"),
                 new DataColumn("Nombre"), new DataColumn("ITBS")});
 
@@ -81,7 +84,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             foreach (var li in llenar)
             {
                 DataTable dt = (DataTable)ViewState["Detalle"];
-                dt.Rows.Add(li.IdArticulo, li.IdDetalle, li.IdFactura, li.Precio, li.Cantidad, li.Nombre, li.ITBIS);
+                dt.Rows.Add(li.IdArticulo, li.Precio, li.Cantidad, li.Nombre, li.ITBIS);
                 ViewState["Detalle"] = dt;
                 this.BindGrid();
             }
@@ -111,9 +114,10 @@ namespace SystemAlmacenWeb.Ui.Registros
             foreach (GridViewRow dr in FacturaGrid.Rows)
             {
                 detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0, 0,
-                Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
+                Convert.ToDecimal(dr.Cells[1].Text), Convert.ToInt32(dr.Cells[2].Text), Convert.ToString(dr.Cells[3].Text), Convert.ToDecimal(dr.Cells[4].Text)
                        );
                 cantidad++;
+                BotonCalcularDevuelta.Focus();
                 CalcularMonto();
             }
 
@@ -147,17 +151,9 @@ namespace SystemAlmacenWeb.Ui.Registros
         protected void Agregar_Click(object sender, EventArgs e)
         {
             int id = Utilidades.TOINT(DropArticulo.SelectedValue);
+
             artig = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
-
-            int id2 = 0;
-            if (facturaG != null)
-            {
-                id2 = facturaG.IdFactura;
-
-            }
-
-
-
+                       
             if (Utilidades.TOINT(TextBoxCantidad.Text) > artig.Existencia)
             {
 
@@ -192,7 +188,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 else
                 {
                     DataTable dt = (DataTable)ViewState["Detalle"];
-                    dt.Rows.Add(DropArticulo.SelectedValue, 0, Convert.ToString(id2), artig.Precio, TextBoxCantidad.Text.Trim(), artig.NombreArticulo.Trim(), artig.ITBIS);
+                    dt.Rows.Add(DropArticulo.SelectedValue, artig.Precio, TextBoxCantidad.Text.Trim(), artig.NombreArticulo, artig.ITBIS);
                     ViewState["Detalle"] = dt;
                     this.BindGrid();
                     CalcularMonto();
@@ -260,9 +256,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                         }
 
-
-
-
                         Utilidades.ShowToastr(this, "Guardo", "Correcto", "success");
 
                         limpiar();
@@ -276,7 +269,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
             }
         }
-
 
         private void EliminarExitencia()
         {
@@ -296,7 +288,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         }
 
-
         private void LlenarDropCliente()
         {
             List<Entidades.Clientes> ListaDrocl = BLL.ClientesBLL.GetListodo();
@@ -308,7 +299,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         }
 
-
         private void LlenarDrop()
         {
             List<Entidades.Articulos> ListaDrop = BLL.ArticuloBLL.GetListodo();
@@ -318,7 +308,6 @@ namespace SystemAlmacenWeb.Ui.Registros
             DropArticulo.DataTextField = "NombreArticulo";
             DropArticulo.DataBind();
         }
-
 
         public void calcularDevuelta()
         {
@@ -388,11 +377,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
                 foreach (GridViewRow precio in FacturaGrid.Rows)
                 {
-                    subTotal += ((Convert.ToDecimal(precio.Cells[4].Text) * Convert.ToDecimal(precio.Cells[3].Text))); ;
-                    subTotal += (Convert.ToDecimal(precio.Cells[3].Text) * (Convert.ToDecimal(precio.Cells[6].Text) / 100));
+                    subTotal += ((Convert.ToDecimal(precio.Cells[2].Text) * Convert.ToDecimal(precio.Cells[1].Text))); ;
+                    subTotal += (Convert.ToDecimal(precio.Cells[1].Text) * (Convert.ToDecimal(precio.Cells[4].Text) / 100));
                     TextBoxSubTotal.Text = subTotal.ToString();
 
-                    itbs += Convert.ToDecimal(precio.Cells[6].Text);
+                    itbs += Convert.ToDecimal(precio.Cells[4].Text);
                     TextBoxTotalITBS.Text = itbs.ToString();
                     TextBoxSubTotal.Text = subTotal.ToString();
 

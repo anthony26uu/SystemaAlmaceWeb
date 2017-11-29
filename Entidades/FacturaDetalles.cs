@@ -24,7 +24,7 @@ namespace Entidades
         public FacturaDetalles()
         {
             Detalle = new List<FacturaDetalles>();
-            impresion = new List<FacturaDetalles>();
+           
         }
 
 

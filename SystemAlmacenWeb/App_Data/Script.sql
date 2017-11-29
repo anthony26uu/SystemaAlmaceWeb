@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[Clientes] (
     [Email]           VARCHAR (80)  NULL,
     [Telefono]        VARCHAR (80)  NULL,
     [Sexo]            VARCHAR (50)  NULL,
-    [FechaNacimiento] DATETIME      NULL,
+    [FechaNacimiento] Date      NULL,
     [Cedula]          VARCHAR (80)  NULL,
     PRIMARY KEY CLUSTERED ([ClienteId] ASC)
 );

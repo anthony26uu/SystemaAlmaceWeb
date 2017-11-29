@@ -46,7 +46,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextBoxID.Text = "";
             TexboCedula.Text = "";
             TexboEmail.Text = "";
-
+            TextFecha.Text = "";
             DropSexo.Text = "";
 
         }
@@ -152,16 +152,11 @@ namespace SystemAlmacenWeb.Ui.Registros
                 if (cliente != null)
                 {
 
-                    TextFecha.Text = String.Format("{0:d/M/yyyy HH:mm:ss}", cliente.FechaNacimiento);
-
-
-                    TextFecha.Text = cliente.FechaNacimiento.ToString();
+                    TextFecha.Text = cliente.FechaNacimiento.ToString("yyyy-MM-dd");
                     TextBoxNombre.Text = cliente.Nombres;
-
                     TextBoxDireccion.Text = cliente.Direccion;
                     DropSexo.Text = cliente.Sexo;
                     TexboEmail.Text = cliente.Email;
-
                     TexboCedula.Text = cliente.Cedula;
                     TexboTelefono.Text = cliente.Telefono;
 
