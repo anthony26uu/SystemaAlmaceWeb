@@ -30,9 +30,7 @@ namespace SystemAlmacenWeb
 
 
                     FormsAuthentication.RedirectFromLoginPage(Textid.Text, true);
-                    // Utilidades.ShowToastr(this, "Bienvenido", "Hola", "success");
-
-
+                  
 
                 }
                 else

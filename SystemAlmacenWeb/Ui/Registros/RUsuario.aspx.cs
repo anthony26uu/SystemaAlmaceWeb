@@ -14,11 +14,11 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             Utilidades.SCritpValidacion();
             TextFecha.Text = string.Format("{0:G}", DateTime.Now);
-          
+
         }
         Usuarios usuariog = new Usuarios();
 
-      
+
 
         private void Limpiar()
         {
@@ -149,12 +149,12 @@ namespace SystemAlmacenWeb.Ui.Registros
                     }
                     else
                     {
-                        
+
                         usuariog = LlenarCampos();
 
                         if (TextBoxPass.Text == TextBoxConfirm.Text)
                         {
-                            
+
                             var usuar = BLL.UserBLL.Buscar(p => p.Id == id);
                             if (id != usuariog.Id)
 
@@ -216,9 +216,9 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
 
             var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
-         
-        
-           
+
+
+
             if (user.Tipo != "Administrador")
             {
 

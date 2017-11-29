@@ -68,7 +68,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
 
             }
-        
+
             else if (DropFiltro.SelectedIndex == 2)
             {
                 if (buscaText.Text == "")

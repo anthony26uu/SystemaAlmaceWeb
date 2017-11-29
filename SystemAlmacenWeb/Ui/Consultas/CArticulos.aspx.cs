@@ -222,8 +222,6 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
         }
 
-
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             Selecionar(Utilidades.TOINT(buscaText.Text));

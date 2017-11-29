@@ -11,11 +11,11 @@ namespace SystemAlmacenWeb.Ui.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
 
             Utilidades.SCritpValidacion();
 
-         
+
         }
 
         Entidades.Clientes clienteg = new Entidades.Clientes();
@@ -24,8 +24,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         public Entidades.Clientes LlenarCampos()
         {
-
-
             clienteg.ClienteId = Utilidades.TOINT(TextBoxID.Text);
             clienteg.Nombres = TextBoxNombre.Text;
             clienteg.Email = TexboEmail.Text;
@@ -35,24 +33,20 @@ namespace SystemAlmacenWeb.Ui.Registros
             clienteg.Sexo = DropSexo.Text;
             clienteg.Telefono = TexboTelefono.Text;
 
-
-
-            
-
             return clienteg;
         }
 
         public void Limpiar()
         {
-         
+
             TextBoxNombre.Text = "";
-         
+
             TextBoxDireccion.Text = "";
             TexboTelefono.Text = "";
             TextBoxID.Text = "";
             TexboCedula.Text = "";
             TexboEmail.Text = "";
-            
+
             DropSexo.Text = "";
 
         }
@@ -157,17 +151,17 @@ namespace SystemAlmacenWeb.Ui.Registros
                 var cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
                 if (cliente != null)
                 {
-                   
+
                     TextFecha.Text = String.Format("{0:d/M/yyyy HH:mm:ss}", cliente.FechaNacimiento);
 
 
                     TextFecha.Text = cliente.FechaNacimiento.ToString();
                     TextBoxNombre.Text = cliente.Nombres;
-                  
-                    TextBoxDireccion.Text = cliente.Direccion ;
+
+                    TextBoxDireccion.Text = cliente.Direccion;
                     DropSexo.Text = cliente.Sexo;
                     TexboEmail.Text = cliente.Email;
-                  
+
                     TexboCedula.Text = cliente.Cedula;
                     TexboTelefono.Text = cliente.Telefono;
 

@@ -21,7 +21,7 @@ namespace SystemAlmacenWeb.Ui
             TextBoxID.Text = "";
             TextBoxNombre.Text = "";
             TextBoxAbono.Text = "";
-            TextBoxDinero.Text = "";
+            TextBoxDevuelta.Text = "";
             TextMonto.Text = "";
 
         }
@@ -116,8 +116,16 @@ namespace SystemAlmacenWeb.Ui
                 {
                     decimal efevtivo = Convert.ToDecimal(TextBoxAbono.Text);
                     decimal deuda = Convert.ToDecimal(TextMonto.Text);
-                    decimal tota = efevtivo - deuda;
-                    TextBoxDinero.Text = tota.ToString();
+                    decimal total =  deuda - efevtivo;
+                    if(total <= 0)
+                    {
+                        TextBoxDevuelta.Text = "0";
+                    }
+                    else
+                    {
+
+                        TextBoxDevuelta.Text = total.ToString();
+                    }
                 }
                 else
                 {
@@ -138,11 +146,11 @@ namespace SystemAlmacenWeb.Ui
 
 
 
-            deudatotal = Convert.ToDecimal(TextBoxDinero.Text) - Convert.ToDecimal(TextBoxAbono.Text);
+            deudatotal = Convert.ToDecimal(TextMonto.Text);
             guardar.Cliente = TextBoxNombre.Text;
-            guardar.Deuda = deudatotal;
+          //  guardar.Deuda = deudatotal;
             guardar.IdDeudas = (Utilidades.TOINT(TextBoxID.Text));
-            if (deudatotal <= 0)
+            if (deudatotal < Convert.ToDecimal(TextBoxDevuelta.Text) || deudatotal == 0)
             {
                 int idd = int.Parse(TextBoxID.Text);
                 var bll = new BLL.DeudasclientesBLL();

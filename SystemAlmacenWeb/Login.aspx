@@ -30,7 +30,14 @@
 
         
     <div class=" container-fluid">
-        <div class="text-center">
+       
+<div class="jumbotron">
+  <h1 class="display-3">EL ALAMCE</h1>
+  <p>Todo en un solo lugar</p>
+ 
+</div>
+
+     
           
                 <div class="row">
                     <div class="col-12 col-sm-2 col-md-3 col-lg-4">
@@ -57,8 +64,7 @@
                 </div>
        
         </div>
-    </div>
-
+ 
       
      
    

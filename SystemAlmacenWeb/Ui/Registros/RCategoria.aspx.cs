@@ -51,7 +51,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (CategoriaBLL.Mofidicar(categoriag))
                     {
-                          Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
+                        Utilidades.ShowToastr(this, "Modificado con exito", "CORRECTO", "success");
 
                     }
                     else
@@ -108,7 +108,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 if (cate != null)
                 {
 
-                  
+
                     Textnombre.Text = cate.NombreCategoria;
                     Utilidades.ShowToastr(this, "Sus Resultados", "CORRECTO", "success");
 
@@ -157,4 +157,4 @@ namespace SystemAlmacenWeb.Ui.Registros
             }
         }
     }
-    }
+}

@@ -40,7 +40,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             articulog.CodigoArticulo = TexboCodigo.Text;
             articulog.FechaIngreso = Convert.ToDateTime(TextFecha.Text);
 
-           
+
             return articulog;
         }
 
@@ -111,12 +111,12 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     if (BLL.ArticuloBLL.Guardar(articulog))
                     {
-                       Utilidades.ShowToastr(this, "Agredado Articulo", "Correcto", "success");
+                        Utilidades.ShowToastr(this, "Agredado Articulo", "Correcto", "success");
                     }
                     else
                     {
                         Utilidades.ShowToastr(this, "No se agrego", "Error", "error");
-                      
+
                     }
 
 
@@ -130,7 +130,7 @@ namespace SystemAlmacenWeb.Ui.Registros
         {
             if (string.IsNullOrWhiteSpace(TextBoxID.Text))
             {
-                  Limpiar();
+                Limpiar();
 
 
             }
@@ -141,24 +141,24 @@ namespace SystemAlmacenWeb.Ui.Registros
                 var cate = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (cate != null)
                 {
-                   if( BLL.ArticuloBLL.Eliminar(cate))
+                    if (BLL.ArticuloBLL.Eliminar(cate))
                     {
                         Utilidades.ShowToastr(this, "Se a Eliminado", "Correcto", "success");
                         Limpiar();
-               
+
 
                     }
                     else
                     {
                         Utilidades.ShowToastr(this, "No se puedo Eliminar", "Fallido", "error");
                     }
-               
+
                 }
 
                 else
                 {
                     Utilidades.ShowToastr(this, "No se puedo Eliminar", "Fallido", "error");
-            
+
 
                     Limpiar();
                 }
@@ -171,7 +171,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
 
                 Utilidades.ShowToastr(this, "Capo Vacio ", "Fallido", "error");
-               Limpiar();
+                Limpiar();
             }
             else
 

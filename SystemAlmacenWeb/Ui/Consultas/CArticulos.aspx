@@ -55,19 +55,20 @@
 
 
 
-        <div class="container-fluid" style="overflow: auto; width: 1434px; height: 213px;">
-            <div class="form-group">
-                <asp:GridView ID="ArticuloGrid" runat="server" CssClass=" table table-striped table-hover table-bordered" HorizontalAlign="Center" Height="16px" Width="742px">
-            <AlternatingRowStyle BackColor="gray  " />
-            <FooterStyle BackColor="#CCCC99" />
-            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-        </asp:GridView>
-    </div>
+        <div class="container">
+            <div class="col-12">
+
+                <div class="form-group">
+                    <asp:GridView ID="ArticuloGrid" runat="server" CssClass=" table table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
+                        <AlternatingRowStyle BackColor="gray  " />
+                        <FooterStyle BackColor="#CCCC99" />
+                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    </asp:GridView>
+                </div>
+            </div>
 
         </div>
         <br />
-   
-
 
         <div class="modal-footer">
             <div class=" text-center">

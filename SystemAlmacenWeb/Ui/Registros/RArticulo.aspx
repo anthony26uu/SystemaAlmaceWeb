@@ -101,7 +101,7 @@
         <br />
         <span class="badge badge-primary">ITBIS</span><br />
 
-        <asp:TextBox ID="TexboItbis" placeholder="ITBS"   TextMode="Number" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" Rows="3"></asp:TextBox>
+        <asp:TextBox ID="TexboItbis" placeholder="ITBS" TextMode="Number" class="input-lg" runat="server" Height="30px" Width="215px" ValidationGroup="guardar" Rows="3"></asp:TextBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TexboItbis" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 

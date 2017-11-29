@@ -12,12 +12,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+            Utilidades.SCritpValidacion();
 
             Lista = BLL.ClientesBLL.GetListodo();
             Entidades.Categorias categoria = new Entidades.Categorias();
@@ -183,7 +178,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
             }
 
 
-            
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

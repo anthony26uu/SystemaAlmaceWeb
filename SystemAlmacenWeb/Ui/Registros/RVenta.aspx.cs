@@ -11,7 +11,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 {
     public partial class RVenta : System.Web.UI.Page
     {
-       
+
         DataTable dt = new DataTable();
 
         Entidades.Articulos artig = new Entidades.Articulos();
@@ -26,11 +26,11 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             Utilidades.SCritpValidacion();
             if (!Page.IsPostBack)
             {
-              
+
                 LlenarDropCliente();
                 LlenarDrop();
 
@@ -42,7 +42,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                 listadoArticulos = new List<Entidades.Articulos>();
                 listaRelaciones = new List<Entidades.FacturaDetalles>();
-                            
+
                 facturaG = new Entidades.Facturas();
                 DropDownTipoVenta.Text = "";
             }
@@ -62,7 +62,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             ViewState["Detalle"] = dt;
             this.BindGrid();
 
-            DropDownTipoVenta.SelectedIndex=0;
+            DropDownTipoVenta.SelectedIndex = 0;
             DropDownCliente.SelectedValue = null;
             TextBoxVendedor.Text = "";
             TexboxClienteCompro.Text = "";
@@ -106,13 +106,13 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
                 id = facturaG.IdFactura;
 
-            }                       
-       
+            }
+
             foreach (GridViewRow dr in FacturaGrid.Rows)
             {
-             detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0, 0,
-             Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
-                    );
+                detalle.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), 0, 0,
+                Convert.ToDecimal(dr.Cells[3].Text), Convert.ToInt32(dr.Cells[4].Text), Convert.ToString(dr.Cells[5].Text), Convert.ToDecimal(dr.Cells[6].Text)
+                       );
                 cantidad++;
                 CalcularMonto();
             }
@@ -176,16 +176,17 @@ namespace SystemAlmacenWeb.Ui.Registros
                     if (artig.IdArticulo == Utilidades.TOINT(producto.Cells[0].Text))
                     {
                         agregado = true;
-                       
 
+
+                        Utilidades.ShowToastr(this, " Articulo ya esta en factura -Selecione otro", "Error", "info");
                         break;
 
                     }
                 }
-                if (agregado)
+                if (agregado == true)
                 {
-                  
-                    Utilidades.ShowToastr(this, " Articulo ya esta en factura -Selecione otro","Error" , "info");
+
+                    Utilidades.ShowToastr(this, " Articulo ya esta en factura -Selecione otro", "Error", "info");
 
                 }
                 else
@@ -202,7 +203,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
 
             }
-                        
+
         }
 
 
@@ -213,10 +214,10 @@ namespace SystemAlmacenWeb.Ui.Registros
             LlenarDatos(detallef);
             var guardar = new Entidades.Deudasclientes();
 
-            int idcliente= int.Parse(DropDownCliente.Text);
+            int idcliente = int.Parse(DropDownCliente.Text);
             var ClienteNombre = BLL.ClientesBLL.Buscar(p => p.ClienteId == idcliente);
 
-           
+
 
             if (detallef.Detalle.Count == 0)
             {
@@ -226,11 +227,11 @@ namespace SystemAlmacenWeb.Ui.Registros
             else
 
             {
-                if(TextBoxTotal.Text=="" && DropDownTipoVenta.Text=="Contado" )
+                if (TextBoxTotal.Text == "" && DropDownTipoVenta.Text == "Contado")
                 {
                     Utilidades.ShowToastr(this, "Calcule total", "ATENCION", "info");
                 }
-                   
+
                 else
                 {
 
@@ -247,12 +248,10 @@ namespace SystemAlmacenWeb.Ui.Registros
                             }
                             else
                             {
-                               
-                               
 
                                 guardar.Cliente = ClienteNombre.Nombres;
                                 guardar.Deuda = Convert.ToDecimal(TextBoxTotal.Text);
-                                if(BLL.DeudasclientesBLL.Guardar(guardar))
+                                if (BLL.DeudasclientesBLL.Guardar(guardar))
                                 {
                                     Utilidades.ShowToastr(this, "Nueva deuda agregada", "ATENCION", "info");
                                 }
@@ -274,10 +273,6 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     }
                 }
-
-              
-
-            
 
             }
         }
@@ -322,18 +317,13 @@ namespace SystemAlmacenWeb.Ui.Registros
             DropArticulo.DataValueField = "IdArticulo";
             DropArticulo.DataTextField = "NombreArticulo";
             DropArticulo.DataBind();
-
-
-
-
         }
 
 
         public void calcularDevuelta()
         {
 
-           
-            if(DropDownTipoVenta.Text=="Credito")
+            if (DropDownTipoVenta.Text == "Credito")
             {
                 CalcularMonto();
             }
@@ -352,7 +342,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                     else
                     {
 
-                        if(Convert.ToDecimal(TextMontoRecibido.Text) < Convert.ToDecimal(TextBoxTotal.Text))
+                        if (Convert.ToDecimal(TextMontoRecibido.Text) < Convert.ToDecimal(TextBoxTotal.Text))
                         {
                             Utilidades.ShowToastr(this, "Dinero Ingresado es menor que monto a pagar", "ATENCION", "info");
 
@@ -361,12 +351,12 @@ namespace SystemAlmacenWeb.Ui.Registros
                         {
                             devuelta = Convert.ToDecimal(TextMontoRecibido.Text) - Convert.ToDecimal(TextBoxTotal.Text);
                             TexboxDevuelta.Text = devuelta.ToString();
-                              }
+                        }
                     }
                 }
             }
-            
-          
+
+
         }
 
         private void SumarExistencia()
@@ -386,28 +376,28 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         public void CalcularMonto()
         {
-            decimal total=0;
+            decimal total = 0;
             decimal subTotal = 0m;
             decimal descuento = 0;
-           
+
             decimal itbs = 0;
             decimal porciento = 100;
-           
+
 
             if (FacturaGrid.Rows.Count > 0)
             {
                 foreach (GridViewRow precio in FacturaGrid.Rows)
                 {
-                    subTotal += ((Convert.ToDecimal(precio.Cells[4].Text) * Convert.ToDecimal(precio.Cells[3].Text)));                        ;
-                    subTotal += (Convert.ToDecimal(precio.Cells[3].Text) *(Convert.ToDecimal(precio.Cells[6].Text)/100));
+                    subTotal += ((Convert.ToDecimal(precio.Cells[4].Text) * Convert.ToDecimal(precio.Cells[3].Text))); ;
+                    subTotal += (Convert.ToDecimal(precio.Cells[3].Text) * (Convert.ToDecimal(precio.Cells[6].Text) / 100));
                     TextBoxSubTotal.Text = subTotal.ToString();
 
                     itbs += Convert.ToDecimal(precio.Cells[6].Text);
                     TextBoxTotalITBS.Text = itbs.ToString();
                     TextBoxSubTotal.Text = subTotal.ToString();
-                 
+
                 }
-               
+
             }
             if (DescuentoTextBox.Text == "")
             {
@@ -415,29 +405,24 @@ namespace SystemAlmacenWeb.Ui.Registros
             }
             else
             {
-               if(TextBoxSubTotal.Text=="")
+                if (TextBoxSubTotal.Text == "")
                 {
                     Utilidades.ShowToastr(this, "Primero Agregue articulos", "ANTENCION ", "info");
                 }
-               else
+                else
                 {
                     descuento = ((Convert.ToDecimal(DescuentoTextBox.Text) / porciento) * Convert.ToDecimal(TextBoxSubTotal.Text));
                     Math.Round(total = (subTotal + itbs) - descuento);
                     TextBoxTotal.Text = total.ToString();
-                   if(DropDownTipoVenta.Text !="Credito")
+                    if (DropDownTipoVenta.Text != "Credito")
                     {
                         TexboxDevuelta.Text = devuelta.ToString();
                     }
                 }
-             
+
 
 
             }
-
-             
-
-
-
 
         }
 
@@ -462,7 +447,6 @@ namespace SystemAlmacenWeb.Ui.Registros
                     if (facturaG != null)
                     {
 
-
                         if (listaRelaciones.Count == 0)
                         {
                             Utilidades.ShowToastr(this, "No se ha registrado Articulos con este ID", "Resultados", "error");
@@ -484,10 +468,6 @@ namespace SystemAlmacenWeb.Ui.Registros
                                 listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
                             }
 
-                            foreach (var articulo in listadoArticulos)
-                            {
-                                articulo.IdArticulo = BLL.ArticuloBLL.Buscar(A => A.IdArticulo == articulo.IdArticulo).IdArticulo;
-                            }
 
                             LlenarRegistro(listaRelaciones);
 
@@ -496,18 +476,12 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                         }
 
-
-
                     }
-
-
-
-
-
                 }
                 else
                 {
                     Utilidades.ShowToastr(this, "No existe factura", "Error", "error");
+                    limpiar();
                 }
             }
 
@@ -527,7 +501,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-           
+
             var user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Base.Usuario);
             if (user.Tipo != "Administrador")
             {
@@ -536,62 +510,63 @@ namespace SystemAlmacenWeb.Ui.Registros
             }
             else
             {
-          
+
                 if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
-            {
-
-                Utilidades.ShowToastr(this, "Campo Id Vacio", "Error", "info");
-            }
-            else
-            {
-                int id = Utilidades.TOINT(TextBoxBuscar.Text);
-
-                facturaG = BLL.FacturaBLL.Buscarb(f => f.IdFactura == id);
-
-
-
-                if (facturaG != null)
                 {
 
+                    Utilidades.ShowToastr(this, "Campo Id Vacio", "Error", "info");
+                }
+                else
+                {
+                    int id = Utilidades.TOINT(TextBoxBuscar.Text);
 
-                    if (BLL.FacturaBLL.EliminarRelacion(facturaG))
+                    facturaG = BLL.FacturaBLL.Buscarb(f => f.IdFactura == id);
+
+
+
+                    if (facturaG != null)
                     {
-                        SumarExistencia();
-                        limpiar();
 
-                        facturaG = new Entidades.Facturas();
-                        Utilidades.ShowToastr(this, "Elimino Correctamente", "ELIMINADO", "success");
+
+                        if (BLL.FacturaBLL.EliminarRelacion(facturaG))
+                        {
+                            SumarExistencia();
+                            limpiar();
+
+                            facturaG = new Entidades.Facturas();
+                            Utilidades.ShowToastr(this, "Elimino Correctamente", "ELIMINADO", "success");
+
+                        }
+                        else
+                        {
+                            Utilidades.ShowToastr(this, "Problemas Al Eliminar", "Error", "error");
+                        }
 
                     }
                     else
                     {
-                        Utilidades.ShowToastr(this, "Problemas Al Eliminar", "Error", "error");
+                        Utilidades.ShowToastr(this, "No hay Factura", "Informacion", "info");
                     }
+                }
 
-                }
-                else
-                {
-                    Utilidades.ShowToastr(this, "No hay Factura", "Informacion", "info");
-                }
             }
-
-        }
 
         }
 
         protected void TextMontoRecibido_TextChanged(object sender, EventArgs e)
         {
-           
 
+            calcularDevuelta();
         }
 
         protected void BotonCalcularDevuelta_Click(object sender, ImageClickEventArgs e)
         {
-           
-           if(DropDownTipoVenta.Text=="Credito")
+
+            if (DropDownTipoVenta.Text == "Credito")
             {
                 CalcularMonto();
-            }else
+            }
+            else
             {
 
                 CalcularMonto();
@@ -602,12 +577,32 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void DropDownTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void DropArticulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             TexboxCantidad.Focus();
+        }
+
+        protected void DropDownCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlenarDropCliente();
+        }
+
+        protected void ButtonNuevoCliente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Ui/Registros/RCliente.aspx");
+        }
+
+        protected void TextBoxTotal_TextChanged(object sender, EventArgs e)
+        {
+            calcularDevuelta();
+        }
+
+        protected void ButtonNuevoCliente_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("/Ui/Registros/RCliente.aspx");
         }
     }
 }

@@ -19,7 +19,7 @@
 
     <div class="text-center">
 
-        <span class="badge badge-primary">Usuario ID</span>
+        <span class="badge badge-primary">ID Deuda</span>
         <br />
 
 
@@ -81,9 +81,9 @@
         <br />
 
         <span class="badge badge-primary">Devuelta o Dinero</span><br />
-        <asp:TextBox ID="TextBoxDinero" class="input-lg" runat="server" Height="30px" Width="215px" ReadOnly="True"></asp:TextBox>
+        <asp:TextBox ID="TextBoxDevuelta" class="input-lg" runat="server" Height="30px" Width="215px" ReadOnly="True"></asp:TextBox>
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxDinero" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxDevuelta" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
         <br />
 
