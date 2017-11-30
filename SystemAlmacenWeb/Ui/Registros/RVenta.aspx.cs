@@ -53,6 +53,17 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         }
 
+        private void limpiarFac()
+        {
+            dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ID Articulo"),
+               new DataColumn(" Precio"),
+                new DataColumn("Cantidad"),
+                new DataColumn("Nombre"), new DataColumn("ITBS")});
+
+            TextBoxBuscar.Text = "";
+            ViewState["Detalle"] = dt;
+            this.BindGrid();
+        }
 
         private void limpiar()
         {
@@ -350,15 +361,15 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         private void SumarExistencia()
         {
-            decimal descuento = 0;
+            decimal suma = 0;
             foreach (GridViewRow producto in FacturaGrid.Rows)
             {
                 Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
                 int productoId = Convert.ToInt32(producto.Cells[0].Text); ///Celda 2 es el idArticulo antes esta detalleid y facturaid
-                descuento = Convert.ToDecimal(producto.Cells[4].Text); //Celda 4 es la cantiddad
+                suma = Convert.ToDecimal(producto.Cells[2].Text); //Celda 4 es la cantiddad
 
                 detallef.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
-                detallef.Articulo.Existencia += Convert.ToInt32(descuento);
+                detallef.Articulo.Existencia += Convert.ToInt32(suma);
                 BLL.ArticuloBLL.Mofidicar(detallef.Articulo);
             }
         }
@@ -470,7 +481,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 else
                 {
                     Utilidades.ShowToastr(this, "No existe factura", "Error", "error");
-                    limpiar();
+                    limpiarFac();
                 }
             }
 

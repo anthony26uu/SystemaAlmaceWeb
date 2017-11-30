@@ -49,15 +49,6 @@ namespace SystemAlmacenWeb.Ui.Registros {
         protected global::System.Web.UI.WebControls.DropDownList DropDownTipoVenta;
         
         /// <summary>
-        /// DescuentoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescuentoTextBox;
-        
-        /// <summary>
         /// DropDownCliente control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,24 @@ namespace SystemAlmacenWeb.Ui.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonNuevoCliente;
+        
+        /// <summary>
+        /// DescuentoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DescuentoTextBox;
+        
+        /// <summary>
+        /// TexboxCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TexboxCantidad;
         
         /// <summary>
         /// TextBoxVendedor control.
@@ -164,15 +173,6 @@ namespace SystemAlmacenWeb.Ui.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
-        
-        /// <summary>
-        /// TexboxCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TexboxCantidad;
         
         /// <summary>
         /// FacturaGrid control.

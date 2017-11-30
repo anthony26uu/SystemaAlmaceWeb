@@ -131,16 +131,16 @@
         </asp:ContentPlaceHolder>
           </div>
         <footer class="text-center">
-            &nbsp;<div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Usuario </h3>
+            <div class="panel panel-info">
+                           
+                                <asp:Label ID="Label1" runat="server" Text="Usuario"></asp:Label>&nbsp
                                   <asp:Label ID="UsuarioLabel" runat="server" Text='<%# Eval("Usuario") %>'></asp:Label>&nbsp&nbsp
-                            </div>
-                          
+                            
+                           <asp:Button ID="ButtonCerrarSesion" class="btn btn-warning" runat="server" OnClick="ButtonCerrarSesion_Click" Text="Cerrar Sesion" Width="120px" />
+             
 
                         </div>
-            <asp:Button ID="ButtonCerrarSesion" class="btn-warning" runat="server" OnClick="ButtonCerrarSesion_Click" Text="Cerrar Sesion" Width="120px" />
-            
+          
             <div class="bg-success">
                 <p class="text-center text-white">Anthony Santana 2014-0527</p>
             </div>
