@@ -21,7 +21,7 @@ namespace SystemAlmacenWeb
             {
 
 
-            //    LlenarUsuario();
+                LlenarUsuario();
             }
 
 

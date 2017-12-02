@@ -300,7 +300,7 @@ namespace SystemAlmacenWeb.Ui.Registros
             {
 
                 int productoId = Convert.ToInt32(producto.Cells[0].Text); ///Celda 2 es el idArticulo antes esta detalleid y facturaid
-                descuento = Convert.ToDecimal(producto.Cells[4].Text); //Celda 4 es la cantiddad
+                descuento = Convert.ToDecimal(producto.Cells[2].Text); //Celda 4 es la cantiddad
 
                 Descontar = BLL.ArticuloBLL.BuscarB(productoId);
               //  if(Descontar.Existencia <)
@@ -376,8 +376,8 @@ namespace SystemAlmacenWeb.Ui.Registros
             foreach (GridViewRow producto in FacturaGrid.Rows)
             {
                 Entidades.FacturaDetalles detallef = new Entidades.FacturaDetalles();
-                int productoId = Convert.ToInt32(producto.Cells[0].Text); ///Celda 2 es el idArticulo antes esta detalleid y facturaid
-                suma = Convert.ToDecimal(producto.Cells[2].Text); //Celda 4 es la cantiddad
+                int productoId = Convert.ToInt32(producto.Cells[0].Text); ///Celda 0 es el idArticulo antes esta detalleid y facturaid
+                suma = Convert.ToDecimal(producto.Cells[2].Text); //Celda 2 es la cantiddad
 
                 detallef.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
                 detallef.Articulo.Existencia += Convert.ToInt32(suma);
