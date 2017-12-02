@@ -109,5 +109,17 @@ namespace SystemAlmacenWeb.Ui.Consultas
         {
             Selecionar(Utilidades.TOINT(buscaText.Text));
         }
+
+        protected void DropFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(DropFiltro.SelectedIndex==1)
+            {
+                RegularExpressionValidator1.Enabled = true;
+            }
+            else
+            {
+                RegularExpressionValidator1.Enabled = false;
+            }
+        }
     }
 }

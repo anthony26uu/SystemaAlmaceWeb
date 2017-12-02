@@ -87,6 +87,16 @@ namespace SystemAlmacenWeb.Ui.Registros
             TextMontoRecibido.Text = "";
             TexboxDevuelta.Text = "";
             TextBoxTotalITBS.Text = "";
+
+            DescuentoTextBox.Enabled = true;
+            DropDownTipoVenta.Enabled = true;
+            DropDownCliente.Enabled = true;
+            Agregar.Enabled = true;
+            DropArticulo.Enabled = true;
+            TextBoxCantidad.Enabled = true;
+            BotonCalcularDevuelta.Enabled = true;
+            TextMontoRecibido.Enabled = true;
+            ButtonGurdar.Enabled = true;
         }
 
         public void LlenarRegistro(List<Entidades.FacturaDetalles> llenar)
@@ -293,6 +303,7 @@ namespace SystemAlmacenWeb.Ui.Registros
                 descuento = Convert.ToDecimal(producto.Cells[4].Text); //Celda 4 es la cantiddad
 
                 Descontar = BLL.ArticuloBLL.BuscarB(productoId);
+              //  if(Descontar.Existencia <)
                 Descontar.Existencia -= Convert.ToInt32(descuento);
                 BLL.ArticuloBLL.Mofidicar(Descontar);
             }
@@ -444,6 +455,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                     limpiar();
                     listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
+                    TextBoxBuscar.Text = facturaG.IdFactura.ToString();
                     if (facturaG != null)
                     {
 
@@ -463,6 +475,15 @@ namespace SystemAlmacenWeb.Ui.Registros
                             TextBoxTotal.Text = Convert.ToString(facturaG.Total);
                             DropDownTipoVenta.Text = Convert.ToString(facturaG.TipoVenta);
 
+                            DropDownTipoVenta.Enabled = false;
+                            DropDownCliente.Enabled = false;
+                            Agregar.Enabled = false;
+                            DropArticulo.Enabled = false;
+                            TextBoxCantidad.Enabled = false;
+                            BotonCalcularDevuelta.Enabled = false;
+                            TextMontoRecibido.Enabled = false;
+                            ButtonGurdar.Enabled = false;
+                            DescuentoTextBox.Enabled = false;
                             foreach (var relacion in listaRelaciones)
                             {
                                 listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
@@ -571,13 +592,22 @@ namespace SystemAlmacenWeb.Ui.Registros
 
                 CalcularMonto();
                 calcularDevuelta();
-                Button2.Focus();
+                ButtonGurdar.Focus();
             }
         }
 
         protected void DropDownTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(DropDownTipoVenta.SelectedIndex==0)
+            {
+                BotonCalcularDevuelta.Enabled = false;
+                TextMontoRecibido.Enabled = false;
+            }
+            else
+            {
+                BotonCalcularDevuelta.Enabled = true;
+                TextMontoRecibido.Enabled = true;
+            }
         }
 
         protected void DropArticulo_SelectedIndexChanged(object sender, EventArgs e)

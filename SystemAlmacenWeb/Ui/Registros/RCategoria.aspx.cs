@@ -127,33 +127,46 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void Eliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Textid.Text))
+            // int id = Utilidades.TOINT(Textid.Text);
+
+            Entidades.Articulos Usada = BLL.ArticuloBLL.Buscar(p => p.Categoria == Textid.Text);
+            if (Usada != null)
             {
-                Utilidades.ShowToastr(this, "Capo Vacio", "ERROR", "error");
-
+                Utilidades.ShowToastr(this, "No puede eliminar esta categoria esta siendo usada ", "ERROR", "error");
                 Limpiar();
-
-
             }
             else
             {
-                int id = int.Parse(Textid.Text);
 
-                var cate = CategoriaBLL.Buscar(p => p.CategoriaId == id);
-                if (cate != null)
+                if (string.IsNullOrWhiteSpace(Textid.Text))
                 {
-                    CategoriaBLL.Eliminar(cate);
-                    Utilidades.ShowToastr(this, "Se ha modificado con exito", "CORRECTO", "success");
+                    Utilidades.ShowToastr(this, "Capo Vacio", "ERROR", "error");
 
                     Limpiar();
-                }
 
+
+                }
                 else
                 {
-                    Utilidades.ShowToastr(this, "No se puedo eliminar Categoria", "ERROR", "error");
+                    int id = int.Parse(Textid.Text);
 
-                    Limpiar();
+                    var cate = CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                    if (cate != null)
+                    {
+                        CategoriaBLL.Eliminar(cate);
+                        Utilidades.ShowToastr(this, "Se ha Eliminado con exito", "CORRECTO", "success");
+
+                        Limpiar();
+                    }
+
+                    else
+                    {
+                        Utilidades.ShowToastr(this, "No se puedo eliminar Categoria", "ERROR", "error");
+
+                        Limpiar();
+                    }
                 }
+
             }
         }
     }

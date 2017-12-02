@@ -14,11 +14,9 @@
     </header>
 
     <div class="text-center">
-
-
         <span class="col-md-3 control-label input-sm">SELECIONE LA OPCION DESEADA</span>
         <div class="col-lg-2 col-md-2">
-            <asp:DropDownList CssClass="form-control" ID="DropFiltro" runat="server" Height="45px">
+            <asp:DropDownList CssClass="form-control" ID="DropFiltro" AutoPostBack="true" runat="server" Height="45px" OnSelectedIndexChanged="DropFiltro_SelectedIndexChanged">
                 <asp:ListItem>Todo</asp:ListItem>
                 <asp:ListItem>ID</asp:ListItem>
                 <asp:ListItem>Nombre</asp:ListItem>
@@ -26,32 +24,34 @@
         </div>
 
 
-
-
-
         <span class="col-md-2 control-label ">ID / NOMBRE</span>
         <div class="col-lg-2 col-md-4">
-
-            <asp:TextBox ID="buscaText" runat="server" class="form-control" placeholder="ID a buscar"></asp:TextBox>
+            <asp:TextBox ID="buscaText" runat="server" class="form-control" placeholder="ID a buscar" ValidationGroup="Buscar"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="buscaText" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="Buscar"></asp:RegularExpressionValidator>
         </div>
+
         <div class="col-lg-2 col-md-6">
-            <asp:Button ID="Button1" runat="server" CssClass="btn-warning" Text="Buscar" Height="45px" Width="88px" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" CssClass="btn-warning" Text="Buscar" Height="45px" Width="88px" OnClick="Button1_Click" ValidationGroup="Buscar" />
         </div>
         <br />
         <br />
-
     </div>
 
 
-    <div class="center-block" style="overflow: auto; width: 1487px; height: 259px;">
-        <asp:GridView ID="CategoriasGrid" runat="server" CssClass=" table table-striped table-hover table-bordered" HorizontalAlign="Center" Height="16px" Width="742px">
-            <AlternatingRowStyle BackColor="gray  " />
-            <FooterStyle BackColor="#CCCC99" />
-            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-        </asp:GridView>
+
+    <div class="container">
+        <div class="col-12 col-sm-20  ">
+            <div class="row">
+                <div class="center-block" style="overflow: auto;">
+                    <asp:GridView ID="CategoriasGrid" runat="server" CssClass="  table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
+                        <AlternatingRowStyle BackColor="gray  " />
+                        <FooterStyle BackColor="#CCCC99" />
+                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    </asp:GridView>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 
     <br />
 

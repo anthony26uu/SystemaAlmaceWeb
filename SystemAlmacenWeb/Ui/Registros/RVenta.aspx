@@ -28,7 +28,7 @@
 
             &nbsp;&nbsp;&nbsp; <span class="badge badge-primary">Tipo de venta </span>
 
-            <asp:DropDownList ID="DropDownTipoVenta" CssClass="btn btn-primary" runat="server" OnSelectedIndexChanged="DropDownTipoVenta_SelectedIndexChanged">
+            <asp:DropDownList ID="DropDownTipoVenta" AutoPostBack="true" CssClass="btn btn-primary" runat="server" OnSelectedIndexChanged="DropDownTipoVenta_SelectedIndexChanged">
 
                 <asp:ListItem>Contado</asp:ListItem>
                 <asp:ListItem>Credito</asp:ListItem>
@@ -166,7 +166,7 @@
 
     <div class="text-center">
         <asp:Button ID="Button4" CssClass="btn btn-warning" runat="server" Text="Limpiar" Height="36px" Width="88px" OnClick="Button4_Click" />
-        <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click" ValidationGroup="guardar" />
+        <asp:Button ID="ButtonGurdar" CssClass="btn btn-success" runat="server" Text="Guardar" Height="36px" Width="88px" OnClick="Button2_Click" ValidationGroup="guardar" />
         <asp:Button ID="Button3" CssClass="btn btn-danger" runat="server" Text="Eliminar" Height="36px" Width="88px" OnClick="Button3_Click" />
 
 
