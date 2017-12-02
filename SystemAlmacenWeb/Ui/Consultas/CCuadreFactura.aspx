@@ -41,19 +41,37 @@
             <asp:Button ID="Button1" runat="server" Text="Buscar" Height="45px" Width="88px" class="btn btn-warning btn-sm" OnClick="Button1_Click" ValidationGroup="Buscar" />
         </div>
 
-        <span>Desde</span>
-        <asp:TextBox ID="desdeFecha" class="input-lg" TextMode="Date" runat="server" Width="212px" Height="45px"></asp:TextBox>
-        <span>Hasta</span>
-        <asp:TextBox ID="hastaFecha" class="input-lg" TextMode="Date" runat="server" Height="44px" Width="212px"></asp:TextBox>
+
+
+        <div class="col-lg-4 col-md-6">
+            <span>Desde</span>
+            <asp:TextBox ID="desdeFecha" class="input-lg" TextMode="Date" runat="server" Width="212px" Height="45px"></asp:TextBox>
+        </div>
+        <div class="col-lg-6 col-md-8">
+            <span>Hasta</span>
+            <asp:TextBox ID="hastaFecha" class="input-lg" TextMode="Date" runat="server" Height="44px" Width="212px"></asp:TextBox>
+        </div>
     </div>
     <br />
 
+    <div class="col-12 col-sm-20  ">
+        <h1>
 
+            <br />
+
+
+        </h1>
+    </div>
+
+    <br />
+    <br />
 
     <div class="container">
         <div class="col-12 col-sm-20  ">
             <div class="row">
-                <div class="center-block" style="overflow: auto;">
+                <div class="center-block" style="overflow: auto; height: 121px;">
+
+
                     <asp:GridView ID="FacturaGrid" runat="server" CssClass="  table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
                         <AlternatingRowStyle BackColor="gray  " />
                         <FooterStyle BackColor="#CCCC99" />
@@ -67,6 +85,8 @@
 
 
     <br />
+
+
 
     <div class="modal-footer">
         <div class="text-center">

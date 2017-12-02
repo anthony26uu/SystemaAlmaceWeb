@@ -14,8 +14,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
             Utilidades.SCritpValidacion();
             Lista = BLL.DeudasclientesBLL.GetListodo();
-            FacturaGrid.DataSource = Lista;
-            FacturaGrid.DataBind();
+            DeudasGrid.DataSource = Lista;
+            DeudasGrid.DataBind();
 
             buscaText.Focus();
 
@@ -42,9 +42,9 @@ namespace SystemAlmacenWeb.Ui.Consultas
         {
             decimal total = 0;
 
-            if (FacturaGrid.Rows.Count > 0)
+            if (DeudasGrid.Rows.Count > 0)
             {
-                foreach (GridViewRow precio in FacturaGrid.Rows)
+                foreach (GridViewRow precio in DeudasGrid.Rows)
                 {
                     Math.Round (total += Convert.ToDecimal(precio.Cells[2].Text));
                 }
@@ -68,7 +68,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 else
                 {
                     Lista = BLL.DeudasclientesBLL.GetListodo();
-                    FacturaGrid.DataSource = Lista;
+                    DeudasGrid.DataSource = Lista;
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
                     calcular();
                     buscaText.Text = "";
@@ -90,8 +90,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    FacturaGrid.DataSource = Lista;
-                    FacturaGrid.DataBind();
+                    DeudasGrid.DataSource = Lista;
+                    DeudasGrid.DataBind();
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
                     calcular();
                     buscaText.Text = "";
@@ -120,8 +120,8 @@ namespace SystemAlmacenWeb.Ui.Consultas
                 }
                 else
                 {
-                    FacturaGrid.DataSource = Lista;
-                    FacturaGrid.DataBind();
+                    DeudasGrid.DataSource = Lista;
+                    DeudasGrid.DataBind();
                     Utilidades.ShowToastr(this, "Sus Resultados", "Resultados", "success");
                     calcular();
                     buscaText.Text = "";
@@ -145,10 +145,14 @@ namespace SystemAlmacenWeb.Ui.Consultas
         {
             if(DropFiltro.SelectedIndex==1)
             {
+                buscaText.Enabled = true;
                 RegularExpressionValidator1.Enabled = true;
+                DropUsuario.Enabled = false;
             }
             else
             {
+                buscaText.Enabled = false;
+                DropUsuario.Enabled = true;
                 RegularExpressionValidator1.Enabled = false;
             }
         }

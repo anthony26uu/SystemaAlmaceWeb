@@ -10,29 +10,29 @@ namespace SystemAlmacenWeb
 {
     public partial class Base : System.Web.UI.MasterPage
     {
-       
+
         public static string Usuario { get; set; }
 
-    
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!Page.IsPostBack)
             {
 
-              
-            //   LlenarUsuario();
+
+            //    LlenarUsuario();
             }
 
-            
+
         }
 
         public void LlenarUsuario()
         {
             var user = new Entidades.Usuarios();
-            user=  BLL.UserBLL.Buscar(p => p.NombreUsuario == Usuario);
+            user = BLL.UserBLL.Buscar(p => p.NombreUsuario == Usuario);
             TipoUsuarioLabel.Text = user.Tipo;
-          
+
             ModalLabel.Text = Usuario.ToString();
             UsuarioLabel.Text = Usuario.ToString();
 

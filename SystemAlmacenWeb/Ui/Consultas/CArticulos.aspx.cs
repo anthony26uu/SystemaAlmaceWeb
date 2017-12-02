@@ -229,16 +229,47 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
         protected void DropFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if(DropCategoria.SelectedIndex==1)
+            if (DropFiltro.SelectedIndex == 1)
             {
+                buscaText.Enabled = true;
                 RegularExpressionValidator1.Enabled = true;
+                DropCategoria.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
-            else
+            else if (DropFiltro.SelectedIndex == 0)
             {
                 RegularExpressionValidator1.Enabled = false;
+                buscaText.Enabled = false;
+                DropCategoria.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
-          
+            else if (DropFiltro.SelectedIndex == 2)
+            {
+                buscaText.Enabled = false;
+                RegularExpressionValidator1.Enabled = false;
+                DropCategoria.Enabled = false;
+                desdeFecha.Enabled = true;
+                hastaFecha.Enabled = true;
+            }
+            else if (DropFiltro.SelectedIndex == 3)
+            {
+                buscaText.Enabled = true;
+                RegularExpressionValidator1.Enabled = false;
+                DropCategoria.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
+            }
+            else if (DropFiltro.SelectedIndex == 4)
+            {
+                buscaText.Enabled = false;
+                RegularExpressionValidator1.Enabled = false;
+                DropCategoria.Enabled = true;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
+            }
+
         }
     }
 }

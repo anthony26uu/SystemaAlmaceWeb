@@ -12,12 +12,7 @@ namespace SystemAlmacenWeb.Ui.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+            Utilidades.SCritpValidacion();
 
             Lista = BLL.UserBLL.GetListodo();
             Entidades.Usuarios Usuario = new Entidades.Usuarios();
@@ -184,13 +179,55 @@ namespace SystemAlmacenWeb.Ui.Consultas
 
         protected void DropTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(DropFiltro.SelectedIndex==1)
+           
+        }
+
+        protected void buscaText_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        protected void DropFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropFiltro.SelectedIndex == 1)
             {
+                buscaText.Enabled = true;
                 RegularExpressionValidator1.Enabled = true;
+                DropTipo.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
-            else
+            else if(DropFiltro.SelectedIndex==0)
             {
                 RegularExpressionValidator1.Enabled = false;
+                buscaText.Enabled = false;
+                DropTipo.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
+            }
+            else if(DropFiltro.SelectedIndex==2)
+            {
+                buscaText.Enabled = false;
+                RegularExpressionValidator1.Enabled = false;
+                DropTipo.Enabled = false;
+                desdeFecha.Enabled = true;
+                hastaFecha.Enabled = true;
+            }
+            else if(DropFiltro.SelectedIndex==3)
+            {
+                buscaText.Enabled = true;
+                RegularExpressionValidator1.Enabled = false;
+                DropTipo.Enabled = false;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
+            }
+            else if(DropFiltro.SelectedIndex==4)
+            {
+                buscaText.Enabled = false;
+                RegularExpressionValidator1.Enabled = false;
+                DropTipo.Enabled = true;
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
         }
     }

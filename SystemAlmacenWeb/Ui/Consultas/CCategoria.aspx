@@ -38,18 +38,24 @@
     </div>
 
 
-
-    <div class="container">
         <div class="col-12 col-sm-20  ">
-            <div class="row">
-                <div class="center-block" style="overflow: auto;">
+            <h1>
+           
+
+            </h1>
+        </div>
+  
+        <div class="container">
+            <div class="col-12 col-sm-20  ">
+                <div class="row">
+                    <div class="center-block" style="overflow: auto; height: 121px;">
                     <asp:GridView ID="CategoriasGrid" runat="server" CssClass="  table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
                         <AlternatingRowStyle BackColor="gray  " />
                         <FooterStyle BackColor="#CCCC99" />
                         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
                     </asp:GridView>
                 </div>
-            </div>
+              </div>
         </div>
     </div>
 

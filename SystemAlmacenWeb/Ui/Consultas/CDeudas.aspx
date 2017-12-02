@@ -13,6 +13,7 @@
         <h1 class="page-header text-center">CONSULTA DEUDAS <span></span></h1>
     </header>
 
+     
 
     <div class="text-center">
         <span class="col-md-2 control-label input-sm">SELECIONE LA OPCION DESEADA</span>
@@ -43,16 +44,23 @@
     <br />
 
 
+   <br />
+
+    <br />
+     <br />
+
+    <br />
+
     <div class="container">
         <div class="col-12 col-sm-20  ">
             <div class="row">
-                <div class="center-block" style="overflow: auto;">
-                    <asp:GridView ID="FacturaGrid" runat="server" CssClass="  table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
+              <div class="center-block" style="overflow: auto;">
+                     <asp:GridView ID="DeudasGrid" runat="server" CssClass="  table-responsive" HorizontalAlign="Center" Height="16px" Width="742px">
                         <AlternatingRowStyle BackColor="gray  " />
                         <FooterStyle BackColor="#CCCC99" />
                         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
                     </asp:GridView>
-                </div>
+            </div>
             </div>
         </div>
     </div>

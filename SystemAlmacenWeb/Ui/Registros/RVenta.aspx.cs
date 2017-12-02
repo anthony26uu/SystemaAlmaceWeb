@@ -598,7 +598,7 @@ namespace SystemAlmacenWeb.Ui.Registros
 
         protected void DropDownTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(DropDownTipoVenta.SelectedIndex==0)
+            if(DropDownTipoVenta.Text=="Credito")
             {
                 BotonCalcularDevuelta.Enabled = false;
                 TextMontoRecibido.Enabled = false;

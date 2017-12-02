@@ -18,7 +18,7 @@
     <div class="text-center">
 
         <span>SELECIONE LA OPCION DESEADA</span>
-        <asp:DropDownList ID="DropFiltro" CssClass="btn-default" runat="server" Height="45px">
+        <asp:DropDownList ID="DropFiltro" CssClass="btn-default" AutoPostBack="true" runat="server" Height="45px" OnSelectedIndexChanged="DropFiltro_SelectedIndexChanged">
             <asp:ListItem>Todo</asp:ListItem>
             <asp:ListItem>ID</asp:ListItem>
             <asp:ListItem>Fecha</asp:ListItem>
@@ -28,7 +28,7 @@
 
 
         <span>ID / NOMBRE</span>
-        <asp:TextBox ID="buscaText" runat="server" class="input-lg" placeholder="ID a buscar" Height="45px" Width="189px" ValidationGroup="Buscar"></asp:TextBox>
+        <asp:TextBox ID="buscaText" runat="server" class="input-lg"  placeholder="ID a buscar" Height="45px" Width="189px" ValidationGroup="Buscar" ></asp:TextBox>
         &nbsp;
         <asp:Button ID="Button1" runat="server" CssClass="btn-warning" Text="Buscar" Height="45px" Width="96px" OnClick="Button1_Click1" ValidationGroup="Buscar" />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="buscaText" ErrorMessage="Solo Numeros y Numeros positivos" ForeColor="Red" ValidationExpression="\d+" ValidationGroup="Buscar"></asp:RegularExpressionValidator>
@@ -41,7 +41,7 @@
         <span>HASTA</span>
         <asp:TextBox ID="hastaFecha" class="input-lg" TextMode="Date" runat="server" Height="44px" Width="212px"></asp:TextBox>
 
-        <asp:DropDownList ID="DropTipo" AutoPostBack="true" runat="server" Height="42px" Width="199px" OnSelectedIndexChanged="DropTipo_SelectedIndexChanged">
+        <asp:DropDownList ID="DropTipo"  runat="server" CssClass="btn-default" Height="42px" Width="199px">
             <asp:ListItem>Administrador</asp:ListItem>
             <asp:ListItem>Empleado</asp:ListItem>
         </asp:DropDownList>

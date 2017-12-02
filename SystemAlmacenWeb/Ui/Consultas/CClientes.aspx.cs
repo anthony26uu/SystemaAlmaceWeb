@@ -190,11 +190,35 @@ namespace SystemAlmacenWeb.Ui.Consultas
         {
             if (DropFiltro.SelectedIndex == 1)
             {
+                buscaText.Enabled = true;
                 RegularExpressionValidator1.Enabled = true;
+               
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
-            else
+            else if (DropFiltro.SelectedIndex == 0)
             {
                 RegularExpressionValidator1.Enabled = false;
+                buscaText.Enabled = false;
+               
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
+            }
+            else if (DropFiltro.SelectedIndex == 2)
+            {
+                buscaText.Enabled = false;
+                RegularExpressionValidator1.Enabled = false;
+               
+                desdeFecha.Enabled = true;
+                hastaFecha.Enabled = true;
+            }
+            else if (DropFiltro.SelectedIndex == 3)
+            {
+                buscaText.Enabled = true;
+                RegularExpressionValidator1.Enabled = false;
+               
+                desdeFecha.Enabled = false;
+                hastaFecha.Enabled = false;
             }
 
         }
