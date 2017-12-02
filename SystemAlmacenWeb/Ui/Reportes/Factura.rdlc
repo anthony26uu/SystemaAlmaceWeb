@@ -365,7 +365,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -801,7 +800,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.20834in</Height>
+    <Height>1.9025in</Height>
     <Style>
       <Border>
         <Color>Gray</Color>
@@ -810,10 +809,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>6.92069in</Width>
+  <Width>6.89726in</Width>
   <Page>
     <PageHeader>
-      <Height>3.99273cm</Height>
+      <Height>2.65813cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -832,7 +831,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Left>12.32905cm</Left>
+          <Top>0.03528cm</Top>
+          <Left>12.00565cm</Left>
           <Height>0.6cm</Height>
           <Width>4.5234cm</Width>
           <Style>
@@ -860,7 +860,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Left>10.80042cm</Left>
+          <Top>0.03528cm</Top>
+          <Left>10.47702cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
           <ZIndex>1</ZIndex>
@@ -878,8 +879,8 @@
           <Source>Embedded</Source>
           <Value>depositphotos_112179970stockillustrationlogonaturalwithleavesnatural</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.72611cm</Left>
-          <Height>3.99273cm</Height>
+          <Left>1.09063cm</Left>
+          <Height>2.65812cm</Height>
           <Width>4.43305cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
@@ -898,7 +899,7 @@
                   <Value>EL ALMACEN</Value>
                   <Style>
                     <FontFamily>Elephant</FontFamily>
-                    <FontSize>24pt</FontSize>
+                    <FontSize>18pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -907,8 +908,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>0.77639cm</Top>
-          <Left>2.56242in</Left>
-          <Height>0.47348in</Height>
+          <Left>2.70593in</Left>
+          <Height>0.30681in</Height>
           <Width>3.23958in</Width>
           <ZIndex>3</ZIndex>
           <Style>
@@ -935,7 +936,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox16">
+        <Textbox Name="Textbox17">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -968,9 +969,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.80693in</Top>
-          <Left>2.56242in</Left>
-          <Height>0.50694in</Height>
+          <Top>0.65415in</Top>
+          <Left>2.70593in</Left>
+          <Height>0.39236in</Height>
           <Width>3.23958in</Width>
           <ZIndex>4</ZIndex>
           <Style>

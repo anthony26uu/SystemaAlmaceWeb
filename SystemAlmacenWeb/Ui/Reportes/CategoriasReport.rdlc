@@ -229,10 +229,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCategoria</DataSetName>
-        <Top>3.87103cm</Top>
-        <Left>1.52122cm</Left>
+        <Top>2.44228cm</Top>
+        <Left>1.35904cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.73106cm</Width>
+        <Width>14.73105cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -276,7 +276,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>0.57312cm</Top>
-        <Left>1.52122cm</Left>
+        <Left>1.35904cm</Left>
         <Height>1.52604cm</Height>
         <Width>14.73106cm</Width>
         <ZIndex>1</ZIndex>
@@ -299,7 +299,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4.73958in</Height>
+    <Height>1.43397in</Height>
     <Style>
       <Border>
         <Color>Gray</Color>
@@ -308,10 +308,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.02635in</Width>
+  <Width>6.61729in</Width>
   <Page>
     <PageHeader>
-      <Height>4.35433cm</Height>
+      <Height>2.72984cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -330,8 +330,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.32632cm</Top>
-          <Left>12.2521cm</Left>
+          <Top>0.10699cm</Top>
+          <Left>11.72887cm</Left>
           <Height>0.6cm</Height>
           <Width>4.5234cm</Width>
           <Style>
@@ -359,8 +359,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.32632cm</Top>
-          <Left>10.72347cm</Left>
+          <Top>0.10699cm</Top>
+          <Left>10.20024cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
           <ZIndex>1</ZIndex>
@@ -378,9 +378,9 @@
           <Source>Embedded</Source>
           <Value>depositphotos_112179970stockillustrationlogonaturalwithleavesnatural</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.32632cm</Top>
-          <Left>0.64916cm</Left>
-          <Height>3.99273cm</Height>
+          <Top>0.07171cm</Top>
+          <Left>0.81385cm</Left>
+          <Height>2.65812cm</Height>
           <Width>4.43305cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
@@ -389,7 +389,7 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox13">
+        <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -399,7 +399,7 @@
                   <Value>EL ALMACEN</Value>
                   <Style>
                     <FontFamily>Elephant</FontFamily>
-                    <FontSize>24pt</FontSize>
+                    <FontSize>18pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -407,9 +407,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>1.10271cm</Top>
-          <Left>2.53212in</Left>
-          <Height>0.47348in</Height>
+          <Top>0.8481cm</Top>
+          <Left>2.59696in</Left>
+          <Height>0.30681in</Height>
           <Width>3.23958in</Width>
           <ZIndex>3</ZIndex>
           <Style>
@@ -436,7 +436,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox15">
+        <Textbox Name="Textbox17">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -469,9 +469,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.9354in</Top>
-          <Left>2.53212in</Left>
-          <Height>0.50694in</Height>
+          <Top>0.68238in</Top>
+          <Left>2.59696in</Left>
+          <Height>0.39236in</Height>
           <Width>3.23958in</Width>
           <ZIndex>4</ZIndex>
           <Style>
@@ -492,7 +492,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>0.81167cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -511,8 +511,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.605cm</Top>
-          <Left>7.02464cm</Left>
+          <Top>0.07056cm</Top>
+          <Left>6.26939cm</Left>
           <Height>0.6cm</Height>
           <Width>1.35224cm</Width>
           <Style>
@@ -540,8 +540,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.605cm</Top>
-          <Left>8.45802cm</Left>
+          <Top>0.07056cm</Top>
+          <Left>7.70277cm</Left>
           <Height>0.6cm</Height>
           <Width>1.15239cm</Width>
           <ZIndex>1</ZIndex>
@@ -570,8 +570,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.605cm</Top>
-          <Left>9.85515cm</Left>
+          <Top>0.07056cm</Top>
+          <Left>9.0999cm</Left>
           <Height>0.6cm</Height>
           <Width>0.58495cm</Width>
           <ZIndex>2</ZIndex>
@@ -600,8 +600,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>1.605cm</Top>
-          <Left>10.02735cm</Left>
+          <Top>0.10583cm</Top>
+          <Left>9.82596cm</Left>
           <Height>0.6cm</Height>
           <Width>1.15239cm</Width>
           <ZIndex>3</ZIndex>
